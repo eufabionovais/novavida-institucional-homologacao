@@ -1,0 +1,148 @@
+---
+  const {titulo, questoes, classList, ...props} = Astro.props;
+---
+
+<div class="faq-wrapper" class:list={classList} {...props}>
+  {
+    titulo &&
+    <h2 class="faq-title">{titulo}</h2>
+  }
+
+    <dl class="accordion">
+
+      {
+        questoes.map((questao) => {
+          return (
+
+            <div class="accordion-item">
+              <dt class="accordion-header">{questao.pergunta}</dt>
+              <dd class="accordion-content">
+                <p>{questao.resposta}</p>
+              </dd>
+            </div>
+
+          )
+        })
+      }
+
+    </dl>
+
+</div>
+
+<style lang="scss">
+  .faq-title {
+    @apply text-4xl pb-10 ;
+  }
+
+  .accordion {
+    counter-reset: number;
+  }
+
+  .accordion-item {
+    @apply py-4 lg:py-8 border-b border-black border-opacity-10;
+    counter-increment: number;
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  .accordion-header {
+    @apply text-lg relative flex items-center gap-6 justify-between cursor-pointer;
+    font-weight: 500;
+    
+    &:after {
+      flex-basis: 26px;
+      aspect-ratio: 1;
+      border-radius: 4px;
+      border: solid 1px transparent;
+      @apply bg-primary text-black;
+      content: "+";
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      line-height: 1;
+      flex-shrink: 0;
+      transition: 0.2s;
+      margin-left: auto;
+    }    
+  }
+
+  .accordion-content {        
+    @apply text-base text-neutral;
+    max-height: 0;
+    overflow: hidden;
+    cursor: pointer;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  }
+
+  .accordion-content.open {
+    max-height: 200px;
+    padding: 15px 0;
+  }  
+
+  .accordion-item:has(.accordion-content.open) .accordion-header {
+    &:after {
+      border: solid 1px #000;
+      @apply bg-transparent text-black ;
+      content: "-";        
+    }
+  }
+
+
+  [variant='numbered'] {
+    .accordion-header {
+      font-size: 28px;
+      font-weight: 400;
+      display: flex;
+      gap: 16px;
+      justify-content: flex-start;
+      &:before {
+        font-size: 28px;
+        content: "0" counter(number, decimal-leading-zero)".";     
+        flex-basis: 100px;   
+      }      
+    }
+    .accordion-content.open {
+      padding-top: 20px;
+    }
+  }
+
+</style>
+
+  <script>
+
+document.addEventListener('DOMContentLoaded', function () {
+    const items = document.querySelectorAll('.accordion-item');
+
+    items.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        const content = item.querySelector('.accordion-content');
+
+        // Abre o item ao passar o mouse sobre o cabeçalho ou o conteúdo
+        item.addEventListener('mouseover', function () {
+            // Fecha todos os outros itens
+            items.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.querySelector('.accordion-content').classList.remove('open');
+                }
+            });
+            // Abre o item atual
+            content.classList.add('open');
+        });
+
+        // Fecha o item ao sair do item inteiro (cabeçalho + conteúdo)
+        item.addEventListener('mouseout', function (event) {
+            // Verifica se o mouse está saindo do item inteiro
+            const relatedTarget = event.relatedTarget;
+
+            // Se relatedTarget não existe ou não está dentro do item atual, fecha o conteúdo
+            if (!relatedTarget || !item.contains(relatedTarget)) {
+                content.classList.remove('open');
+            }
+        });
+    });
+});
+
+  </script>

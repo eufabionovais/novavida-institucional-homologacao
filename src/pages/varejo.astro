@@ -1,0 +1,238 @@
+---
+
+import ButtonShared from "../components/shared/Button.astro";
+import CallToAction from "../components/shared/CallToAction.astro";
+import BeneficioProduto from "../components/shared/BeneficioProduto.astro";
+import CardIcone from "../components/shared/CardIcone.astro";
+import Layout from '../layouts/Layout.astro';
+import { baseURL } from "../config";
+
+const items = [
+  {
+    titulo: "Análise de Crédito Precisa e Confiável",
+    descricao: "A análise de crédito é fundamental para empresas que oferecem produtos financeiros. Na Nova Vida, usamos tecnologias avançadas para fornecer uma visão detalhada do perfil de crédito dos consumidores. Nossos algoritmos analisam dados diversos para decisões mais precisas e menor inadimplência.",
+    imagem: {
+      url: `${baseURL}/img/segmento-varejo/imagem-analise-credito.png`,
+      alt: "Descrição imagem 1"
+    },
+    tituloLista: "Por que escolher os dados da Nova Vida?",
+    lista: [
+      "Visão completa do perfil de crédito",
+      "Avaliação de risco precisa",
+      "Redução da inadimplência",
+      "Aumento da rentabilidade"
+    ],
+    customClasses: {
+      'container': 'mt-12',
+      'content-col': 'col-span-5',
+      'image-col': 'bg-grey-surface rounded-xl',
+      'image-wrapper': '',
+      'image-col-img': 'transform -translate-x-11',
+      'title': 'text-highlight-on-light'
+    }    
+  },
+  
+  {
+    titulo: "Confirmação Cadastral Eficiente",
+    descricao: "Manter dados cadastrais atualizados é essencial para a segurança dos serviços financeiros do varejo. Nossa solução verifica e valida informações em tempo real, garantindo acesso a dados sempre confiáveis e atualizados. Isso melhora a experiência do cliente e a conformidade regulatória.",
+    imagem: {
+      url: `${baseURL}/img/segmento-varejo/imagem-confirmacao-cadastral.png`,
+      alt: "Descrição imagem 2"
+    },
+    tituloLista: "Vantagens de uma confirmação cadastral eficiente:",
+    lista: [
+      "Validação em tempo real",
+      "Dados atualizados e precisos",
+      "Melhoria na segurança e conformidade",
+      "Melhor experiência do cliente"
+    ],
+    customClasses: {
+      'container': 'md:mt-12',
+      'content-col': 'col-span-5',
+      'image-col': 'bg-grey-surface rounded-xl',
+      'image-wrapper': '',
+      'image-col-img': '',
+      'title': 'text-highlight-on-light'
+    }    
+  },
+]
+
+const definicoes = [
+  {
+    titulo: "Determinação de Limite Otimizada",
+    descricao: "Definir limites de crédito é crucial na gestão de produtos financeiros. A Nova Vida usa dados como histórico de crédito e renda para definir limites personalizados, garantindo uso seguro do crédito sem comprometer a segurança",
+    imagem: {
+      url: `${baseURL}/img/segmento-varejo/imagem-determinacao.png`,
+      alt: "Descrição imagem 3"
+    },
+    tituloLista: "Destaques da nossa solução de limite de crédito",
+    lista: [
+      "Limites personalizados",
+      "Análise de múltiplas variáveis",
+      "Maior satisfação do cliente",
+      "Redução de inadimplência"
+    ],
+    customClasses: {
+      'content-col': '[&]:col-span-5 [&]:col-start-8 [&]:row-start-1',
+      'image-col': 'bg-grey-surface rounded-xl [&]:col-start-1 [&]:row-start-1',
+      'image-wrapper': '',
+      'image-col-img': '',
+      'title': 'text-highlight-on-light'
+    }    
+  },
+  
+  {
+    titulo: "Definição de Personas e Segmentação de Mercado",
+    descricao: "Compreender seus clientes é essencial no varejo. A Nova Vida ajuda a definir personas detalhadas e segmentar o mercado de forma eficaz. Usando dados comportamentais e demográficos, adaptamos ofertas às preferências de cada grupo, melhorando campanhas e conversão.",
+    imagem: {
+      url: `${baseURL}/img/segmento-varejo/imagem-definicao.png`,
+      alt: "Descrição imagem 4"
+    },
+    tituloLista: "Por que usar nossa solução de segmentação",
+    lista: [
+      "Definição precisa de personas",
+      "Segmentação eficaz",
+      "Personalização de ofertas",
+      "Aumento da lealdade e vendas"
+    ],
+    customClasses: {
+      'container': 'mt-12',
+      'content-col': '[&]:col-span-5 [&]:col-start-8 [&]:row-start-1',
+      'image-col': 'bg-grey-surface rounded-xl [&]:col-start-1 [&]:row-start-1',
+      'image-wrapper': '',
+      'image-col-img': '',
+      'title': 'text-highlight-on-light'
+    }
+  }
+]
+
+---
+
+<Layout title="Segmento Cobrança - Nova Vida TI">
+
+    <!-- Intro -->
+    <div class="content-row novidades text-black pt-20 pb-10">
+        <div class="content-container" data-grid-section="initial-section">
+            <div data-grid-section="initial-section__header">
+                <small class="flex items-center gap-2 text-neutral mb-6 text-base">
+                    Segmento <i class="icon-curved-arrow relative top-1"></i>
+                </small>
+                <p class="text-2xl">Varejo</p>                
+            </div>
+            <div data-grid-section="initial-section__content">
+                 <p class="section-highlight-title text-highlight-on-light">
+                    Como a Nova Vida Está Transformando os Produtos Financeiros no Varejo
+                </p>
+                <p class="mt-20 text-neutral">
+                    Na Nova Vida, nossa missão é proporcionar soluções inovadoras em enriquecimento e consulta de dados, impulsionando o sucesso das empresas do varejo em seus produtos financeiros. Atuamos como um parceiro estratégico para nossos clientes, oferecendo insights valiosos que otimizam desde a análise de crédito até a definição de personas.
+                </p>              
+            </div>
+            <div data-grid-section="initial-section__action">
+                <img src=`${baseURL}/img/segmento-cobranca/icon-scroll.png` alt="">
+            </div>
+        </div>
+    </div>
+    <!-- / Intro -->
+
+    <!-- Banner -->
+    <div class="content-row">
+        <div class="content-container md:py-10">
+            <div class="image-wrapper relative">
+                <img src=`${baseURL}/img/segmento-varejo/banner.png` alt="" />
+            </div>
+        </div>
+    </div>
+    <!-- / Banner -->
+
+    <!-- Analise e confirmação -->
+    {
+        items.map((beneficio) => {
+          return (
+            <BeneficioProduto item={beneficio} />
+          )
+        })
+    }
+    <!-- / Analise e confirmação -->
+
+    <ButtonShared
+        text="Garanta segurança e confiança nos seus dados" 
+        href="#"
+    />
+
+    <!-- Determinação e definição -->
+    {
+        definicoes.map((beneficio) => {
+          return (
+            <BeneficioProduto item={beneficio} />
+          )
+        })
+    }
+    <!-- / Determinação e definição -->
+
+    <ButtonShared
+        text="Transforme suas soluções financeiras no varejo com a Nova Vida" 
+        href="#"
+    />
+
+    <!-- Soluções -->
+    <div class="content-row py-10">
+        <div class="content-container px-5">
+            <h2 class="text-4xl text-center text-highlight-on-light font-light">Por que Escolher a Nova Vida? <span>Somos guiados pela expertise e tecnologia para oferecer soluções de dados que impulsionam resultados estratégicos.</span></h2>
+        </div>
+        <div class="content-container lg:grid grid-cols-4 grid-rows-2 h-full md:mt-24 mt-10 gap-4 divide-y-2 lg:divide-y-0 lg:divide-x-2 divide-black divide-opacity-10">
+          <CardIcone 
+            titulo="Parceria Estratégica" 
+            icone=`${baseURL}/img/segmento-varejo/icone-parceria.svg`
+            conteudo="Trabalhamos com os principais motores de crédito do país. Comece a utilizar os dados da Nova Vida para suas políticas de crédito hoje mesmo."
+            classList={'col-span-1 pb-4 mb-4'}
+          />
+      
+          <CardIcone 
+          titulo="Tecnologia de Ponta" 
+          icone=`${baseURL}/img/segmento-varejo/icone-tecnologia.svg`
+          conteudo="Utilizamos as mais recentes tecnologias de big data e inteligência artificial para garantir inovações contínuas."
+          classList={'col-span-1 row-span-2 lg:pl-4 content-end py-4 mb-4'}
+          />    
+          
+          <CardIcone 
+            titulo="Foco em Resultados" 
+            icone=`${baseURL}/img/segmento-varejo/icone-resultados.svg`
+            conteudo="Nosso objetivo é sempre entregar resultados mensuráveis que impactem positivamente o seu negócio."
+            classList={'col-span-1 row-span-2 lg:pl-4 py-4 mb-4'}
+          />
+          <CardIcone 
+            titulo="Expertise no Varejo" 
+            icone=`${baseURL}/img/segmento-varejo/icone-varejo.svg`
+            conteudo="Entendemos profundamente as necessidades e desafios do setor de varejo, oferecendo soluções específicas e direcionadas"
+            classList={'col-span-1  row-span-2 lg:pl-4  content-end py-4 mb-4'}
+          />        
+      
+        </div>
+    </div>
+    <!-- / Soluções -->
+
+    <div class="content-row pt-10 pb-0">
+        <div class="content-container">
+            <div class="md:grid grid-cols-12  px-12 py-16 bg-[url('/img/segmento-varejo/banner-cubo.gif')] md:h-[500px] rounded-xl ">
+                <div class="col-span-5 flex flex-col">
+                    <h3 class="text-3xl text-highlight-on-dark font-light">Na Nova Vida, acreditamos que dados são mais do que números; <span>eles são a chave para o sucesso em um mercado competitivo.</span></h3>
+                    <p class="mt-auto">Junte-se a nós e descubra como podemos transformar os seus produtos financeiros e impulsionar o crescimento da sua empresa.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <CallToAction
+        customClasses={"mt-4"}
+        info={{
+        titulo: "Entre em contato conosco hoje mesmo e veja como a Nova Vida pode ajudar a sua empresa a alcançar novos patamares de sucesso.",
+        descricao: "",
+        textButton: 'Falar Agora',
+        url: "/#",
+        imagem: {
+        url: `${baseURL}/img/segmento-varejo/imagem-call-to-action.png`,
+        alt: "Texto alternativo imagem"
+        }
+    }} />
+</Layout>

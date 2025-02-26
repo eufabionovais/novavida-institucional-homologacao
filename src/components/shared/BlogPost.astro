@@ -1,0 +1,18 @@
+---
+const { post : {imagem, categoria, data, titulo, alt, link} } = Astro.props;
+
+import { baseURL } from "../../config";
+---
+
+<div class="blog-post-preview">
+    <div class="blog-post-preview__imagem">
+        <a href=`${baseURL}${link}` class="image-wrapper">
+            <img class="rounded-xl" src=`${baseURL}${imagem}` alt={alt}>
+        </a>
+    </div>
+    <div class="blog-post-preview__info flex justify-between gap-4 py-9">
+        <p class="blog-post-preview__categoria text-neutral">{categoria}</p>
+        <p class="blog-post-preview__data text-neutral">{data}</p>
+        <p class="blog-post-preview__titulo w-1/2 text-black"><a href=`${baseURL}${link}`>{titulo}</a></p>
+    </div>
+</div>

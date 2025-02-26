@@ -1,0 +1,18 @@
+---
+const { items = [] } = Astro.props;
+---
+
+<div class="grid grupo-lista-numerica" data-animation="color-transition">
+  {items.map((item, index) => (
+    <div class={`lg:grid grid-cols-12 gap-x-4 py-10 ${index !== items.length - 1 ? 'border-b border-neutral border-opacity-50' : ''}`}>      
+      <div class="col-span-1 text-2xl">{(index + 1).toString().padStart(3, '0')}.</div>
+      
+      <div class="col-span-4 my-3 lg:my-0">
+        <h3 class="text-2xl">{item.titulo}</h3>
+      </div>
+      <div class="col-span-6 col-start-7">
+        <p>{item.texto}</p>
+      </div>
+    </div>
+  ))}
+</div>

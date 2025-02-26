@@ -1,0 +1,14 @@
+---
+const { text, href, icon, customClasses = "", ...props } = Astro.props;
+---
+
+<a href={href} class={`${customClasses}` } {...props}>
+    {text}
+    <i class=`${icon} text-[15px]`></i>
+</a>
+
+<style>
+    a {
+        @apply inline-flex justify-between items-center gap-16 pb-6 border-b border-black text-black;
+    }
+</style>

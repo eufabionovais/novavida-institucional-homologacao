@@ -1,0 +1,12 @@
+---
+import Faq from "../shared/Faq.astro";
+
+//Data 
+import { faqAPI } from "../../data/faq-api-kyc.js";
+---
+
+<div class="content-row py-20">
+  <div class="content-container">
+    <Faq titulo="FAQ" questoes={faqAPI} />
+  </div>
+</div>

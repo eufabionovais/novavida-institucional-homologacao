@@ -1,0 +1,190 @@
+---
+
+import Layout from '../layouts/Layout.astro';
+import CardIcone from "../components/shared/CardIcone.astro";
+import ButtonShared from "../components/shared/Button.astro";
+import ListaNumerica from "../components/shared/listaNumerica.astro";
+import CallToAction from "../components/shared/CallToAction.astro";
+import BeneficioProduto from "../components/shared/BeneficioProduto.astro";
+import { baseURL } from "../config";
+
+const items = [
+  {
+    titulo: "Fontes de Dados Confiáveis e Atualizadas",
+    descricao: "Nossa solução acessa e organiza dados provenientes de bases públicas, como registros governamentais, cartórios, tribunais, juntas comerciais e outras fontes verificáveis. Garantimos que sua empresa esteja equipada com informações precisas para mitigar riscos e atender às regulamentações com eficiência.",
+    imagem: {
+      url: `${baseURL}/img/segmento-compliance/imagem-fonte-dados.png`,
+      alt: "Descrição imagem 1"
+    },
+    customClasses: {
+      'content-col': '[&]:col-span-5 [&]:col-start-8 [&]:row-start-1 justify-center ',
+      'image-col': '[&]:col-start-1 [&]:row-start-1',
+      'image-wrapper': '',
+      'image-col-img': '',
+      'title': 'text-highlight-on-light'
+    }    
+  }
+]
+
+const carteiras = [
+  {
+    titulo: "Te ajudamos a monitorar clientes e parceiros com eficiência",
+    descricao: "Nosso trabalho é conectar sua empresa às informações necessários para um processo seguro de compliance e KYC. A partir de fontes verificadas e nossa tecnologia, realize de forma automatizada processos complexos como:",
+    imagem: {
+      url: `${baseURL}/img/segmento-compliance/imagem-monitorar-clientes.png`,
+      alt: "Descrição imagem 1"
+    },
+    customClasses: {
+      'container': 'md:mt-20',
+      'content-col': 'justify-center col-span-5',
+      'image-col': 'bg-grey-surface rounded-xl py-20',
+      'title': 'text-highlight-on-light'
+    }   
+  }
+]
+
+const processos = [
+  { 
+    titulo: "Due Diligence: Tomada de Decisões Confiáveis", 
+    texto: "Realizamos a busca e validação de informações sobre empresas e indivíduos, permitindo que você tome decisões embasadas ao realizar transações, parcerias ou aquisições."
+  },
+  { 
+    titulo: "Dossiês Personalizados", 
+    texto: "Criamos relatórios detalhados que consolidam dados de múltiplas fontes para oferecer uma visão completa de históricos e comportamentos, seja de pessoas físicas ou jurídicas."
+  },
+  { 
+    titulo: "Identificação de Conflitos de Interesse", 
+    texto: "Ajudamos a identificar possíveis conflitos de interesse, rastreando relações pessoais, comerciais e financeiras ocultas que possam impactar sua organização."
+  },
+  { 
+    titulo: "Background Checks: Confiabilidade e Segurança", 
+    texto: "Facilitamos o levantamento de antecedentes criminais, históricos profissionais e reputacionais de indivíduos, garantindo segurança em contratações e parcerias."
+  },
+  { 
+    titulo: "Certidões e Documentação Jurídica", 
+    texto: "Buscamos certidões e documentos em fontes públicas, agilizando processos legais e comprovando a conformidade de terceiros com as exigências regulatórias."
+  }
+];
+
+---
+
+<Layout title="Segmento KYC e Compliance - Nova Vida TI">
+
+
+    <!-- Intro -->
+    <div class="content-row novidades text-white bg-black py-40 pb-20">
+        <div class="content-container" data-grid-section="initial-section">
+            <div data-grid-section="initial-section__header">
+                <small class="flex items-center gap-2 text-neutral mb-6 text-base">
+                    Segmento <i class="icon-curved-arrow relative top-1"></i>
+                </small>
+                <p class="text-2xl">Compliance e KYC</p>                
+            </div>
+            <div data-grid-section="initial-section__content">
+                 <p class="section-highlight-title text-highlight-on-dark">
+                      Dados que Transformam: A Base para Segurança, Conformidade e Eficiência nos Negócios
+                </p>
+                <p class="mt-20 text-neutral">
+                     No universo corporativo atual, onde a segurança da informação e a conformidade regulatória são prioridades, o processo de KYC (Know Your Customer) e práticas de Compliance são cruciais para a integridade dos negócios. A expertise em dados da Nova Vida fornece soluções para ajudar sua empresa a navegar nesse cenário desafiador.
+                </p>              
+            </div>
+            <div data-grid-section="initial-section__action">
+                <img src=`${baseURL}/img/segmento-cobranca/icon-scroll.png` alt="">
+            </div>
+        </div>
+    </div>
+    <!-- / Intro --> 
+
+    <!-- Banner -->
+    <div class="content-row lg:transform lg:-mt-32">
+        <div class="content-container md:my-20 my-10">
+            <div class="image-wrapper relative">
+                <img src=`${baseURL}/img/segmento-compliance/banner.png` alt="" />
+            </div>
+        </div>
+    </div>
+    <!-- / Banner -->
+
+    <!-- Monitorar -->
+    {
+        carteiras.map((beneficio) => {
+          return (
+            <BeneficioProduto item={beneficio} />
+          )
+        })
+    }
+    <!-- / Monitorar -->
+
+    <!-- Processos -->
+    <div class="content-row py-10">
+        <div class="content-container">
+            <ListaNumerica items={processos} />
+        </div>
+    </div>
+    <!-- / Processos -->
+
+    <ButtonShared
+    text="Fale com a pessoa certa no momento certo. Descubra como!" 
+    href="#"
+    customClasses="lg:col-span-6 lg:col-start-4 col-span-10 col-start-2" 
+    />
+
+    <!-- Fonte Dados -->
+    {
+        items.map((beneficio) => {
+          return (
+            <BeneficioProduto item={beneficio} />
+          )
+        }) 
+    }
+    <!-- / Fonte Dados -->
+
+    <!-- Beneficios -->
+    <div class="content-row md:py-20 py-10">
+        <div class="content-container px-5 lg:grid grid-cols-12">
+            <h2 class="text-4xl text-center text-highlight-on-light font-light col-span-8 col-start-3">Benefícios que Transformam a Gestão e Elevam a Performance Empresarial</h2>
+        </div>
+        <div class="content-container lg:grid grid-cols-4 grid-rows-2 h-full mt-32 gap-4 divide-y-2 lg:divide-y-0 lg:divide-x-2 divide-black divide-opacity-10">
+          <CardIcone 
+            titulo="Redução de Riscos" 
+            icone=`${baseURL}/img/segmento-compliance/icone-reducao-riscos.svg`
+            conteudo="Evite associações com parceiros ou clientes de reputação duvidosa, protegendo sua empresa de potenciais problemas e prejuízos futuros."
+            classList={'col-span-1 pb-4 mb-4'}
+          />
+      
+          <CardIcone 
+          titulo="Conformidade Garantida" 
+          icone=`${baseURL}/img/segmento-compliance/icone-conformidade.svg`
+          conteudo="Atenda aos regulamentos com confiança e agilidade, assegurando o cumprimento das exigências legais e operacionais do seu setor."
+          classList={'col-span-1 row-span-2 lg:pl-4 content-end py-4 mb-4'}
+          />    
+          
+          <CardIcone 
+            titulo="Decisões Mais Seguras" 
+            icone=`${baseURL}/img/segmento-compliance/icone-decisoes.svg`
+            conteudo="cesse informações críticas que suportam suas decisões estratégicas, permitindo ações mais assertivas e bem embasadas para o sucesso."
+            classList={'col-span-1 row-span-2 lg:pl-4 py-4 mb-4'}
+          />
+          <CardIcone 
+            titulo="Eficiência Operacional" 
+            icone=`${baseURL}/img/segmento-compliance/icone-eficiencia.svg`
+            conteudo="Automatize processos que antes demandavam tempo e recursos, otimizando as operações e aumentando a produtividade da sua equipe."
+            classList={'col-span-1  row-span-2 lg:pl-4  content-end py-4 mb-4'}
+          />        
+      
+        </div>
+    </div>
+    <!-- / Beneficios -->
+
+    <CallToAction
+        info={{
+        titulo: "Reduza riscos e garanta segurança simplificando decisões estratégicas com nossas soluções",
+        descricao: "Nossa expertise garante a confiabilidade que sua empresa precisa.",
+        textButton: 'Falar Agora',
+        url: "/#",
+        imagem: {
+        url: `${baseURL}/img/segmento-compliance/imagem-call-to-action.png`,
+        alt: "Texto alternativo imagem"
+        }
+    }} />
+</Layout>

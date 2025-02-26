@@ -1,0 +1,12 @@
+---
+import Faq from "../shared/Faq.astro";
+
+//Data 
+import { faqHome } from "../../data/faq-home.js";
+---
+
+<div class="content-row pt-20">
+  <div class="content-container">
+    <Faq titulo="FAQ" questoes={faqHome} />
+  </div>
+</div>

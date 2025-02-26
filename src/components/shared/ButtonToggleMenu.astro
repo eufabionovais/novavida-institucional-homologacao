@@ -1,0 +1,71 @@
+<button class="btn-menu">
+  <span class="bar bar-top"></span>
+  <span class="bar bar-middle"></span>
+  <span class="bar bar-bottom"></span>
+</button>
+
+<style>
+
+
+
+.btn-menu {
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  border: solid 1px currentColor;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.btn-menu .bar {
+  position: absolute;
+  left: 50%;
+}
+
+.btn-menu .bar {
+  display: flex;
+  justify-content: center;
+  width: 25px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: 0.5s;
+}
+
+.btn-menu .bar:first-child {
+  transform: translate(-50%, -10px);
+}
+
+.btn-menu .bar:nth-child(2) {
+  transform: translate(-50%, 0);  
+}
+
+.btn-menu .bar:last-child {
+  transform: translate(-50%, 10px);
+}
+
+.btn-menu.open .bar:first-child {
+  transform: translate(-50%, 0) rotate(45deg);
+}
+
+.btn-menu.open .bar:nth-child(2) {
+  transform: translate(-50%, 0) scaleX(10%);
+}
+
+.btn-menu.open .bar:last-child {
+  transform: translate(-50%, 0) rotate(-45deg);
+}
+
+</style>
+
+<!-- <script>
+  const btnMenu = document.querySelector(".btn-menu");
+
+  btnMenu.addEventListener("click", (event)=> {
+    const _this = event.currentTarget as HTMLElement;
+      _this.classList.toggle("open")
+  })
+</script> -->

@@ -1,0 +1,100 @@
+---
+  const {item} = Astro.props;
+---
+
+<div class:list={item.customClass} data-theme={item.tema} data-direcao={item.direcao || 'horizontal'} class="bandeirola flex items-center px-3 py-2 gap-4 rounded-md text-sm max-w-60 relative">
+  <img src={item.icone} alt="">
+  <p>{item.texto}</p>
+</div>
+
+<style>
+  
+  .bandeirola {
+    &:before {
+      content: "";
+      display: block;
+      width: 120px;
+      height: 1px;
+      background: #000;
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      transform: translateY(-50%)
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      width: 7px;
+      height: 7px;
+      background: #000;
+      border-radius: 100%;
+      position: absolute;
+      right: calc(100% + 120px);
+      top: 50%;
+      transform: translateY(-50%)
+    }
+    
+    &.last-badeirola-ipe{
+      @media screen and (min-width: 767px) {
+        &:before {
+          width: 60px;
+        }
+  
+        &:after {
+          right: calc(100% + 60px);
+        }
+      }
+    }
+  }
+
+  [data-direcao=vertical] {
+    &:before {
+      width: 1px;
+      height: 150px;
+      top: calc(100% + 13px);
+
+    }
+    &:after {
+        top: -15px;
+        right: calc(100% - 3px);
+    }    
+    p {
+      &:after {
+        display: block;
+        content: "";
+        height: 1px;
+        width: 10px;
+        position: absolute;
+        left: 0;
+        transform: translateX(-50%);
+        top: calc(100% + 87px);
+        background: #000;
+      }
+    }
+  }
+
+  [data-theme='black'] {
+    @apply bg-black text-white;
+  }
+
+  [data-theme='blue'] {
+    background: #BDE1FA;
+    @apply text-black;
+  }
+
+  [data-theme='purple'] {
+    background: #E6D3FA;
+    @apply text-black;
+  }
+
+  [data-theme='green'] {
+    background: #9FDABB;
+    @apply text-black;
+  }
+
+  [data-theme='yellow'] {
+    background: #FFDB43;
+    @apply text-black;
+  }
+</style>

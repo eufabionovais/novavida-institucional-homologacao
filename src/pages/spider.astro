@@ -1,0 +1,103 @@
+---
+
+import BaseButton from "../components/shared/BaseButton.astro";
+import ButtonShared from "../components/shared/Button.astro";
+import CallToAction from "../components/shared/CallToAction.astro";
+import HeroShared from "../components/shared/HeroShared.astro";
+import Faq from "../components/shared/Faq.astro";
+import { baseURL } from "../config";
+import Layout from '../layouts/Layout.astro';
+
+
+//Data 
+import { faqPrinciapaisBeneficios } from "../data/faq-principais-beneficios-spider.js";
+
+---
+
+<Layout title="Plataforma Spider - Nova Vida TI">
+
+    <HeroShared 
+      item={{
+          bgDesktop: `${baseURL}/img/plataforma-spider/banner-desktop.png`,
+          bgMobile: `${baseURL}/img/plataforma-spider/banner-mobile.png`,
+          minHeightDesktop: "650px",
+          minHeightMobile: "735px"
+      }}
+    >
+        <div class="col-span-5 pb-14 flex flex-col justify-end lg:justify-start items-start">
+            <h1 class="hero-title mt-24">
+              Spider: a única ferramenta de big data capaz de organizar dados públicos
+            </h1>              
+            <p class="mt-5 lg:mt-11 text-sm lg:text-base">
+              Transforme dados abertos em insights poderosos! <br class="hidden lg:inline" />Explore informações de portais da transparência em todo o Brasil, abrangendo as esferas municipal, estadual e federal. Identifique seu público-alvo, crie segmentações estratégicas e potencialize seus processos de vendas e inteligência de mercado.
+            </p>              
+
+            <BaseButton classList="mt-16" />
+
+        </div>  
+    </HeroShared>     
+
+    <!-- Como fazemos -->
+    <div class="content-row  text-black">
+      <div class="content-container lg:grid grid-cols-12 pt-12">
+        <div class="col-span-12">
+          <h2 class="section-highlight-title text-highlight-on-light">
+            Nossa inteligência de dados potencializa suas estratégias, auxiliando na identificação de oportunidades e ações voltadas para benefícios e linhas de crédito com maior eficiência.
+          </h2>
+        </div>
+      </div>
+    </div>
+    <!-- / Como fazemos -->    
+
+    <div class="content-row md:mt-20 mt-10 mb-4">
+        <div class="content-container">
+            <div class="md:grid grid-cols-12 space-y-8 md:space-y-0">
+            <div class="col-span-5 flex flex-col justify-center space-y-4 lg:space-y-11">
+                <h2 class="text-black font-regular text-2xl lg:text-3xl">O Atalho para novos convênios e grandes oportunidades</h2>
+                <p class="leading-relaxed">Desvende novas oportunidades e facilite a abertura de convênios. Nossa ferramenta de alta performance, movida por inteligência artificial, mapeia e segmenta servidores públicos das esferas municipal, estadual e federal. Com insights precisos e estratégias otimizadas, você transforma dados em conversões e impulsiona o fechamento de novos negócios.</p>
+            </div>
+            <div class="col-span-6 col-start-7 flex justify-center bg-grey-surface rounded-xl py-20">
+                <div class="image-wrapper flex items-center">
+                <img src=`${baseURL}/img/plataforma-spider/beneficios/beneficio-1.png` alt="">
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <ButtonShared
+        text="Fale com um de nossos especialistas " 
+        href="#"
+        customClasses="lg:col-span-4 lg:col-start-5 col-span-10 col-start-2 mt-0" 
+    />
+
+    <!-- Principais beneficios -->
+    <div class="content-row  text-black  lg:py-20">
+        <div class="content-container lg:grid grid-cols-12">
+          <div class="col-span-4 mb-4 lg:mb-0">
+            <small class="flex items-center gap-2 text-neutral mb-6 text-base">O que a Spider faz por você <i class="icon-curved-arrow relative top-1"></i></small>
+            <p class="text-xl mb-4 lg:mb-0 leading-normal">Captação inteligente e segmentação precisa para maximizar resultados</p>
+          </div>
+          <div class="col-span-7 col-start-6">
+            <Faq classList="faq-numerada" questoes={faqPrinciapaisBeneficios} />
+          </div>
+      
+        </div>
+      </div>
+    <!-- Principais beneficios -->
+      
+  
+    <CallToAction
+        customClasses={"mt-20"}
+        info={{
+        titulo: "Revolucione suas vendas e gestão com o Spider",
+        descricao: "Descubra como a Spider pode revolucionar seu processo de vendas e gestão de crédito consignado, tornando sua operação mais rápida, segura e eficaz.",
+        textButton: 'Entre em Contato',
+        url: "/#",
+        imagem: {
+        url: `${baseURL}/img/plataforma-spider/call-to-action/imagem-call-to-action.png`,
+        alt: "Texto alternativo imagem"
+        }
+    }} />
+
+</Layout>

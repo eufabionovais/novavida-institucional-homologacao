@@ -1,0 +1,70 @@
+---
+const {link, hasIcon = true, classList, variant = 'light', ...props} = Astro.props;
+---
+
+<a href={link} class="btn" class:list={classList} data-variant={variant} {...props}>
+    <slot>
+      Conheça Mais
+    </slot>
+    {
+      hasIcon &&
+      <slot name="icon">
+        <i class="icon-arrow-right text-[14px]"></i>
+      </slot>
+    }
+
+</a>
+
+<style>
+  .btn {
+    @apply inline-flex items-center self-start justify-center gap-4 px-7 py-3  border rounded-md  duration-200 cursor-pointer relative;
+    /* outline: solid 2px transparent;
+    outline-offset: 8px; */
+
+    &[data-variant='primary'] {
+      @apply bg-primary text-black border-transparent;
+
+      /* box-shadow: 0 50px 0 0 red;
+      text-shadow: 0 50px BLACK;    
+      transition: 1s;   */
+
+      &:hover {
+        @apply bg-black text-primary outline-primary -outline-offset-2;
+        /* outline-color: red;
+        outline-offset: -2px; */
+        /* box-shadow: 0 50px 0 0 red inset;
+        text-shadow: 0 50px black inset;           */
+      }      
+    }    
+
+    &[data-variant='dark'] {
+      @apply bg-black lg:text-white lg:border-white;
+      &:hover {
+        @apply bg-primary text-black;
+        //outline-color: #000;
+        /* outline-color: transparent;
+        outline-offset: -2px; */
+      }      
+    }
+    &[data-variant='light'] {
+      @apply bg-transparent lg:text-white lg:border-white;
+      &:hover {
+        @apply bg-white text-black;
+        /* outline-color: #fff;
+        outline-offset: -2px; */
+      }      
+    } 
+    
+    &[data-variant='dark-outlined'] {
+      @apply bg-transparent text-black border-black;
+      &:hover {
+        @apply bg-white text-black;
+        /* outline-color: #fff;
+        outline-offset: -2px; */
+      }      
+    }     
+    
+  }
+
+
+</style>

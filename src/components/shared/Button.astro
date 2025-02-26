@@ -1,0 +1,13 @@
+---
+const { text, href, customClasses = "" } = Astro.props;
+---
+
+<div class="content-row md:py-20 py-16">
+    <div class="content-container flex justify-center">
+        <a href={href} class={`inline-flex items-center justify-center gap-4 px-6 py-3 bg-black text-white rounded-md hover:bg-opacity-90 transition duration-200 ${customClasses}`}
+        >
+            {text}
+            <i class="icon-arrow-up-angled text-[12px]"></i>
+        </a>
+    </div>
+</div>

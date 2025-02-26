@@ -1,0 +1,116 @@
+---
+  const {titulo, questoes, classList} = Astro.props;
+---
+
+
+    <div class="faq-wrapper " class:list={classList}>
+      {
+        titulo &&
+        <h2 class="text-4xl  pb-10 border-b border-black  border-opacity-10">{titulo}</h2>
+      }
+      <dl>
+      {
+        questoes.map((questao) => {
+          return (
+            <div class="faq-item py-4 lg:py-8">
+              <div class="faq-item__conteudo">
+                <dt class="text-lg font-regular  relative flex items-center gap-6 justify-between cursor-pointer">{questao.pergunta}</dt>
+                <dd class="text-base">
+                  <div class="faq-item__conteudo text-neutral">{questao.resposta}</div>
+                </dd>
+              </div>
+            </div>
+          )
+        })
+      }
+      </dl>
+
+    </div>
+
+
+
+<style>
+
+  .faq-item {
+    
+    @apply border-b border-black border-opacity-10;
+    dt {
+      &:after {
+        flex-basis: 26px;
+        aspect-ratio: 1;
+        border-radius: 4px;
+        border: solid 1px transparent;
+        @apply bg-primary;
+        content: "+";
+        height: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        line-height: 1;
+        flex-shrink: 0;
+        transition: 0.2s;
+      }
+    }
+
+    dd {
+      display: grid; 
+      grid-template-rows: 0fr;
+      transition: 250ms grid-template-rows ease-out;
+    
+    }
+    
+    dd >  .faq-item__conteudo {
+      overflow: hidden;
+    }
+
+    &.open {
+      dd {
+         grid-template-rows: 1fr;
+         .faq-item__conteudo {
+          @apply py-8;
+         }
+      }
+      dt {
+        &:after {
+          @apply bg-transparent;
+          content: "-";
+          border: solid 1px #000;
+        }
+      }
+    }
+
+  }
+
+</style>
+
+<script>
+
+  // $(function(){
+  //   const faqItems = $(".faq-item");
+  //   if(faqItems.length) {
+  //     faqItems.on("mouseover", function(){
+  //       gsap.to($(this), { css: { gridTemplateRows: "1fr" }, duration: 1.5, ease: "power2.inOut" })
+  //       faqItems.removeClass("open");
+  //       $(this).addClass("open");
+  //     })
+  //   }
+  // })
+
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach((item) => {
+
+      item.addEventListener("click", () => {
+        
+        const isOpen = item.classList.contains("open");
+
+        if(!isOpen) {
+          item.classList.add("open");
+          return 
+        }           
+        item.classList.remove("open");
+        
+      })
+  });
+</script>

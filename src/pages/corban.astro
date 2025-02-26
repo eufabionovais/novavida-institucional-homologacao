@@ -1,0 +1,260 @@
+---
+
+import Layout from '../layouts/Layout.astro';
+
+
+import ButtonShared from "../components/shared/Button.astro";
+import CallToAction from "../components/shared/CallToAction.astro";
+import BeneficioProduto from "../components/shared/BeneficioProduto.astro";
+import ListaNumerica from "../components/shared/listaNumerica.astro";
+
+import { baseURL } from "../config";
+
+const carteiras = [
+  {
+    titulo: "Mensageria de alta performance",
+    imagem: {
+      url: `${baseURL}/img/segmento-corban/mensageria.png`,
+      alt: "Descrição imagem 1"
+    },
+    tituloLista: "", 
+    lista: [
+      "<span class='text-black'>SMS com rota TOKEN</span>: Crie campanhas segmentadas com alta entregabilidade. Combinado à higienização de dados, o SMS torna-se um recurso valioso para impulsionar suas vendas.",
+      "<span class='text-black'>WhatsApp com dados qualificados</span>: Nossa plataforma própria para disparos de WhatsApp utiliza dados enriquecidos, garantindo alta performance e redução de banimentos"
+    ],
+    customClasses: {
+      'container': 'md:mt-20 mt-10',
+      'content-col': 'justify-center col-span-5',
+      'image-col': 'bg-grey-surface rounded-xl py-20',
+      'title': 'text-highlight-on-light',
+      'lista': 'space-y-10 custom-lista',
+      'lista-container': '[&]:lg:mt-12',
+      'image-col-img': 'lg:-mt-28 lg:ml-20'
+      
+    }   
+  }
+]
+
+const items = [
+  {
+    imagem: {
+      url: `${baseURL}/img/segmento-corban/imagem-fonte-dados.png`,
+      alt: "Descrição imagem 1"
+    },
+    tituloLista: "",
+    lista: [
+      'O melhor <strong>C.P.C</strong>. (Contato com a Pessoa Certa) do mercado;',
+      'Números de telefone <strong>"quentes"</strong> com WhatsApp ativo e flag do Procon e não perturbe;',
+      'Flag de FGTS;',
+      'Indicadores de <strong>score e persona</strong>.'
+    ],
+    customClasses: {
+      'content-col': '[&]:col-span-5 [&]:col-start-8 [&]:row-start-1 justify-center ',
+      'image-col': 'bg-grey-surface rounded-xl py-20 [&]:col-start-1 [&]:row-start-1',
+      'image-wrapper': '',
+      'image-col-img': '',
+      'title': 'text-highlight-on-light',
+      'lista-container': '[&]:lg:mt-0 text-black',
+      'lista': 'space-y-10'
+    }    
+  }
+]
+
+const telefones = [
+  { 
+    titulo: "Novos telefones diários", 
+    texto: "Inserção diária de novos números de telefone após análise de sua viabilidade de contato direto com a pessoa certa, garantindo maior precisão e efetividade nos resultados."
+  },
+  { 
+    titulo: "Números ativos garantidos", 
+    texto: "Identificação de números ativos com alta probabilidade de contato efetivo, assegurando qualidade e agilidade no alcance das pessoas certas em suas estratégias."
+  },
+  { 
+    titulo: "Flags WhatsApp atualizadas", 
+    texto: "Verificações diárias para identificar a presença de WhatsApp em nossos telefones, resultando milhões de flags atualizadas mensalmente."
+  }
+];
+
+---
+
+<Layout title="Segmento Corban - Nova Vida TI">
+
+    <!-- Intro -->
+    <div class="content-row novidades text-black pt-20 md:pt-40 pb-20">
+        <div class="content-container" data-grid-section="initial-section">
+            <div data-grid-section="initial-section__header">
+                <small class="flex items-center gap-2 text-neutral mb-6 text-base">
+                    Segmento <i class="icon-curved-arrow relative top-1"></i>
+                </small>
+                <p class="text-2xl">Corban</p>                
+            </div>
+            <div data-grid-section="initial-section__content">
+                 <p class="section-highlight-title text-highlight-on-light">
+                    Venda mais com soluções de inteligência de dados para contato e segmentação de público
+                </p>
+                <p class="mt-20 text-neutral">
+                    Na Nova Vida, entendemos que o sucesso da sua operação depende de alcançar o contato certo e segmentar o público mais propenso a consumir produtos financeiros. Por isso, oferecemos a melhor base cadastral e os mais precisos indicadores de perfil, como: score digital, propensão à tomada de crédito, escolha do canal de acionamento e personas.
+                </p>              
+            </div>
+            <div data-grid-section="initial-section__action">
+                <img src=`${baseURL}/img/segmento-cobranca/icon-scroll.png` alt="">
+            </div>
+        </div>
+    </div>
+    <!-- / Intro -->       
+
+    <!-- Banner -->
+    <div class="content-row lg:transform lg:-mt-32">
+        <div class="content-container md:my-20">
+            <div class="image-wrapper relative">
+                <img src=`${baseURL}/img/segmento-corban/banner.png` alt="" />
+            </div>
+        </div>
+    </div>
+    <!-- / Banner -->
+
+    <!-- Mensageria -->
+    {
+        carteiras.map((beneficio) => {
+          return (
+            <BeneficioProduto item={beneficio} />
+          )
+        })  
+    }
+    <!-- / Mensageria -->
+
+    <ButtonShared
+        text="Alcance a pessoa certa com o melhor telefone hot" 
+        href="#"
+        customClasses="lg:col-span-6 lg:col-start-4 col-span-10 col-start-2" 
+    />
+
+    <!-- Vantagens -->
+    <div class="content-row md:pb-20 pb-10">
+        <div class="content-container px-5 lg:grid grid-cols-12">
+            <h2 class="text-4xl text-center text-highlight-on-light font-light col-span-10 col-start-2"><span>Vantagens de uma base de dados tratada e repleta de</span> oportunidades para correspondentes bancários</h2>
+        </div>
+    </div>
+      
+    { 
+        items.map((beneficio) => {
+          return (
+                <BeneficioProduto item={beneficio} />
+            )
+        })
+    }
+    <!-- / Vantagens -->
+    
+    <!-- Telefones -->
+    <div class="content-row md:my-20 my-10">
+        <div class="content-container px-5 lg:grid grid-cols-12">
+            <div class="col-span-10 col-start-2 text-center ">
+              <h2 class="text-4xl text-highlight-on-light font-light ">Por que os nossos telefones fazem a diferença?</h2>
+              <div class="mt-10">
+                <img src=`${baseURL}/img/segmento-cobranca/icon-scroll.png` class="inline-block" alt="">
+              </div>
+            </div>
+        </div>
+      </div>
+      
+      <div class="content-row py-10">
+          <div class="content-container">
+              <ListaNumerica items={telefones} />
+          </div>
+      </div>
+    <!-- / Telefones -->
+
+    <ButtonShared
+        text="Tenha alta performance com contatos qualificados" 
+        href="#"
+        customClasses="lg:col-span-6 lg:col-start-4 col-span-10 col-start-2" 
+    />
+
+    <div class="content-row md:mb-32 mb-20">
+        <div class="content-container px-5 lg:grid grid-cols-12">
+            <h2 class="col-span-10 col-start-2 text-center text-4xl text-highlight-on-light font-light ">Time de influenciadores: <span>conheça as vozes que impulsionam nossa missão na cobrança</span></h2>
+        </div>
+
+        <div class="content-container flex flex-wrap gap-8 md:gap-12 justify-between py-16 md:py-32 border-b border-black border-opacity-10">
+            <div class="influencer">
+                <div class="image-wrapper">
+                    <img src=`${baseURL}/img/segmento-corban/rayane-silva.png` alt="">
+                </div>
+                <div class="w-full">
+                    <p class="nome">Rayane Silva</p>
+                    <p class="rede-social">@escoladocredito</p>
+                </div>
+            </div>
+            <div class="influencer">
+                <div class="image-wrapper">
+                    <img src=`${baseURL}/img/segmento-corban/gabriel-ramalho.png` alt="">
+                </div>
+                <div class="w-full">
+                    <p class="nome">Gabriel Ramalho</p>
+                    <p class="rede-social">@gabriel.ramalhos</p>
+                </div>
+            </div>
+            <div class="influencer">
+                <div class="image-wrapper">
+                    <img src=`${baseURL}/img/segmento-corban/eron-pereira.png` alt="">
+                </div>
+                <div class="w-full">
+                    <p class="nome">Eron Pereira</p>
+                    <p class="rede-social">@eronmega</p>
+                </div>
+            </div>
+            <div class="influencer">
+                <div class="image-wrapper">
+                    <img src=`${baseURL}/img/segmento-corban/alexandre-matos.png` alt="">
+                </div>
+                <div class="w-full">
+                    <p class="nome">Alexandre Matos</p>
+                    <p class="rede-social">@oalexandrematos</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-row md:mb-44 mb-20">
+        <div class="content-container px-5 lg:grid grid-cols-12">
+            <p class="col-span-10 col-start-2 text-center text-xl text-highlight-on-light font-light mb-14">Estamos conectados aos maiores promotores do mercado, <span>criando juntos soluções inovadoras e estratégicas para transformar operações e gerar resultados excepcionais.</span></p>
+        </div>
+
+        <div class="content-container lg:grid grid-cols-6 text-center gap-24 items-center space-y-4 lg:space-y-0">
+            <div class="image-wrapper"><img src=`${baseURL}/img/segmento-corban/bevi.png` class="col-span-1 inline-block"  alt=""></div>
+
+            <div class="image-wrapper"><img src=`${baseURL}/img/segmento-corban/lev.png` class="col-span-1 inline-block"  alt=""></div>
+
+            <div class="image-wrapper"><img src=`${baseURL}/img/segmento-corban/nova-promotora.png` class="col-span-1 inline-block"  alt=""></div>
+
+            <div class="image-wrapper"><img src=`${baseURL}/img/segmento-corban/credfranco.png` class="col-span-1 inline-block"  alt=""></div>
+
+            <div class="image-wrapper"><img src=`${baseURL}/img/segmento-corban/teddy-promotora.png` class="col-span-1 inline-block"  alt=""></div>
+
+            <div class="image-wrapper"><img src=`${baseURL}/img/segmento-corban/vieira-cred.png` class="col-span-1 inline-block"  alt=""></div>
+
+        </div>
+    </div>
+    
+    <CallToAction
+        info={{
+        titulo: "Transforme cada ligação em um passo certeiro rumo ao sucesso.",
+        descricao: "Escolha a Nova Vida e alcance resultados extraordinários com o melhor telefone hot do Brasil!",
+        textButton: 'Falar Agora',
+        url: "/#",
+        imagem: {
+        url: `${baseURL}/img/segmento-corban/imagem-call-to-action.png`,
+        alt: "Texto alternativo imagem"
+        }
+    }} />
+</Layout>
+
+<style>
+    .influencer{
+        @apply flex md:flex-col gap-4 md:items-center;
+
+        .nome{
+            @apply text-black mb-2;
+        }
+    }
+</style>

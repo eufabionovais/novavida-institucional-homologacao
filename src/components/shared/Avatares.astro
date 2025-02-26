@@ -1,0 +1,55 @@
+---
+const {classList, itens, ['avatar-size']: avatarSize, ['show-more'] : showMore} = Astro.props;
+---
+
+<div class:list={classList} class="flex items-center avatares-wrapper" data-section-avatares>
+
+  {
+    itens.map((avatar) => {
+      return (
+        <div class="avatar-item" data-size={avatarSize}>
+          <img src={avatar.imagem} alt="">
+        </div>
+
+      )
+    })  
+  }
+
+  {
+    showMore &&
+    <div class="avatar-item" data-size={avatarSize}>
+      <button class="avatar-item__more">+</button>
+    </div>
+  }
+
+  
+</div>
+
+<style lang="scss">
+.avatar-item:not(:first-child) {
+  margin-left: -10px;
+}
+
+.avatar-item[data-size='small'] {
+  width: 42px;
+  aspect-ratio: 1;
+}
+
+.avatar-item[data-size='small']:not(:first-child):has:not(.avatar-item__more) {
+  margin-left: -5px;
+}
+
+.avatar-item:has(.avatar-item__more) {
+  margin-left: 10px;
+}
+
+.avatar-item__more {
+    margin-left: 0;
+    height: 100%;
+    aspect-ratio: 1;
+    background: #fff;
+    color: #000;
+    border-radius: 50%;
+}
+
+</style>

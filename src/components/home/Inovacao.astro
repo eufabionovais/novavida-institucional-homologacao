@@ -1,0 +1,40 @@
+---
+import CardIcone from "../../components/shared/CardIcone.astro";
+import { baseURL } from "../../config";
+---
+
+<div class="content-row py-10">
+  <div class="content-container">
+      <h2 class="text-4xl text-center text-highlight-on-light font-light"><span>Na Nova Vida TI, somos movidos pela inovação</span> e dedicação em oferecer soluções de dados que impulsionam resultados.</h2>
+  </div>
+  <div class="content-container lg:grid grid-cols-4 grid-rows-2 h-full mt-24 gap-4 divide-y-2 lg:divide-y-0 lg:divide-x-2 divide-black divide-opacity-10">
+    <CardIcone 
+      titulo="Uma só Nova Vida" 
+      icone=`${baseURL}/img/home/inovacao/icone-uma-so-nova-vida.svg`
+      conteudo="Não importa onde estamos, somos uma equipe unida, movida pela mesma missão: entregar soluções de dados com eficiência e confiança."
+      classList={'col-span-1 pb-4 mb-4'}
+    />
+
+    
+    <CardIcone 
+    titulo="Presença abrangente" 
+    icone=`${baseURL}/img/home/inovacao/icone-presenca.svg`
+    conteudo="Atuamos em qualquer lugar, integrando culturas e perspectivas, sempre abertos a novas ideias e formas inovadoras de resolver desafios."
+    classList={'col-span-1 row-span-2 lg:pl-4 content-end py-4 mb-4'}
+    />    
+    
+    <CardIcone 
+      titulo="Simplicidade e precisão" 
+      icone=`${baseURL}/img/home/inovacao/icone-simplicidade.svg`
+      conteudo="Onde quer que operemos, desvendamos dados complexos e os transformamos em soluções claras e eficazes, com coragem e transparência."
+      classList={'col-span-1 row-span-2 lg:pl-4 py-4 mb-4'}
+    />
+    <CardIcone 
+      titulo="Tecnologia e conexão" 
+      icone=`${baseURL}/img/home/inovacao/icone-tecnologia.svg`
+      conteudo="Valorizamos tanto a precisão dos dados quanto a empatia e a intuição, equilibrando inovação com entendimento humano."
+      classList={'col-span-1  row-span-2 lg:pl-4  content-end py-4 mb-4'}
+    />        
+
+  </div>
+</div>

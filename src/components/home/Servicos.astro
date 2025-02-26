@@ -1,0 +1,108 @@
+<!-- ---
+import { baseURL } from "../../config";
+import ServicoCard from "./ServicoCard.astro";
+
+const listaServicos = [
+  {
+    categoria: "credito",
+    servicos: [
+      {
+        titulo: "Plataforma IPE teste",
+        imagem: `${baseURL}/img/home/produtos/ipe.png`,
+        descricao: "Paresss de sofrer com dados desatualizados ou incorretos. A Plataforma Ipê oferece inteligência de dados de forma rápida e eficiente, garantindo operações mais precisas. Tome decisões informadas no seu dia a dia, minimizando erros e otimizando os resultados. Melhore suas operações com dados confiáveis.",
+        link: "/plataforma-ipe",
+        categoria: "produtos-credito"
+      },
+        {
+        titulo: "Plataforma Congonhas",
+        imagem: `${baseURL}/img/home/produtos/congonhas.png`,
+        descricao: "Simplifique o ciclo de crédito com a melhor ferramenta para localização, análise e validação de dados. O Congonhas oferece informações atualizadas e um histórico completo de CPF e CNPJ. Reduza riscos e aumente a eficiência de suas operações. Trabalhe com dados precisos e confiáveis em todo o ciclo de crédito.",
+        link: "/plataforma-congonhas",
+        categoria: "produtos-credito"
+      },
+        {
+        titulo: "API de Consultas",
+        imagem: `${baseURL}/img/home/produtos/api-consultas.png`,
+        descricao: "Acelere seu processo de onboarding e ofereça uma jornada mais segura e eficiente para seus usuários com o poder do nosso datalake. A API de Consultas da Nova Vida TI entrega, em tempo recorde, dados essenciais como cadastro, crédito, consumo, demografia, capacidade financeira, e muito mais.",
+        link: "/api-consultas",
+        categoria: "produtos-credito"
+      },
+    ]
+  },
+
+  {
+    categoria: "marketing",
+    servicos: [
+      {
+      titulo: "Plataforma Next",
+      imagem: `${baseURL}/img/home/produtos/next.png`,
+      descricao: "Desbrave novas oportunidades de negócios B2B com a Plataforma Next. Identifique perfis estratégicos, crie campanhas personalizadas e aumente sua conversão. Potencialize suas estratégias de marketing e vendas com insights detalhados e direcionados. Explore novos mercados, atraia leads qualificados e acelere o crescimento da sua empresa.",
+      link: "/plataforma-next",
+      categoria: "produtos-marketing"
+    },
+      {
+      titulo: "Plataforma Opera",
+      imagem: `${baseURL}/img/home/produtos/opera.png`,
+      descricao: "Transforme a comunicação com seus clientes em uma experiência personalizada, eficiente e segura com a Plataforma Opera. Nossa ferramenta de mensageria oferece disparo de SMS e WhatsApp, automatizando processos para garantir que suas mensagens cheguem na hora certa, com o impacto certo.",
+      link: "/plataforma-opera",
+      categoria: "produtos-marketing"
+    },
+      {
+      titulo: "Plataforma Spider",
+      imagem: `${baseURL}/img/home/produtos/spider.png`,
+      descricao: "Garanta a conformidade em todas as etapas de seus processos com análises robustas. Realize verificações completas de fornecedores e parceiros comerciais. Minimize riscos com a checagem de dados críticos e previna fraudes. Assegure que seu negócio esteja em total conformidade com as regulamentações vigentes.",
+      link: "/plataforma-spider",
+      categoria: "produtos-marketing"
+    },
+    ]
+  },
+
+  {
+    categoria: "compliance",
+    servicos: [
+      {
+        titulo: "Plataforma Gênesis",
+        imagem: `${baseURL}/img/home/produtos/genesis.png`,
+        descricao: "Assegure a conformidade em cada etapa dos seus processos com análises robustas da Plataforma Gênesis. Verifique fornecedores e parceiros comerciais de forma completa, minimizando riscos e prevenindo fraudes. Cheque dados críticos com eficiência. Garanta que sua empresa esteja sempre em conformidade com as regulamentações vigentes.",
+        link: "/plataforma-genesis",
+        categoria: "produtos-compliance"
+      },
+        {
+        titulo: "Plataforma de Consultas KYC",
+        imagem: `${baseURL}/img/home/produtos/api-consultas-kyc.png`,
+        descricao: "Acelere seu processo de onboarding e ofereça uma jornada mais segura e eficiente para seus usuários com o poder do nosso datalake. A API de Consultas da Nova Vida TI entrega, em tempo recorde, dados essenciais como cadastro, crédito, consumo, demografia, capacidade financeira, e muito mais.",
+        link: "#",
+        categoria: "produtos-compliance"
+      }      
+    ]
+  }
+]
+
+---
+
+
+<div class="content-row  py-20">
+  <div class="content-container lg:grid grid-cols-12 h-full">
+    <div class="col-span-4 flex flex-col sticky top-[120px] h-dvh space-y-4 menu-categorias">
+      <h2 class="text-4xl leading-snug font-light"><a href="#produtos-credito" id="produtos-credito" >Crédito e Cobrança</a></h2>
+      <h2 class="text-4xl leading-snug font-light"><a href="#produtos-marketing" id="produtos-marketing" >Marketing e Vendas</a></h2>
+      <h2 class="text-4xl leading-snug font-light"><a href="#produtos-compliance" id="produtos-compliance" >Compliance & KYC</a></h2>
+    </div>
+    <div class="col-span-6 col-start-7 flex flex-col space-y-11">
+      {
+        listaServicos.map((servicoGrupo) => {
+            return (
+            <div data-categoria={servicoGrupo.categoria}>
+              {
+                servicoGrupo.servicos.map((servico) => {
+                  return <ServicoCard servico={servico} />
+                })
+              }
+            </div>
+          )
+        })
+      }
+    </div>
+  </div>
+</div>
+ -->
