@@ -1,0 +1,1 @@
+import"./hoisted.B9qBVkyD.js";const e=document.querySelectorAll(".faq-item");e.forEach(s=>{s.addEventListener("click",()=>{if(!s.classList.contains("open")){s.classList.add("open");return}s.classList.remove("open")})});

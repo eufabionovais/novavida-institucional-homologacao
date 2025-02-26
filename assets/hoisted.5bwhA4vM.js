@@ -1,0 +1,1 @@
+import{S as i}from"./swiper-core.DdILsi2M.js";import{N as o,P as a}from"./pagination.2Dv2G4Uq.js";import"./hoisted.B9qBVkyD.js";document.addEventListener("DOMContentLoaded",()=>{const e=".slider-blog";new i(e,{modules:[o,a],slidesPerView:1.25,spaceBetween:16,pagination:{el:".swiper-pagination",clickable:!0}})});
