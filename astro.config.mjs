@@ -9,7 +9,7 @@ export default defineConfig({
     enabled: false
   },  
   
-  base: process.env.NODE_ENV === "production" ? "novavida-institucional" : "",
+  base: process.env.NODE_ENV === "production" ? "/novavida-institucional-homologacao" : "/",
   compressHTML: false,
   output: "static",
 
