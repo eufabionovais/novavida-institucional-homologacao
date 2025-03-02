@@ -1,0 +1,1 @@
+import{S as r}from"./swiper-core.D5S6FTas.js";import"./hoisted.B9qBVkyD.js";document.addEventListener("DOMContentLoaded",()=>{const e=".slider-cards";new r(e,{slidesPerView:1.15,autoHeight:!0,breakpoints:{1024:{slidesPerView:3.15}}})});

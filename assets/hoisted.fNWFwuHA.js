@@ -1,1 +1,0 @@
-import{S as i}from"./swiper-core.DdILsi2M.js";import"./hoisted.CtjKOE4_.js";import"./hoisted.B9qBVkyD.js";document.addEventListener("DOMContentLoaded",()=>{const e=".slider-indicadores-valiosos";new i(e,{slidesPerView:1,spaceBetween:16,breakpoints:{768:{slidesPerView:2},1024:{slidesPerView:4.1}}})});

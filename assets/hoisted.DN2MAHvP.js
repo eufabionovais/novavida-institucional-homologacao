@@ -1,0 +1,1 @@
+import"./BaseFaq.astro_astro_type_script_index_0_lang.Gyr4-A_J.js";import{S as i}from"./swiper-core.D5S6FTas.js";import{N as t}from"./navigation.8vL6Bq0x.js";import"./hoisted.B9qBVkyD.js";document.addEventListener("DOMContentLoaded",()=>{const e=".slider-novidades";new i(e,{modules:[t],slidesPerView:1,navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"}})});

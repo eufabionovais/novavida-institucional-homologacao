@@ -1,0 +1,1 @@
+import{S as i}from"./swiper-core.D5S6FTas.js";import"./BaseFaq.astro_astro_type_script_index_0_lang.Gyr4-A_J.js";import"./hoisted.B9qBVkyD.js";document.addEventListener("DOMContentLoaded",()=>{const e=".slider-indicadores-valiosos";new i(e,{slidesPerView:4.1,spaceBetween:16})});
