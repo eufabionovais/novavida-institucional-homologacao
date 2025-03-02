@@ -8,7 +8,7 @@ export const subMenus =
         'itens': [
           {
             'titulo': 'Quem somos',
-            'descricao': 'A modern tool to manage all AP & AR for clients',
+            'descricao': 'Inovação em dados para conectar empresas aos clientes certos.',
             'icone': `/img/shared/icones/submenus/institucional/icone-quem-somos.png`,
             'path': '/quem-somos'            
           }        
@@ -18,7 +18,7 @@ export const subMenus =
         'itens': [
           {
             'titulo': 'Blog',
-            'descricao': 'A modern tool to manage all AP & AR for clients',
+            'descricao': 'Conteúdos que inspiram, informam e otimizam sua estratégia.',
             'icone': `/img/shared/icones/submenus/institucional/icone-blog.png`,
             'path': '/blog'            
           }          
@@ -29,7 +29,7 @@ export const subMenus =
         'itens': [         
           {
             'titulo': 'Carreira',
-            'descricao': 'A modern tool to manage all AP & AR for clients',
+            'descricao': 'Junte-se a nós e transforme o mercado com inteligência de dados.',
             'icone': `/img/shared/icones/submenus/institucional/icone-carreira.png`,
             'path': '/carreira'            
           }         
@@ -108,13 +108,13 @@ export const subMenus =
         'itens': [
           {
             'titulo': 'Call Center',
-            'descricao': 'A modern tool to manage all AP & AR for clients',
+            'descricao': 'Enriquecemos dados para contatos mais rápidos e eficazes em Call Centers.',
             'icone': `/img/shared/icones/submenus/segmentos/icone-call-center.png`,
             'path': '/call-center'            
           },
           {
             'titulo': 'Correspondentes Bancários',
-            'descricao': 'A modern tool to manage all AP & AR for clients',
+            'descricao': 'Validação e enriquecimento de dados para agilidade no crédito.',
             'icone': `/img/shared/icones/submenus/segmentos/icone-correspondentes-bancarios.png`,
             'path': '/corban'            
           }        
@@ -126,13 +126,13 @@ export const subMenus =
         'itens': [
           {
             'titulo': 'Cobrança',
-            'descricao': 'A modern tool to manage all AP & AR for clients',
+            'descricao': 'Dados atualizados para melhorar a recuperação e otimizar cobranças.',
             'icone': `/img/shared/icones/submenus/segmentos/icone-cobranca.png`,
             'path': '/cobrancas'            
           },
           {
             'titulo': 'Varejo',
-            'descricao': 'A modern tool to manage all AP & AR for clients',
+            'descricao': 'Dados precisos para personalizar ofertas e impulsionar suas vendas.',
             'icone': `/img/shared/icones/submenus/segmentos/icone-varejo.png`,
             'path': '/varejo'            
           }        
@@ -143,7 +143,7 @@ export const subMenus =
         'itens': [
           {
             'titulo': 'Bancos e Fintechs',
-            'descricao': 'A modern tool to manage all AP & AR for clients',
+            'descricao': 'Soluções que tornam decisões de crédito seguras e inteligentes.',
             'icone': `/img/shared/icones/submenus/segmentos/icone-bancos-fintech.png`,
             'path': 'kyc-e-compliance'            
           }

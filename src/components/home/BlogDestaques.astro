@@ -1,5 +1,4 @@
 ---
-import { baseURL } from "../../config";
 import ButtonOutlineBottom from "../../components/shared/ButtonOutlineBottom.astro";
 import BlogPost from "../../components/shared/BlogPost.astro";
 
@@ -81,46 +80,3 @@ const posts = [
   </div>
 </div>
 
-<style lang="scss">
-  .swiper {
-     --swiper-pagination-top: 96%;
-    .swiper-slide {
-      // max-width: 592px;
-      width: 100%;
-      img {
-        border-radius: 12px;
-      }
-    }
-  }
-</style>
-
-
-
-<script>
-import Swiper from 'swiper';
-
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-
-document.addEventListener("DOMContentLoaded", () => {
-
-  const sliderBlog = ".slider-blog";
-  
-  const swiperDestaquesBlog = new Swiper(sliderBlog, {
-    modules: [Navigation, Pagination, Autoplay ],
-    slidesPerView: 1,
-    spaceBetween: 0,    
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },   
-    speed: 1500,
-    autoplay: {
-      delay: 4000, // Adjust delay time in milliseconds
-      disableOnInteraction: false, // Allows autoplay to continue after interaction
-    },
-    loop: true, 
-    
-  });
-})
-
-</script>

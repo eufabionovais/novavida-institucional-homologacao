@@ -28,11 +28,13 @@ export default defineConfig({
   vite: {
     build: {
       cssMinify: false,
+      cssCodeSplit: false,
+
+
       rollupOptions: {
         output: {
-          // Custom naming for CSS files
+ 
           assetFileNames: (assetInfo) => {
-            console.log(assetInfo)
             if (assetInfo.name && assetInfo.name.endsWith('.css')) {
               return 'assets/css/[name][extname]'; 
             }

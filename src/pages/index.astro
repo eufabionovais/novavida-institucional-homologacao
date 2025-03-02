@@ -8,7 +8,6 @@ import ButtonOutlineBottom from "../components/shared/ButtonOutlineBottom.astro"
 
 import BlogDestaques from "../components/home/BlogDestaques.astro";
 import Clientes from "../components/home/Clientes.astro";
-// import FaqHome from "../components/home/FaqHome.astro";
 import Hero from "../components/home/Hero.astro";
 
 import Depoimentos from "../components/shared/Depoimentos.astro";
@@ -81,7 +80,7 @@ const listaServicos = [
 
 <Layout title="Nova Vida - TI" customClasses="dark-theme"; pageName="home">
 	<Hero />
-	<main>
+	<>
 
 		<div class=" text-black">
       <div class="content-container" data-grid-section="initial-section">
@@ -270,11 +269,9 @@ const listaServicos = [
 			</div>
 		</div>		
 
-	</main>
+	
 </Layout>
 
 <style>
-  .indicadores-wrapper {
-    background: url('/img/home/indicadores/bg-indicadores.webp') no-repeat center / cover;
-  }
+
 </style>

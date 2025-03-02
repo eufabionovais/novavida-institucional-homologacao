@@ -1,5 +1,6 @@
 /* @import url("../css/reset.css");  */
 
+
 /* * {
   outline: solid 1px red;
 } */
@@ -499,6 +500,10 @@ h1, h2, h3, h4, h5, h6 {
     }
   }  
 
+  .indicadores-wrapper {
+    background: url('/img/home/indicadores/bg-indicadores.webp') no-repeat center / cover;
+  }
+
   /* [data-theme=white] {
     nav {
       a {
@@ -507,17 +512,39 @@ h1, h2, h3, h4, h5, h6 {
     }
   } */
 
-  .slider-blog {
-    position: relative;
+
+.swiper.slider-blog {
+  position: relative;
+  --swiper-pagination-top: 96%;
+}
+
+.swiper.slider-blog .swiper-slide {
+  width: 100%;   
+}
+
+.swiper.slider-blog .swiper-slide img {
+  border-radius: 12px;      
+}
+
+  .slider-depoimentos {
+      &:before {
+        width: 30px;
+        height: 26px;
+        content: "";
+        display: block;
+        background: url('/img/shared/icones/aspa.svg') no-repeat;
+        margin-bottom: 40px;
+      }
   }
 
-   .slider-blog:before {
-    display: none;
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100px; 
-    height: 100%;
-    z-index: 2;
-   }
+  .swiper-slide .swiper-slide {
+    width: 100%;
+  }
+
+  .slider-depoimentos .swiper-slide img {
+    border-radius: 12px;
+  }
+
+  .slider-depoimentos .swiper-buttons-wrapper {
+    border-top: solid 1px #000;
+  }

@@ -1,10 +1,61 @@
+// import Swiper from '../../node_modules/swiper';
+// import { Navigation, Pagination, Autoplay } from '../../node_modules/swiper/modules';
+
+// import {Swiper} from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
+
 let lastScrollY = window.scrollY;
+
 document.addEventListener("DOMContentLoaded", () => {
 
   // devicePixelRatioAjustment()
 
   toggleHeaderVisibility();
+
+
+
+    const blogDestaqueSlider = document.querySelector(".slider-blog");
+    if(blogDestaqueSlider) {
+      new Swiper(blogDestaqueSlider, {
+        // modules: [Swiper.Navigation, Swiper.Pagination, Swiper.Autoplay ],
+        slidesPerView: 1,
+        spaceBetween: 0,    
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },   
+        speed: 1500,
+        autoplay: {
+          delay: 4000, 
+          disableOnInteraction: false, 
+        },
+        loop: true, 
+      });
+    }
+
+    const depoimentosSlider = document.querySelector(".slider-depoimentos");
+    if(depoimentosSlider) {
+      new Swiper(depoimentosSlider, {
+        // modules: [Swiper.Navigation, Swiper.Pagination, Swiper.Autoplay ],
+        slidesPerView: 1,
+        spaceBetween: 0,    
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },   
+        speed: 1500,
+        autoplay: {
+          delay: 4000, 
+          disableOnInteraction: false, 
+        },
+        loop: true, 
+      });
+    }    
+
+
 });
+
+
+
 
 
 
@@ -27,6 +78,9 @@ function devicePixelRatioAjustment() {
 
 
 }
+
+
+
 
 
 
