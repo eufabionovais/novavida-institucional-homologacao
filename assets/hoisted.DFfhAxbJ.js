@@ -1,5 +1,0 @@
-import{I as a,V as l}from"./index.min.DHTWj37Y.js";import"./hoisted.B9qBVkyD.js";a(document.getElementById("cpf"),{mask:"000.000.000-00"});a(document.getElementById("email"),{mask:/^\S*@?\S*$/});new l(document.querySelector("#formContatoPrivacidade"),{rules:{nome:{required:!0},cpf:{required:!0},email:{email:!0,required:!0},detalhes:{required:!0},dados:{required:!0}},messages:{nome:{required:"Insira o nome."},cpf:{required:"Insira o CPF."},email:{required:"Insira o e-mail."},detalhes:{required:"Insira os detalhes."}}});const r=document.querySelectorAll('input[name="direito"]'),n=document.getElementById("outros");r.length>0&&n&&r.forEach(e=>{e.addEventListener("change",()=>{n.disabled=e.id!=="direitoOpcao7"||!e.checked})});const d=document.getElementById("fileInput"),u=document.getElementById("triggerButton"),i=document.getElementById("attachedFiles");u.addEventListener("click",e=>{e.preventDefault(),d.click()});d.addEventListener("change",e=>{const t=Array.from(e.target.files);t.length>0?i.innerHTML=`
-            <ul>
-            ${t.map(o=>`<li>${o.name}</li>`).join("")}
-            </ul>
-        `:i.innerHTML="<p>Nenhum arquivo anexado.</p>"});
