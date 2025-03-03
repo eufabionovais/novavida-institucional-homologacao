@@ -111,38 +111,3 @@
 
 </style>
 
-  <script>
-
-document.addEventListener('DOMContentLoaded', function () {
-    const items = document.querySelectorAll('.accordion-item');
-
-    items.forEach(item => {
-        const header = item.querySelector('.accordion-header');
-        const content = item.querySelector('.accordion-content');
-
-        // Abre o item ao passar o mouse sobre o cabeçalho ou o conteúdo
-        item.addEventListener('mouseover', function () {
-            // Fecha todos os outros itens
-            items.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.querySelector('.accordion-content').classList.remove('open');
-                }
-            });
-            // Abre o item atual
-            content.classList.add('open');
-        });
-
-        // Fecha o item ao sair do item inteiro (cabeçalho + conteúdo)
-        item.addEventListener('mouseout', function (event) {
-            // Verifica se o mouse está saindo do item inteiro
-            const relatedTarget = event.relatedTarget;
-
-            // Se relatedTarget não existe ou não está dentro do item atual, fecha o conteúdo
-            if (!relatedTarget || !item.contains(relatedTarget)) {
-                content.classList.remove('open');
-            }
-        });
-    });
-});
-
-  </script>

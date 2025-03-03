@@ -198,24 +198,3 @@ const posts = [
     }  
 </style>
 
-<script>
-    import Swiper from 'swiper';
-    
-    import { Navigation, Pagination } from 'swiper/modules';
-    
-    document.addEventListener("DOMContentLoaded", () => {
-    
-      const sliderBlog = ".slider-blog";
-      
-      const swiperDestaquesBlog = new Swiper(sliderBlog, {
-        modules: [Navigation, Pagination ],
-        slidesPerView: 1.25,
-        spaceBetween: 16,    
-        pagination : {
-          el: ".swiper-pagination",
-           clickable: true, 
-        }   
-      });
-    })
-    
-</script>

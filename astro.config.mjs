@@ -39,6 +39,10 @@ export default defineConfig({
               return 'assets/css/[name][extname]'; 
             }
 
+            // if (assetInfo.name && assetInfo.name.endsWith('.svg') || assetInfo.name.endsWith('.ttf') || assetInfo.name.endsWith('.woff')) {
+            //   return 'assets/font-icons/fonts/[name][extname]'; 
+            // }            
+
             return 'assets/[name][extname]';
           },
         },

@@ -105,6 +105,36 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+  .hero-home {
+    height: auto;
+    min-height: auto;
+    @apply text-neutral-light bg-black pt-20;
+    background: url('/img/home/hero/bg-hero-home-mobile.gif') #000 no-repeat center;
+   
+  }
+
+  .novidades {
+    border-top: solid 1px #7A7A7A;
+    background: var(--black);
+    @apply text-white
+  }
+
+  .slider-novidades {
+    @apply text-neutral-light;
+  }  
+ .slider-novidades .swiper-wrapper {
+    align-items: center;
+  }
+
+
+  @media (min-width: 768px) {
+    .hero-home {
+      height: calc(100vh - 80px);
+      min-height: 500px;   
+      background: url('/img/home/hero/bg-hero-home.webp') #000 no-repeat center / cover;   
+    }
+  }
+
 
 /* FAQ Numerada */
 .faq-numerada dl {
@@ -307,6 +337,9 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 } */
 
+  .servico + .servico {
+    margin-top: 132px;
+  }
 
 [data-animation="courtain"] {
   overflow: hidden;
@@ -500,6 +533,11 @@ h1, h2, h3, h4, h5, h6 {
     }
   }  
 
+    .clientes-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
   .indicadores-wrapper {
     background: url('/img/home/indicadores/bg-indicadores.webp') no-repeat center / cover;
   }
@@ -547,4 +585,22 @@ h1, h2, h3, h4, h5, h6 {
 
   .slider-depoimentos .swiper-buttons-wrapper {
     border-top: solid 1px #000;
+  }
+
+    .indicadores-wrapper {
+    background: url('/img/home/indicadores/bg-indicadores.webp') no-repeat center / cover;
+  }
+
+
+    .custom-lista  {
+
+      li::marker{
+          @apply text-black;
+      }
+
+      .list-disc{
+          li::marker{
+              color: currentColor;
+          }
+      }
   }

@@ -272,35 +272,3 @@ const colunas = [
     }
 </style>
 
-<script>
-    import Swiper from 'swiper';
-
-    document.addEventListener("DOMContentLoaded", () => {
-        const sliderCards = ".slider-cards";
-        
-        const swiperDestaquesBlog = new Swiper(sliderCards, {
-            slidesPerView: 1.15,
-            spaceBetween: 0,
-            breakpoints: {
-                1024: {
-                    slidesPerView: 3.15,
-                },
-            },
-        });
-
-
-        const buttons = document.querySelectorAll('.action');
-
-        buttons.forEach(button => {
-            button.addEventListener('click', function () {
-                const parentDiv = this.closest('.fundador');
-
-                if (parentDiv) {
-                    parentDiv.classList.toggle('open');
-
-                    this.textContent = parentDiv.classList.contains('open') ? 'Fechar' : 'Leia mais'
-                }
-            });
-        })
-    });
-</script>

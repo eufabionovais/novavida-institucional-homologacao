@@ -10,16 +10,9 @@ import BaseButton from "../shared/BaseButton.astro";
   </div>
   <h2 class="text-3xl font-regular text-black servico__titulo mt-[32px]">{servico.titulo}</h2>
   <p class="text-base font-light servico__descricao  mt-[26px] leading-[1.86]">{servico.descricao}</p>
-  <!-- <a href=`${baseURL}${servico.link}` class="py-3 px-8 text-white bg-black inline-flex rounded items-center gap-3">Conheça mais <i class="icon-arrow-right"></i></a> -->
 
   <BaseButton classList="servico__btn mt-[52px]" variant="dark" link=`${baseURL}${servico.link}` />
 </div>
 
-<style>
-  .servico + .servico {
-    margin-top: 132px;
-  }
-
-</style>
 
 

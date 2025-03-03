@@ -182,22 +182,3 @@ import HeroShared from '../components/shared/HeroShared.astro';
   }
 
 </style>
-
-<script>
-  import Swiper from 'swiper';
-
-  
-  document.addEventListener("DOMContentLoaded", () => {
-      const sliderCards = ".slider-cards";
-      
-      const swiperDestaquesBlog = new Swiper(sliderCards, {
-          slidesPerView: 1.15,
-          autoHeight: true,
-          breakpoints: {
-              1024: {
-                  slidesPerView: 3.15,
-              },
-          },
-      });
-  });
-</script>

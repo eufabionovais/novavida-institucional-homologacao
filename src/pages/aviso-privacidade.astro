@@ -29,7 +29,7 @@ import Layout from "../layouts/Layout.astro";
     </HeroShared> 	
 
 
-	<div class="content-row novidades text-black py-12 md:pt-20 md:pb-32">
+	<div class="content-row text-black py-12 md:pt-20 md:pb-32">
 		<div class="content-container lg:grid grid-cols-12">
 			<div class="col-span-12 flex items-center lg:mt-0">
 				<p class="section-highlight-title text-highlight-on-light">
@@ -326,63 +326,6 @@ import Layout from "../layouts/Layout.astro";
   }
 
 
-  .custom-lista  {
 
-      li::marker{
-          @apply text-black;
-      }
-
-      .list-disc{
-          li::marker{
-              color: currentColor;
-          }
-      }
-  }
 </style>
 
-<script>
-  document.addEventListener("DOMContentLoaded", (event) => {
-      
-      const menuLinks = document.querySelectorAll('.item-link');
-      const sections = document.querySelectorAll('.item-content');
-  
-  
-      menuLinks.forEach(link => {
-          link.addEventListener('click', function (event) {
-              event.preventDefault();
-  
-              const targetId = this.getAttribute('href');
-              const targetElement = document.querySelector(targetId);
-  
-              if (targetElement) {
-                  const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-                  const offsetPosition = elementPosition - 100;
-  
-                  window.scrollTo({
-                      top: offsetPosition,
-                      behavior: 'smooth'
-                  });
-              }
-          });
-      }); 
-  
-      const observer = new IntersectionObserver(entries => {
-              entries.forEach(entry => {
-                  if (entry.isIntersecting) {
-                      menuLinks.forEach(link => link.classList.remove('current'));
-  
-                      const activeLink = document.querySelector(`.item-link[href="#${entry.target.id}"]`);
-  
-                      if (activeLink) {
-                          activeLink.classList.add('current');
-                      }
-                  }
-              });
-          },
-          { threshold: 0.3 }
-      );
-  
-      sections.forEach(section => observer.observe(section));
-  });
-  
-  </script>

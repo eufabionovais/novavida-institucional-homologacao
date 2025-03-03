@@ -155,29 +155,3 @@ const categoriaSelecionada = "All"
     }
 </style>
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const inputs = document.querySelectorAll('input[name="categorias"]');
-        const posts = document.querySelectorAll('[data-categoria]');
-        const totalPosts = document.querySelector('#totalPosts');
-        let textCategoriaSelecionada = document.querySelector('#categoriaSelecionada');
-
-        inputs.forEach((input) => {
-            input.addEventListener("change", (event) => {
-                const target = event.target as HTMLInputElement
-                const categoriaSelecionada  = target.value;
-                textCategoriaSelecionada.innerHTML = categoriaSelecionada;
-                
-                const totalPostsEncontrados = document.querySelectorAll(`[data-categoria='${categoriaSelecionada}']`).length;
-                
-                posts.forEach((post) => {
-                    if (post.getAttribute('data-categoria') !== categoriaSelecionada && categoriaSelecionada !== 'All') {
-                        post.classList.add('hidden'); 
-                    } else {
-                        post.classList.remove('hidden');
-                    }
-                });
-            });
-        });
-    });
-</script>

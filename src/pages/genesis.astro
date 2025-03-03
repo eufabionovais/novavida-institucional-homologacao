@@ -170,7 +170,7 @@ const beneficiosIpe = [
           </div>
           <div class="col-span-12 md:mt-32 mt-20">
             <div class="gap-y-10 space-y-5 md:space-y-0 lg:mb-28">
-              <div class="swiper slider-indicadores-valiosos h-[540px] px-2">
+              <div class="swiper slider-indicadores-valiosos-genesis h-[540px] px-2">
                 <div class="swiper-wrapper">
                 {
                   bandeirolas.map(bandeirola => {
@@ -233,28 +233,3 @@ const beneficiosIpe = [
   }} />
 
 </Layout>
-
-<script>
-    import Swiper from 'swiper';
-    
-    document.addEventListener("DOMContentLoaded", () => {
-    
-      const sliderIndicadores = ".slider-indicadores-valiosos";
-      
-      const swiperSliderIndicadores = new Swiper(sliderIndicadores, {
-        slidesPerView: 1,
-        spaceBetween: 16,    
-    
-        breakpoints: {
-          768: {
-            slidesPerView: 2
-          },
-          1024: {
-            slidesPerView: 4.10
-          },
-        },    
-    
-      });
-    })
-    
-</script>
