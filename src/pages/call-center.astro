@@ -4,6 +4,7 @@ import ListaNumerica from "../components/shared/listaNumerica.astro";
 import BeneficioProduto from "../components/shared/BeneficioProduto.astro";
 import ButtonShared from "../components/shared/Button.astro";
 import CallToAction from "../components/shared/CallToAction.astro";
+import BaseButton from "../components/shared/BaseButton.astro";
 import { baseURL } from "../config";
 import Layout from '../layouts/Layout.astro';
 
@@ -85,7 +86,7 @@ const oportunidades = [
     {
         carteiras.map((beneficio) => {
           return (
-            <BeneficioProduto customClasses={{
+            <BeneficioProduto data-animation="beneficios" customClasses={{
               'container': 'mt-20',
               'content-col': 'col-span-5',
               'title': 'text-highlight-on-light'
@@ -96,10 +97,18 @@ const oportunidades = [
     <!-- / Validação e Enriquecimento -->
 
 
+
+<!-- 
     <ButtonShared
         text="Descubra como melhorar a eficiência do seu call center" 
         href="#"
-    />
+    /> -->
+
+
+  <BaseButton variant="dark" classList={"mx-auto flex w-fit mt-[92px] mb-[122px]"} data-animation='from-bottom'>
+    Descubra como melhorar a eficiência do seu call center
+    <i class="icon-arrow-up-angled text-[12px]" slot="icon"></i>
+  </BaseButton>    
 
     <!-- Oportunidades -->
      
@@ -121,11 +130,17 @@ const oportunidades = [
 
     <!-- / Oportunidades  -->
     
-    <ButtonShared
+    <!-- <ButtonShared
         text="Fale com a pessoa certa no momento certo. Descubra como!" 
         href="#"
         customClasses="col-span-6 col-start-4" 
-    />
+    /> -->
+
+    <BaseButton variant="dark" classList={"mx-auto flex w-fit mt-[92px] mb-[122px]"} data-animation='from-bottom'>
+      Fale com a pessoa certa no momento certo. Descubra como!
+      <i class="icon-arrow-up-angled text-[12px]" slot="icon"></i>
+    </BaseButton>       
+
     <CallToAction
         info={{
         titulo: "Fale com Nossa Equipe e Veja Como Transformar a Recuperação de Crédito da Sua Empresa",
