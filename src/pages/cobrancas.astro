@@ -4,6 +4,7 @@ import ListaNumerica from "../components/shared/listaNumerica.astro";
 import BeneficioProduto from "../components/shared/BeneficioProduto.astro";
 import ButtonShared from "../components/shared/Button.astro";
 import CallToAction from "../components/shared/CallToAction.astro";
+import BaseButton from "../components/shared/BaseButton.astro";
 import { baseURL } from "../config";
 import Layout from '../layouts/Layout.astro';
 
@@ -93,7 +94,7 @@ const beneficios = [
                 <p class="text-2xl">Cobrança</p>                
             </div>
             <div data-grid-section="initial-section__content">
-                <p class="section-highlight-title text-highlight-on-light">
+                <p class="section-highlight-title text-highlight-on-dark">
                     Como a Nova Vida está transformando a forma que as empresas de cobrança lidam com os dados
                 </p>
                 <p class="mt-10 md:mt-20 text-neutral">
@@ -124,17 +125,22 @@ const beneficios = [
     {
         carteiras.map((beneficio) => {
           return (
-            <BeneficioProduto item={beneficio} />
+            <BeneficioProduto item={beneficio} data-animation="beneficios" />
           )
         }) 
     }
     <!-- / Carteiras -->
 
-    <ButtonShared
+    <!-- <ButtonShared
         text="Descubra como otimizar a recuperação de inadimplentes" 
         href="#"
         customClasses="col-span-6 col-start-4" 
-    />
+    /> -->
+
+    <BaseButton variant="dark" classList={"mx-auto flex w-fit mt-[92px] mb-[122px]"} data-animation='from-bottom'>
+      Descubra como otimizar a recuperação de inadimplentes
+      <i class="icon-arrow-up-angled text-[12px]" slot="icon"></i>
+    </BaseButton>       
 
     <!-- Tecnologia -->
     { 
@@ -163,11 +169,16 @@ const beneficios = [
     </div>
     <!-- / Beneficios -->
 
-    <ButtonShared
+    <!-- <ButtonShared
         text="Saiba como melhorar suas taxas de recuperação de crédito" 
         href="#"
         customClasses="col-span-6 col-start-4" 
-    />
+    /> -->
+
+    <BaseButton variant="dark" classList={"mx-auto flex w-fit mt-[92px] mb-[122px]"} data-animation='from-bottom'>
+      Saiba como melhorar suas taxas de recuperação de crédito
+      <i class="icon-arrow-up-angled text-[12px]" slot="icon"></i>
+    </BaseButton>       
 
     <!-- Inovação -->
     <div class="content-row">
