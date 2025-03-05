@@ -163,9 +163,9 @@ const beneficiosIpe = [
     <div class="content-row  text-black">
         <div class="content-container lg:grid grid-cols-12 pt-20 ">
           <div class="col-span-5">
-            <h2 class="text-4xl">Por que escolher o Gênesis?</h2>
+            <h2 class="text-4xl section-highlight-title text-highlight-on-light">Por que escolher o Gênesis?</h2>
           </div>
-          <div class="col-span-6 col-start-7 text-neutral">
+          <div class="col-span-6 col-start-7 text-neutral" data-animation="from-bottom">
             <p class="text-lg">Obtenha insights para otimizar suas estratégias com nossos indicadores precisos. Tome decisões mais seguras e assertivas com as nossas soluções.</p>
           </div>
           <div class="col-span-12 md:mt-32 mt-20">
@@ -204,7 +204,7 @@ const beneficiosIpe = [
 
       beneficiosIpe.map((beneficio) => {
         return (
-          <BeneficioProduto item={beneficio} />
+          <BeneficioProduto item={beneficio} data-animation="beneficios" />
         )
       })
     
