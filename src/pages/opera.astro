@@ -48,7 +48,7 @@ import HeroShared from '../components/shared/HeroShared.astro';
 
             <div class="col-span-5 col-start-1 row-start-1 flex flex-col self-center py-6 lg:py-6 ">
 
-                <h3 class="section-title">Opera é a plataforma de comunicação automatizada da Nova Vida TI</h3>
+                <h3 class="section-title section-highlight-title text-highlight-on-light">Opera é a plataforma de comunicação automatizada da Nova Vida TI</h3>
                 <p class="text-base leading-7 mt-4 lg:mt-11">Com uma interface intuitiva e 100% de autonomia, a plataforma Opera foi desenvolvida para gerenciar seus envios de SMS de maneira prática e personalizada. Com alta confiabilidade, impulsione seus resultados e garanta que cada mensagem chegue ao público certo.</p>
             </div>
             </div>
@@ -58,75 +58,80 @@ import HeroShared from '../components/shared/HeroShared.astro';
 
     <div class="content-row">
         <div class="content-container md:mt-28 mt-10 gap-4">
-            <div class="swiper slider-cards mt-6 lg:mt-0">
-                <div class="swiper-wrapper lg:divide-x-2 divide-black divide-opacity-10">
+            <div class="mt-6 lg:mt-0" data-animation="horizontal-sticky-wrapper">
+                <div class="lg:divide-x-2 divide-black divide-opacity-10 flex h-[275px]" data-animation="horizontal-sticky">
                     
-                    <div class="swiper-slide">
+                    
                         <CardIcone
                             titulo="Envio garantido do SMS para todos os celulares"
                             icone=`${baseURL}/img/plataforma-opera/icone-sms.png`
                             conteudo="Alcance seus contatos de forma garantida, sem depender de internet."
-                            classList={"col-span-1 px-7"}
+                            classList={"col-span-1 px-7 min-w-[400px] static"}
                         />
-                    </div>
+              
 
-                    <div class="swiper-slide">
+                   
                         <CardIcone
                             titulo="Engajamento imediato com alta taxa de abertura"
                             icone=`${baseURL}/img/plataforma-opera/icone-engajamento.png`
                             conteudo="Mais de 90% dos SMS são lidos, superando outros meios tradicionais."
-                            classList={"col-span-1 px-7"}
+                            classList={"col-span-1 px-7 min-w-[400px] static"}
                         />
-                    </div>
+                    
 
-                    <div class="swiper-slide">
+                   
                         <CardIcone
                             titulo="Envios seguros e homologados pela Anatel:"
                             icone=`${baseURL}/img/plataforma-opera/icone-envio-seguro.png`
                             conteudo="Segurança e rapidez em entregas com tecnologia Shortcode, a mesma utilizada por bancos."
-                            classList={"col-span-1 px-7"}
+                            classList={"col-span-1 px-7 min-w-[400px] static"}
                         />
-                    </div>
+                    
 
-                    <div class="swiper-slide">
+                    
                         <CardIcone
                             titulo="Filtro de qualificação:"
                             icone=`${baseURL}/img/plataforma-opera/icone-whatsapp.png`
                             conteudo="Alcance contatos com WhatsApp ativo e maximize o engajamento com mensagens estratégicas."
-                            classList={"col-span-1 px-7"}
+                            classList={"col-span-1 px-7 min-w-[400px] static"}
                         />
-                    </div>
+                  
                 
                 </div>
             </div>
         </div>
     </div>
 
-    <ButtonShared
-        text="Experimente a Plataforma" 
+    <!-- <ButtonShared
+        text="Experimente a Plataformas" 
         href="#"
         customClasses="lg:col-span-4 lg:col-start-5 col-span-10 col-start-2 mt-0" 
-    />
+    /> -->
+
+    <BaseButton href="#" variant="dark" classList="flex justify-self-center mt-[70px] mb-[80px]">
+        Experimente a Plataforma
+        <i class="icon-arrow-up-angled text-[12px]" slot="icon"></i>
+    </BaseButton>
 
     <section class="content-row py-5 lg:py-14">
         <div class="content-container">
             <div class="md:grid grid-cols-12 space-y-8 md:space-y-0">
 
                 <div class="col-span-6 col-start-1">
-                    <div class="image-wrapper">
-                    <img src=`${baseURL}/img/plataforma-opera/beneficios/beneficio-2.png` alt="">
+                    <div data-imagem="true">
+                        <img src=`${baseURL}/img/plataforma-opera/beneficios/beneficio-2.png` alt="">
                     </div>
                 </div>
 
-                <div class="col-span-5 col-start-8 row-start-1 flex flex-col">
+                <div class="col-span-5 col-start-8 row-start-1 flex flex-col" data-animation='beneficios'>
 
-                    <h3 class="text-3xl text-black font-regular">Disparo de SMS: comunicação rápida e eficaz</h3>
-                    <p class="text-base leading-7 mt-11">Alcance seus clientes instantaneamente com nossa plataforma de SMS. Seja qual for o tamanho do seu negócio, garantimos a entrega de mensagens no momento ideal, potencializando suas campanhas com o apoio de inteligência artificial.</p>
+                    <h3 class="text-3xl text-black font-regular" data-titulo="true">Disparo de SMS: comunicação rápida e eficaz</h3>
+                    <p class="text-base leading-7 mt-11"  data-conteudo="true">Alcance seus clientes instantaneamente com nossa plataforma de SMS. Seja qual for o tamanho do seu negócio, garantimos a entrega de mensagens no momento ideal, potencializando suas campanhas com o apoio de inteligência artificial.</p>
 
                 
                     <div class="mt-2 mb-10 lg:mb-0 lg:mt-10">
-                    <p class="font-medium text-black mb-7">Onde usar o SMS em massa:</p>
-                    <ul class="list-disc list-outside marker:pl-0 ml-4 leading-7 text-black">
+                    <p class="font-medium text-black mb-7"  data-lista-titulo="true">Onde usar o SMS em massa:</p>
+                    <ul class="list-disc list-outside marker:pl-0 ml-4 leading-7 text-black"  data-lista="true">
                         <li>Lembretes: <span class="text-neutral">Mantenha seus clientes informados e pontuais.</span></li>
                         <li>Notificações: <span class="text-neutral">Transmita informações críticas em tempo real.</span></li>
                         <li>Promoções: <span class="text-neutral">Aumente seu alcance com campanhas de impacto.</span></li>
@@ -140,7 +145,7 @@ import HeroShared from '../components/shared/HeroShared.astro';
 
     <section class="content-row py-5 lg:py-14 ">
         <div class="content-container">
-            <h2 class="text-4xl text-highlight-on-light leading-snug text-center">Com SMS, sua comunicação é focada e objetiva, <span>garantindo que a mensagem certa chegue ao seu público no momento exato.</span></h2>
+            <h2 class="text-4xl text-center section-highlight-title text-highlight-on-light">Com SMS, sua comunicação é focada e objetiva, <span>garantindo que a mensagem certa chegue ao seu público no momento exato.</span></h2>
         </div>
     </section>
 
@@ -166,7 +171,7 @@ import HeroShared from '../components/shared/HeroShared.astro';
     }} />
 
 </Layout>
-
+<!-- 
 <style>
   .swiper-wrapper{
       align-items: stretch;
@@ -181,4 +186,4 @@ import HeroShared from '../components/shared/HeroShared.astro';
       }
   }
 
-</style>
+</style> -->

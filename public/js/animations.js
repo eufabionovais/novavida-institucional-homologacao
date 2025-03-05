@@ -116,7 +116,7 @@ animateContentWithSlider(contentWithSlider);
 
 
   /* CARD ÍCONES */
-  const cardIcones = document.querySelectorAll(".card-icone");
+  const cardIcones = document.querySelectorAll(".card-icone:not(.static)");
   if(cardIcones) {
     animateElementsWithScrollTrigger(cardIcones)
   }
@@ -401,7 +401,7 @@ function animateBeneficios(elements) {
     elementTl.from(conteudo, {y: 20, opacity: 0, duration: 0.4, ease: 'back.out(1.7)'}, "-=0.1")
     elementTl.from(listaTitulo, {y: 20, opacity: 0, duration: 0.4, ease: 'back.out(1.7)'}, "-=0.1")
     elementTl.from(listaItens, {x: 20, opacity: 0, duration: 0.4, stagger: 0.2, ease: 'back.out(1.7)'}, "-=0.1")
-    elementTl.from(imagem, {y: 20, opacity: 0, duration: 0.4, ease: 'back.out(1.7)'}, "-=0.4")
+    elementTl.from(imagem, {y: 20, opacity: 0, duration: 0.4, ease: 'back.out(1.7)'}, "-=0.8")
   })
 }
 
@@ -571,7 +571,7 @@ function animateHorizontalSticky(items) {
 
     const computedStyle = getComputedStyle(item);
     const gapValue = computedStyle.getPropertyValue('gap');
-    const rawGapValue = parseInt(gapValue,10);
+    const rawGapValue = parseInt(gapValue,10) || 0;
 
     let totalWidth = 0;
     $(item).children().each(function(index, item){
