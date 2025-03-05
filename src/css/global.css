@@ -355,13 +355,13 @@ h1, h2, h3, h4, h5, h6 {
 
   [variant='numbered'] {
     .accordion-header {
-      font-size: 28px;
+      font-size: 32px;
       font-weight: 400;
       display: flex;
       gap: 16px;
       justify-content: flex-start;
       &:before {
-        font-size: 28px;
+        font-size: inherit;
         content: "0" counter(number, decimal-leading-zero)".";     
         flex-basis: 100px;   
       }      

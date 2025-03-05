@@ -5,6 +5,7 @@ import ButtonShared from "../components/shared/Button.astro";
 import CallToAction from "../components/shared/CallToAction.astro";
 import HeroShared from "../components/shared/HeroShared.astro";
 import Faq from "../components/shared/Faq.astro";
+import BaseFaq from "../components/shared/BaseFaq.astro";
 import { baseURL } from "../config";
 import Layout from '../layouts/Layout.astro';
 
@@ -79,7 +80,8 @@ import { faqPrinciapaisBeneficios } from "../data/faq-principais-beneficios-spid
             <p class="text-xl mb-4 lg:mb-0 leading-normal">Captação inteligente e segmentação precisa para maximizar resultados</p>
           </div>
           <div class="col-span-7 col-start-6">
-            <Faq classList="faq-numerada" questoes={faqPrinciapaisBeneficios} />
+            <!-- <Faq classList="faq-numerada" questoes={faqPrinciapaisBeneficios} /> -->
+            <BaseFaq questoes={faqPrinciapaisBeneficios} variant="numbered" classList="faq-numerada" />
           </div>
       
         </div>
