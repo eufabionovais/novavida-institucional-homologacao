@@ -1,0 +1,227 @@
+---
+
+import CallToAction from "../components/shared/CallToAction.astro";
+import Layout from '../layouts/Layout.astro';
+import { baseURL } from "../config";
+import { faqAPI } from "../data/faq-api-kyc.js";
+import HeroShared from '../components/shared/HeroShared.astro';
+import BaseButton from '../components/shared/BaseButton.astro';
+
+---
+
+<Layout title="API de Consulta KYC - Nova Vida TI">
+
+      <HeroShared 
+      item={{
+          bgDesktop: `${baseURL}/img/api-consulta-kyc/banner-desktop.png`,
+          bgMobile: `${baseURL}/img/api-consulta-kyc/banner-mobile.png`,
+          minHeightDesktop: "650px",
+          minHeightMobile: "780px"
+      }}
+  >
+        <div class="col-span-5 pb-14 flex flex-col justify-end lg:justify-start items-start">
+            <h1 class="hero-title mt-24">
+              API de consultas para KYC: Velocidade e segurança
+            </h1>              
+            <p class="mt-5 lg:mt-11 text-sm lg:text-base">
+              Nossa API transforma dados públicos em informações estratégicas para simplificar processos de KYC, Compliance e validação de clientes. Integre facilmente ao seu sistema e aumente a eficiência das suas operações com segurança e precisão.
+            </p>              
+
+            <BaseButton classList="mt-16" />
+
+        </div>  
+    </HeroShared>   
+
+
+  <div class="content-row text-black pt-20">
+		<div class="content-container lg:grid grid-cols-12">
+			<div class="col-span-12 flex items-center">
+				<p class="section-highlight-title text-highlight-on-light">
+					Conheça a lista de APIs de consultas que a Nova Vida <span>disponibiliza via web services JSON. Clique na consulta para ver detalhes</span>
+				</p>
+			</div>
+		</div>
+	</div>
+
+  <div class="content-row py-20">
+    <div class="content-container">
+
+
+
+      <div class="faq-wrapper text-black">
+        <dl>
+        {
+          faqAPI.map((questao) => {
+            return (
+              <div class="faq-item">
+                <div class="faq-item__conteudo">
+                  <dt>{questao.pergunta}</dt>
+                  <dd class="text-base">
+                    <div class="faq-item__conteudo">
+                      <ul>
+                        {
+                          questao.respostas?.map((interna) => {
+                            return (
+                              <li>
+                                <div class="item">
+                                  <p class="item__titulo" set:html={interna.pergunta}></p>
+                                  <div class="item__wrap-text">
+                                    <p class="item__text" set:html={interna.resposta}></p>
+                                  </div>
+                                </div>
+                              </li>
+                            )                        
+                          })                                                    
+                        }
+                      </ul>
+                    </div>
+                  </dd> 
+                </div>
+              </div>
+            )
+          })
+        }
+        </dl>
+  
+      </div>
+    </div>
+  </div>
+
+  <CallToAction
+    info={{
+    titulo: "Automatize processos e garanta dados precisos com nossa API",
+    descricao: "Aproveite a eficiência da nossa API para integrar dados com precisão, segurança e velocidade, otimizando seus processos de ponta a ponta.",
+    textButton: 'Falar Agora',
+    url: "/#",
+    imagem: {
+      url: `${baseURL}/img/api-consulta-kyc/imagem-call-to-action.png`,
+      alt: "Texto alternativo imagem"
+    }
+  }} />
+
+</Layout>
+
+<style lang="scss">
+
+.custom-lista li::marker {
+    @apply text-black;
+  }
+
+  .faq-item {
+    
+    @apply border-b border-black border-opacity-10 py-4 lg:py-8;
+
+    ul{
+      @apply divide-y divide-black divide-opacity-10;
+      
+      li{
+        @apply py-4 lg:py-8 text-neutral;
+
+        .item__titulo{
+          @apply text-xl text-black flex items-center gap-6 justify-between cursor-pointer;
+
+          &:after {
+            flex-basis: 26px;
+            aspect-ratio: 1;
+            border-radius: 8px;
+            border: solid 1px transparent;
+            @apply bg-primary;
+            font-family: 'icomoon';
+            content: "\e900";
+            height: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            line-height: 1;
+            flex-shrink: 0;
+            transition: 0.2s;
+          }
+        }
+
+        .item__wrap-text{
+          display: grid; 
+          grid-template-rows: 0fr;
+          transition: 250ms grid-template-rows ease;
+        }
+
+        .item__text{
+          overflow: hidden;
+        }
+
+        .item{
+          &.open {
+
+            .item__wrap-text {
+              grid-template-rows: 1fr;
+              @apply py-8;
+
+              .faq-item__conteudo {
+              }
+            }
+            .item__titulo {
+              &:after {
+                @apply bg-transparent;
+                font-family: 'Inter', sans-serif;
+                content: "-";
+                border: solid 1px #000;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    dt {
+      @apply text-3xl font-regular  relative flex items-center gap-6 justify-between cursor-pointer;
+
+      &:after {
+        flex-basis: 26px;
+        aspect-ratio: 1;
+        border-radius: 8px;
+        border: solid 1px transparent;
+        @apply bg-primary;
+        content: "+";
+        height: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        line-height: 1;
+        flex-shrink: 0;
+        transition: 0.2s;
+      }
+    }
+
+    dd {
+      display: grid; 
+      grid-template-rows: 0fr;
+      transition: 250ms grid-template-rows ease;
+    }
+    
+    dd >  .faq-item__conteudo {
+      overflow: hidden;
+    }
+
+    &.open {
+      @apply border-none;
+
+      dd {
+         grid-template-rows: 1fr;
+         .faq-item__conteudo {
+          @apply py-8;
+         }
+      }
+      dt {
+        &:after {
+          @apply bg-transparent;
+          content: "-";
+          border: solid 1px #000;
+        }
+      }
+    }
+
+  }
+
+</style>
+

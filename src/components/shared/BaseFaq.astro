@@ -1,0 +1,33 @@
+---
+  const {titulo, questoes, classList, ...props} = Astro.props;
+---
+
+<div class="faq-wrapper" class:list={classList} {...props}>
+  {
+    titulo &&
+    <h2 class="faq-title">{titulo}</h2>
+  }
+
+    <dl class="accordion">
+
+      {
+        questoes.map((questao) => {
+          return (
+
+            <div class="accordion-item">
+              <dt class="accordion-header">{questao.pergunta}</dt>
+              <dd class="accordion-content">
+                <p>{questao.resposta}</p>
+              </dd>
+            </div>
+
+          )
+        })
+      }
+
+    </dl>
+
+</div>
+
+
+

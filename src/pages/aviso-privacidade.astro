@@ -1,0 +1,331 @@
+---
+import HeroShared from "../components/shared/HeroShared.astro";
+import { baseURL } from "../config";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Aviso de privacidade - Nova Vida TI">
+
+    <HeroShared 
+      item={{
+          bgDesktop: `${baseURL}/img/api-privacidade/banner-desktop.png`,
+          bgMobile: `${baseURL}/img/api-privacidade/banner-mobile.png`,
+          minHeightDesktop: "535px",
+          minHeightMobile: "665px"
+      }}
+  >
+        <div class="col-span-5 pb-14 flex flex-col justify-end lg:justify-start items-start">
+            <h1 class="hero-title mt-24">
+               Transparência
+              <br class="hidden lg:inline">
+              Aviso de privacidade
+            </h1>              
+            <p class="mt-5 lg:mt-11 text-sm lg:text-base">
+              Este aviso de privacidade foi desenvolvido em atenção às diretrizes da Lei Geral de Proteção de Dados (“LGPD”) e traz informações sobre como lidamos com dados pessoais.
+            </p>              
+
+
+        </div>  
+    </HeroShared> 	
+
+
+	<div class="content-row text-black py-12 md:pt-20 md:pb-32">
+		<div class="content-container lg:grid grid-cols-12">
+			<div class="col-span-12 flex items-center lg:mt-0">
+				<p class="section-highlight-title text-highlight-on-light">
+					Criamos esse conteúdo com a ideia de simplificar o tema e dar ideias práticas de como se adequar às bases legais.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="content-row">
+    <div class="content-container lg:grid grid-cols-12 h-full">
+        <div class="hidden lg:block lista-link-item">
+            <h2 class="current">
+                <a href="#como-utilizamos" class="item-link current">Como utilizamos</a>
+            </h2>
+            <h2 >
+                <a href="#quais-dados" class="item-link">Quais dados utilizamos</a>
+            </h2>
+            <h2 >
+                <a href="#com-quem" class="item-link">Com quem compartilhamos</a>
+            </h2>
+            <h2 >
+                <a href="#transferencias" class="item-link">Transferência internacionais</a>
+            </h2>
+            <h2 >
+                <a href="#como-protegemos" class="item-link">Como protegemos</a>
+            </h2>
+            <h2 >
+                <a href="#tempo-armazenagem" class="item-link">Tempo de armazenagem</a>
+            </h2>
+            <h2 >
+                <a href="#seus-direitos" class="item-link">Quais são seus direitos</a>
+            </h2>
+            <h2 >
+                <a href="#atualizacoes" class="item-link">Atualizações</a>
+            </h2>
+        </div>
+        <div class="col-span-8 col-start-5 space-y-16 md:space-y-32 flex flex-col">
+            <!-- Como utilizamos -->
+            <div class="item-content space-y-12" id="como-utilizamos">
+                <h2 class="text-3xl text-black">Por que e como utilizamos os dados pessoais?</h2>
+                <div class="text-base space-y-10">
+                    <p>
+                        Como empresa de tecnologia aplicada a dados, realizamos a coleta e
+                        tratamento de dados pessoais a fim de transformá-los em importantes recursos
+                        para tomada de decisão de nossos clientes, empresas dos mais variados
+                        setores da economia. Nesse contexto, os produtos e soluções que oferecemos
+                        possibilitam a nossos clientes:
+                    </p>
+
+                    <ul class="list-disc list-outside marker:pl-0 marker ml-4 leading-7">
+                        <li>
+                            Conhecer melhor e, então, aprofundar o relacionamento com seus
+                            respectivos clientes;
+                        </li>
+                        <li>Validar informações para prevenir fraudes;</li>
+                        <li>
+                            Dinamizar e garantir assertividade de processos internos, dentre eles,
+                            de compliance, concessão de crédito, cobrança e análise de riscos de
+                            negócio; e
+                        </li>
+                        <li>
+                            Ampliar conhecimento e oportunidades de mercado e facilitar tomadas de
+                            decisão.
+                        </li>
+                    </ul>
+
+                    <p>
+                        Entendemos que esses objetivos são lícitos e valiosos e que sua viabilização
+                        não diminui ou desconsidera os interesses, expectativas e direitos dos
+                        titulares. Isso porque, acreditamos que é de interesse de toda a sociedade
+                        que os relacionamentos estabelecidos no âmbito empresarial sejam dotados de
+                        boa-fé, livres de fraudes e outras práticas ilícitas e/ou irregulares.
+                    </p>
+
+                    <p>
+                        Nesse sentido, os produtos e soluções que oferecemos dependem da coleta e do
+                        uso de dados pessoais obtidos de fontes variadas. A maioria delas são
+                        públicas, como sites oficiais do governo, mas utilizamos também parceiros
+                        estratégicos que nos fornecem dados, garantindo contratualmente a origem
+                        lícita de tais informações.
+                    </p>
+
+                    <p>
+                        Em nossos contínuos esforços de conformidade com a legislação, checamos a
+                        procedência das fontes de dados que utilizamos e contamos com processo
+                        estruturado para seleção e manutenção de fornecedores de dados. Além disso,
+                        impomos contratualmente que nossos clientes utilizem os dados fornecidos de
+                        maneira responsável e em conformidade com a legislação.
+                    </p>
+                </div>
+                <div class="item__imagem">
+                    <div class="image-wrapper">
+                        <img src=`${baseURL}/img/api-privacidade/imagem-como-utilizamos.png` />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quais dados utilizamos -->
+            <div class="item-content space-y-12" id="quais-dados">
+                <h2 class="text-3xl text-black">Quais dados pessoais utilizamos?</h2>
+                <div class="text-base space-y-10">
+                    <p>
+                        A partir da consulta às fontes mencionadas acima, podemos coletar e tratar os seguintes tipos de dados pessoais sobre você:
+                    </p>
+
+                    <ul class="custom-lista list-disc list-outside marker:pl-0 marker ml-4 leading-7">
+                        <li><span class="text-black">Dados cadastrais:</span> como nome, CPF, data de nascimento, telefone, e-mail e endereços;</li>
+                        <li><span class="text-black">Dados profissionais:</span> como números de registro profissional, profissão, endereço e telefone comerciais;</li>
+                        <li><span class="text-black">Dados societários:</span> como participações societárias e informações relacionadas à sociedade;</li>
+                        <li><span class="text-black">Dados de processos judiciais:</span> como dados sobre processos em curso, sua natureza e demais informações constantes dos autos; e</li>
+                        <li><span class="text-black">Informações de crédito e patrimoniais:</span> como renda, histórico de crédito e propriedade de imóveis;</li>
+                        <li><span class="text-black">Dados de consumo:</span> como interesses e utilização de serviços.</li>
+                    </ul>
+
+                </div>
+            </div>
+            
+            <!-- Com quem compartilhamos -->
+            <div class="item-content space-y-12" id="com-quem">
+                <h2 class="text-3xl text-black">Com quem compartilhamos seus dados pessoais?</h2>
+                <div class="text-base space-y-10">
+                    <p>
+                        Nossas atividades se destinam justamente ao fornecimento de dados pessoais que coletamos e inteligência gerada a partir de sua análise. Assim, compartilhamos os dados pessoais com os clientes que contratam nossos produtos e soluções, os quais utilizarão as informações para as finalidades descritas no tópico “Por que e como utilizamos dados pessoais”.
+                    </p>
+
+                    <p>
+                        Além dos clientes, para viabilizar nossas atividades, podemos também compartilhar seus dados pessoais com os seguintes destinatários, observando as justificativas legais e os limites aplicáveis:
+                    </p>
+
+                    <ul class="list-disc list-outside marker:pl-0 marker ml-4 leading-7">
+                        <li>
+                            Fornecedores, prestadores de serviços e parceiros comerciais que nos apoiam na operacionalização de nossas atividades, como empresas de tecnologia que prestam serviços de desenvolvimento e manutenção de sistemas e provedores de infraestrutura para armazenamento de dados;
+                        </li>
+                        <li>
+                            Autoridades competentes, para cumprimento de obrigações legais e regulatórias e para atendimento de ordens judiciais ou requisições oficiais; 
+                        </li>
+                        <li>
+                            Outras empresas, no caso de reorganização, sucessão ou quaisquer alterações societárias, visando a continuidade dos nossos serviços.
+                        </li>
+                    </ul>
+                    <div class="item__imagem">
+                        <div class="image-wrapper">
+                            <img src=`${baseURL}/img/api-privacidade/imagem-com-quem-compartilhamos.png` />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Transferência internacionais -->
+            <div class="item-content space-y-12" id="transferencias">
+                <h2 class="text-3xl text-black">Transferência internacionais</h2>
+                <div class="text-base space-y-10">
+                    <p>
+                        Para viabilizar nossas atividades e garantir a segurança e disponibilidade de seus dados, a Nova Vida realiza transferências internacionais de dados pessoais. Seus dados podem ser armazenados ou processados em infraestrutura de terceiros localizados nos Estados Unidos. Essas transferências ocorrem para empresas parceiras que atuam no fornecimento de serviços de armazenamento e backup de dados, conforme listadas abaixo:
+                    </p>
+
+                    <ol class="custom-lista list-decimal list-outside marker:pl-0 marker ml-4 leading-7 space-y-4">
+                        <li>
+                            <span class="text-black">Microsoft Azure</span>
+
+                            <ul class="list-disc list-outside marker:pl-0 marker ml-4 leading-7">
+                                <li>Local: West Central US, Wyoming</li>
+                                <li>Razão Social: TD SYNNEX BRASIL LTDA</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <span class="text-black">Microsoft Azure</span>
+
+                            <ul class="list-disc list-outside marker:pl-0 marker ml-4 leading-7">
+                                <li>Local: East US 2, Virginia</li>
+                                <li>Razão Social: DEDALUS PRIME SISTEMAS E SERVIÇOS DE INFORMÁTICA LTDA</li>
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <span class="text-black">HostDime</span>
+
+                            <ul class="list-disc list-outside marker:pl-0 marker ml-4 leading-7">
+                                <li>Local: Florida, US</li>
+                                <li>Razão Social: DIMENOC SERVIÇOS DE INFORMÁTICA</li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <p>
+                        A Nova Vida adota as medidas necessárias para garantir que essas transferências ocorram em conformidade com a legislação aplicável, assegurando a proteção de seus dados pessoais nos padrões exigidos pela LGPD e demais normas vigentes.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Como protegemos -->
+            <div class="item-content space-y-12" id="como-protegemos">
+                <h2 class="text-3xl text-black">Como protegemos seus dados pessoais?</h2>
+                <div class="text-base space-y-10">
+                    <p>Entendemos como uma grande responsabilidade a proteção dos dados pessoais que tratamos.</p>
+                    <p>Por isso, adotamos medidas de segurança técnicas e organizacionais para proteger os dados pessoais contra acessos não autorizados e/ou situações acidentais ou ilícitas de destruição, perda, alteração, comunicação ou difusão.</p>
+                    <p>Possuímos uma Política de Segurança Informação, que é constantemente revisada e atualizada e estabelece rígidas diretrizes corporativas e a aplicação de controles efetivos para proteção de nossos ativos de informação, como classificação da informação e controle de acessos, a fim de assegurar a integridade, disponibilidade e confidencialidade dos dados que tratamos e prevenir de riscos. Além disso, contamos com um procedimento específico de resposta para casos de incidente envolvendo dados pessoais.</p>
+                    <p>Em termos de governança, instituímos um Comitê de Segurança da Informação que se responsabiliza pela nossa gestão de segurança e pelo monitoramento do cumprimento de nossas políticas. Além disso, promovemos a constante capacitação do nosso pessoal interno por meio da realização de treinamentos periódicos sobre o assunto.</p>
+                    <p>Visando garantir ainda mais essa segurança que tanto prezamos em todos os níveis, também transferimos esse cuidado a nossos clientes, fornecedores e colaboradores, incluindo nos instrumentos contratuais que celebramos cláusulas específicas sobre o tema.</p>
+                </div>
+            </div>
+            
+            <!-- Tempo de armazenagem -->
+            <div class="item-content space-y-12" id="tempo-armazenagem">
+                <h2 class="text-3xl text-black">Por quanto tempo armazenamos seus dados pessoais?</h2>
+                <div class="text-base space-y-10">
+                    <p>De maneira bastante objetiva, os dados pessoais são mantidos pelo período necessário para cumprirmos com as finalidades descritas nesse Aviso, observados, inclusive, os prazos legais e regulatórios de guarda das informações e a eventual necessidade de utilização em processos judiciais, administrativos ou arbitrais.</p>
+                </div>
+            </div>
+
+            <!-- Quais são seus direitos e como exercê-los? -->
+            <div class="item-content space-y-12" id="seus-direitos">
+                <h2 class="text-3xl text-black">Quais são seus direitos e como exercê-los?</h2>
+                <div class="text-base space-y-10">
+                    <p>
+                        A LGPD garante aos titulares direitos relativos aos seus dados pessoais, os quais podem ser exercidos se respeitadas as limitações técnicas e jurídicas eventualmente aplicáveis, bem como as condições de validação de identidade, quando o caso.
+                    </p>
+
+                    <p class="text-black">
+                        Confira abaixo quais são esses direitos:
+                    </p>
+
+                    <ul class="list-disc list-outside marker:pl-0 marker ml-4 leading-7">
+                        <li>Confirmar o tratamento de seus dados pela Nova Vida;</li>
+                        <li>Solicitar acesso aos seus dados pessoais;</li>
+                        <li>Solicitar a correção de informações que estejam desatualizadas, incorretas ou incompletas;</li>
+                        <li>Solicitar a anonimização, bloqueio ou eliminação de seus dados pessoais, desde que tratados de forma excessiva, desnecessária ou em desconformidade com a LGPD;</li>
+                        <li>Nos casos em que o tratamento ocorrer mediante a obtenção do seu consentimento (autorização), solicitar a revogação dessa autorização e/ou a exclusão de seus dados pessoais;</li>
+                        <li>Uma vez regulamentado pela Autoridade Nacional de Proteção de Dados, solicitar a portabilidade de seus dados pessoais;</li>
+                        <li>Sem prejuízo das informações fornecidas neste aviso, solicitar informação adicionais acerca das entidades com as quais a Nova Vida compartilha seus dados pessoais;</li>
+                        <li>Se opor à utilização de seus dados pessoais, se verificada inconformidade com a LGPD e observados os limites e imposições legalmente previstos;</li>
+                        <li>Solicitar revisão de decisões tomadas de forma automática (sem participação humana), bem como solicitar o fornecimento dos critérios e procedimentos adotados para a tomada dessas decisões; </li>
+                    </ul>
+
+                    <p class="text-black">
+                        Caso deseje solicitar o exercício dos direitos relacionados ao uso de seus dados pessoais, acesse a área do Portal de Privacidade da Nova Vida e preencha o formulário neste <a href="#" class="text-[#1D92FF]">[LINK]</a>.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Atualizações -->
+            <div class="item-content space-y-12" id="atualizacoes">
+                <h2 class="text-3xl text-black">Atualizações</h2>
+                <div class="text-base space-y-10 text-black">
+                    <p>
+                        Este Aviso poderá sofrer atualizações e ajustes a qualquer tempo.
+                    </p>
+
+                    <p class="text-black">
+                        Data da última atualização: XX de XX de 2023
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+</Layout>
+<style>
+
+  .lista-link-item{
+      @apply col-span-4 flex flex-col lg:sticky top-[120px] lg:h-dvh space-y-4 lg:pb-0 pb-20 pl-8;
+
+      h2{
+          @apply text-xl leading-snug font-light;
+
+          a{
+              &::before{
+                  display: none;
+                  position: absolute;
+                  right: calc(100% + 6px);
+                  top: 50%;
+                  transform: translateY(-50%) rotate(-90deg);
+                  font-family: 'icomoon';
+                  content: '\e900';
+                  font-size: 16px;
+              }
+
+              &.current,
+              &:hover{
+                  @apply text-black relative;
+                  text-decoration: underline;
+
+                  &::before{
+                      display: block;
+                  }
+              }
+          }
+      }
+  }
+
+
+
+</style>
+

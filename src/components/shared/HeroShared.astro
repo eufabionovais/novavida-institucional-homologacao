@@ -1,0 +1,30 @@
+---
+const {item} = Astro.props;
+const marginTop = item.marginTop || "mt-24"
+---
+
+<div class="content-row relative text-white" class:list={marginTop}>
+    <div class=`content-container relative px-5 hero-content-wrapper` class:list={item.xPadding}>
+        <div class="hero-area flex lg:grid grid-cols-12 px-3 lg:px-10" style={`--bg-mobile: url('${item.bgMobile}'); --bg-desktop: url('${item.bgDesktop}'); --min-height-desktop: ${item.minHeightDesktop}; --min-height-mobile: ${item.minHeightMobile};  `}>
+            <slot />
+        </div>
+    </div>
+</div>  
+
+<style>
+.hero-area {
+    background-image: var(--bg-mobile);
+    background-size: cover;
+    background-position: center 0;
+    border-radius: 12px;
+    min-height: var(--min-height-mobile);
+}
+
+@media (min-width: 1024px) {
+    .hero-area {
+        background-image: var(--bg-desktop);
+        min-height: var(--min-height-desktop);
+    }   
+}
+</style>
+

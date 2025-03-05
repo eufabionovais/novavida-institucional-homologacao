@@ -1,0 +1,108 @@
+---
+import { baseURL } from "../../config";
+import { subMenus } from "../../data/submenus.js";
+import ButtonToggleMenu from "./ButtonToggleMenu.astro";
+import Submenu from "./Submenu.astro";
+import BaseButton from "./BaseButton.astro";
+const { theme = 'white'} = Astro.props;
+---
+
+<div class="flex justify-center ml-auto main-menu__container" data-theme={theme}>
+  <ButtonToggleMenu />
+  <div class="main-menu__wrapper">
+      <nav class="main-menu">
+        <li>
+          <a href="#" class="submenu-toggle">Institucional</a>
+          <div class="submenu-wrapper">
+            <Submenu submenus={subMenus.institucional} classList={'lg:grid grid-cols-3 gap-8'} />
+          </div>      
+        </li>
+        <li>
+          <a href="#" class="submenu-toggle">Soluções</a>
+          <div class="submenu-wrapper">
+            <Submenu submenus={subMenus.solucoes} classList={'lg:grid grid-cols-3 gap-8'} />
+          </div>      
+        </li>
+          <li>
+          <a href="#" class="submenu-toggle">Segmentos</a>
+          <div class="submenu-wrapper">
+            <Submenu submenus={subMenus.segmentos} classList={'lg:grid grid-cols-3 gap-8'} />
+          </div>      
+        </li>
+        <li>
+          <a href="#" class="submenu-toggle">LGPD</a>
+          <div class="submenu-wrapper">
+            <Submenu submenus={subMenus.lgpd} classList={'lg:grid grid-cols-3 gap-8'} />
+          </div>           
+        </li>
+      </nav>
+      <BaseButton link=`${baseURL}/contato` classList={'btn-contato'} variant="primary" hasIcon={false}>Contato</BaseButton>
+  </div>
+</div>
+
+
+<style lang="scss">
+  nav {
+    @apply flex list-none  h-full;
+    li {
+      @apply h-full;
+
+      @media (min-width: 1141px) {
+
+        &:hover {
+  
+          > .submenu-toggle {
+            &:after {
+              transform: rotate(-180deg);
+            }
+          }
+  
+          .submenu-wrapper {
+            @apply visible opacity-100;
+            
+          }
+        }
+      }
+
+    }
+    a {
+      @apply p-3 mx-3 flex h-full items-center  bg-opacity-40 text-white duration-300; 
+    }
+    .submenu-toggle {
+      &:after {
+          font-family: 'icomoon';
+          content: "\e900";
+          font-size: 12px;
+          margin-left: 8px;
+          display: block;
+          transition: 0.2s;
+      }
+    }
+  }
+
+  .submenu-wrapper {
+    max-height: calc(100vh - 80px);
+    overflow: auto;
+    @apply w-dvw bg-white fixed left-0 right-0 top-[80px] opacity-0 invisible duration-300 py-12;
+    box-shadow: 0 100vh 0 100vh rgba(0,0,0,0.5);
+  }
+
+  [data-theme=black] {
+    nav {
+      a {
+        @apply text-white;
+      }
+    }
+  }  
+
+  [data-theme=white] {
+    nav {
+      a {
+        @apply text-black;
+      }
+    }
+  }
+
+</style>
+
+

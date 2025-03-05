@@ -1,0 +1,60 @@
+---
+import Avatares from "../shared/Avatares.astro";
+import { baseURL } from "../../config";
+
+const avataresHero = [
+    {
+      imagem: `${baseURL}/img/shared/avatares/avatar-1.png`
+    },
+    {
+      imagem: `${baseURL}/img/shared/avatares/avatar-2.png`
+    }    
+]
+---
+
+<div class="content-row hero hero-home">
+  <div class="content-container y-padding min-h-[795px] lg:min-h-[auto] lg:h-full flex flex-col">
+    <div class="lg:grid lg:grid-cols-12 h-full flex flex-col flex-1 justify-between">
+      <div class="col-span-5 items-center lg:items-baseline  flex">
+        <h1 class="text-3xl lg:text-5xl lg:leading-[64px] font-light leading-snug text-highlight-on-dark">
+          Expertise singular em coleta, análise e consolidação de dados
+        </h1>
+      </div>
+      <div class="col-span-4 col-start-9">
+        <div class="lg:mt-[135px]">
+          <Avatares avatar-size="small" itens={avataresHero} classList={'mb-12'} />
+          <p>Tornamos interações mais humanas, possíveis e seguras. Ferramentas capazes de conectar pessoas e empresas para que ambos tenham uma relação de crescimento e segurança.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="content-row novidades py-4 lg:py-0">
+  <div class="content-container md:grid grid-cols-12 h-full py-4">
+    <div class="col-span-4 flex items-center">
+      <p>Bem-Vindos</p>
+    </div>
+    <div class="col-span-7 col-start-5 flex items-center">
+      <div class="swiper slider-novidades">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            Nossas soluções são feitas para atender aos desafios dos clientes.
+          </div>
+          <div class="swiper-slide">
+            Vivemos de dados, respiramos  inovação e criamos soluções que transformam.
+          </div>          
+        </div>
+      </div>
+    </div>
+    <div class="col-span-1 flex items-center lg:justify-end mt-4 lg:mt-0">
+        <div class="swiper-buttons-wrapper flex gap-2 items-center" data-theme="light">
+          <button class="swiper-button swiper-button-prev">
+            <span class="sr-only">Anterior</span>
+          </button>
+          <button class="swiper-button swiper-button-next">
+            <span class="sr-only">Próximo</span>
+          </button> 
+        </div>
+    </div>  
+  </div>
+</div>

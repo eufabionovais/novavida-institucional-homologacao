@@ -1,0 +1,175 @@
+---
+
+import { baseURL } from "../config";
+import Layout from '../layouts/Layout.astro';
+
+---
+
+<Layout title="Segmento Cobrança - Nova Vida TI">
+    <div class="content-row md:pt-40 pt-32">
+        <div class="content-container lg:grid grid-cols-12">
+            <form class="col-span-8 col-start-5 flex flex-col gap-y-10 [&]:row-start-1 pt-" id="formContato">
+                <p class="section-highlight-title text-highlight-on-light lg:mb-24">
+                    Estamos aqui para ajudar! <br /> Utilize o formulário abaixo para nos enviar uma mensagem e nossa equipe dedicada responderá prontamente.
+                </p>
+                <div class="grid grid-cols-12 gap-x-4 space-y-10 lg:space-y-0">
+                    <div class="col-span-12 lg:col-span-6" data-field-holder>
+                        <label for="nome" class="block text-black">Nome</label>
+                        <input
+                            id="nome"
+                            name="nome"
+                            type="text"
+                            placeholder="Digite seu nome"
+                            class="py-5 pr-2 block w-full border-b border-neutral border-opacity-50 placeholder-black placeholder-opacity-30"
+                        />
+                        <span data-field-error></span>
+                    </div>
+                    
+                    <div class="col-span-12 lg:col-span-6" data-field-holder>
+                        <label for="empresa" class="block text-black">Empresa</label>
+                        <input
+                            id="empresa"
+                            name="empresa"
+                            type="text"
+                            placeholder="Digite o nome da sua empresa"
+                            class="py-5 pr-2 block w-full border-b border-neutral border-opacity-50 placeholder-black placeholder-opacity-30"
+                        />
+                        <span data-field-error></span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-12 gap-x-4 space-y-10 lg:space-y-0">
+                    <div class="col-span-12 lg:col-span-6" data-field-holder>
+                        <label for="email" class="block text-black">E-mail</label>
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            placeholder="Digite seu e-mail"
+                            class="py-5 pr-2 block w-full border-b border-neutral border-opacity-50 placeholder-black placeholder-opacity-30"
+                        />
+                        <span data-field-error></span>
+                    </div>
+                    <div class="col-span-12 lg:col-span-6" data-field-holder>
+                        <label for="telefone" class="block text-black">Telefone</label
+                        >
+                        <input
+                            id="telefone"
+                            name="telefone"
+                            type="tel"
+                            placeholder="Digite seu telefone"
+                            class="py-5 pr-2 block w-full border-b border-neutral border-opacity-50 placeholder-black placeholder-opacity-30"
+                        />
+                        <span data-field-error></span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-12">
+                    <div class="col-span-12" data-field-holder>
+                        <label for="mensagem" class="block text-black">Mensagem</label>
+                        <textarea
+                            id="mensagem"
+                            name="mensagem"
+                            rows="4"
+                            placeholder="Digite seu texto"
+                            class="py-5 pr-2 block w-full border-b border-neutral border-opacity-50 placeholder-black placeholder-opacity-30"
+                        ></textarea>
+                        <span data-field-error></span>
+                    </div>
+                    <!-- Termos -->
+                </div>
+                
+                <div>
+                    <p class="text-black">
+                        Termos de uso e privacidade de informações
+                    </p>
+                    <p class="my-10">
+                        O endereço de e-mail cadastrado pelo usuário diretamente em nosso site será
+                        utilizado estritamente para o envio de newsletters. Em nenhuma hipótese, a Nova Vida
+                        comercializará ou transferirá estes dados a terceiros para que façam uso com outras
+                        finalidades.
+                    </p>
+                    <div class="termos" data-field-holder>
+                        <input
+                            id="termos"
+                            name="termos"
+                            type="checkbox"
+                            class="hidden"
+                        />
+                        <div class="bg-checkbox">
+                            <i class="icon-check"></i>
+                        </div>
+                        <label for="termos">Li e aceito com os termos citados</label>
+    
+                        <span data-field-error></span>
+                    </div>
+    
+                    <button type="submit" class="py-3 rounded px-7 inline-flex justify-center items-center self-start gap-4 bg-primary text-black min-w-64">Enviar <i class="icon-arrow-up-angled text-[12px]"></i></button>
+                </div>
+            </form>
+    
+            <div class="col-span-3 [&]:row-start-1 pt-20 lg:pt-0">
+                <div>
+                    <small class="flex items-center gap-2 text-neutral mb-6 text-base">
+                        Contato <i class="icon-curved-arrow relative top-1"></i>
+                    </small>
+                    <p class="text-2xl text-black">Conecte-se conosco</p>
+                </div>
+                <div class="mt-20">
+                    <div class="grupo-contato flex flex-col gap-8 text-black">
+                        <div class="item flex gap-4">
+                            <img src=`${baseURL}/img/contato/icone-localizacao.png` alt="" class="self-start" />
+                            <p>
+                                R. Enxovia, 472 - Vl. Sao Francisco São Paulo - SP, 04711-030
+                            </p>
+                        </div>
+                        <div class="item flex gap-4">
+                            <img src=`${baseURL}/img/contato/icone-mensagem.png` alt="" class="self-start" />
+                            <p>
+                                novavida@novavidati.com.br
+                            </p>
+                        </div>
+                        <div class="item flex gap-4">
+                            <img src=`${baseURL}/img/contato/icone-telefone.png` alt="" class="self-start" />
+                            <p>
+                                ( 11 ) 3744-5393
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</Layout>
+
+<style scoped lang="scss">
+    .termos {
+        @apply flex items-start relative mb-10;
+
+        .bg-checkbox{
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background-color: #E0E0E0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: transparent;
+        }
+
+        label {
+            @apply relative pl-8 text-sm text-black;
+        }
+
+        input[type="checkbox"]:checked + .bg-checkbox {
+            @apply text-black;
+        }
+    }
+
+    [data-field-error]{
+        @apply block text-debug mt-2
+    }
+</style>

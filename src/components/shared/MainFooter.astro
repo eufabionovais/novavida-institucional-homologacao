@@ -1,0 +1,90 @@
+---
+import { baseURL } from "../../config";
+const textoRodape = `${baseURL}/img/shared/texto-rodape.svg`;
+---
+
+
+<footer class="content-row pt-16 bg-black text-white pb-7 main-footer mt-32 md:mt-[288px]">
+  <div class="content-container lg:grid grid-cols-12">
+    <div class="col-span-4 space-y-8">
+      <div class="logo">
+        <img src=`${baseURL}/img/shared/logo-nova-vida-icone.png` alt="Nova Vida">
+      </div>
+      <div class="info-contato">
+        <p>
+          <a href="phone:+551137445393" target="_blank">( 11 ) 3744-5393</a>
+        </p>
+        <p>R. Enxovia, 472 - Vila Sao Francisco (Zona Sul)</p>
+        <p>São Paulo - SP, 04711-030</p>
+      </div>
+      <div class="social flex items-center gap-2">
+        <a href="#">
+          <img src=`${baseURL}/img/shared/icones/facebook.svg` alt="Facebook">
+        </a>
+        <a href="#">
+          <img src=`${baseURL}/img/shared/icones/instagram.svg` alt="Instagram">
+        </a>  
+        <a href="#">
+          <img src=`${baseURL}/img/shared/icones/linkedin.svg` alt="LinkedIn">
+        </a>                
+        <a href="#">
+          <img src=`${baseURL}/img/shared/icones/youtube.svg` alt="Youtube">
+        </a>                        
+      </div>
+    </div>
+    <div class="col-span-5 col-start-7 flex items-end">
+      <form action="" class="pb-2 border-b border-white border-opacity-10">
+        <p>Deseja receber e-mails com novos eventos e conteúdos exclusivos?</p>
+        <div class="flex mt-12 gap-3">
+          <input type="text" placeholder="Digite seu e-mail" class="bg-transparent flex-1 py-3 px-4 placeholder-white placeholder-opacity-35">
+          <button type="submit" class="flex items-center gap-4 duration-300 text-white hover:text-primary">Enviar <i class="icon-arrow-up-angled text-[10px] "></i></button>
+        </div>
+      </form>
+    </div>
+    <div class="col-span-12">
+      <h3 class="footer-text text-neutral-ultra-light text-2xl lg:text-[44px] leading-[1.36] font-light mt-10 mb-4  lg:mt-20 lg:mb-9 pb-11 border-b border-white border-opacity-10 text-highlight-on-dark">Impulsione seu negócio com nossas soluções de dados, o catalisador para o seu crescimento.</h3>
+    </div>
+    
+  </div>
+  <nav class="content-container lg:grid grid-cols-4 pb-9 space-y-10 lg:space-y-0">
+    
+      <ul class="text-neutral-light space-y-2" data-animation='lista'>
+        <li class=" text-white mb-5">Institucional</li>
+        <li><a href=`${baseURL}/quem-somos`>Quem somos</a></li>
+        <li><a href=`${baseURL}/contato`>Contato</a></li>
+        <li><a href=`${baseURL}/blog`>Blog</a></li>
+        <li><a href=`${baseURL}/carreira`>Carreira</a></li>
+      </ul>
+
+      <ul class="text-neutral-light  space-y-2" data-animation='lista'>
+        <li class=" text-white mb-5">Soluções</li>
+        <li><a href=`${baseURL}/ipe`>IPE</a></li>
+        <li><a href=`${baseURL}/congonhas`>Congonhas</a></li>
+        <li><a href=`${baseURL}/api-consulta`>API de Consultas</a></li>
+        <li><a href=`${baseURL}/next`>Next</a></li>
+        <li><a href=`${baseURL}/opera`>Opera</a></li>
+        <li><a href=`${baseURL}/spider`>Spider</a></li>
+        <li><a href=`${baseURL}/genesis`>Gênesis</a></li>
+        <li><a href=`${baseURL}/api-consulta-kyc`>API de Consultas KYC</a></li>
+      </ul>     
+      
+      <ul class="text-neutral-light  space-y-2" data-animation='lista'>
+        <li class=" text-white mb-5">Segmentos</li>
+        <li><a href=`${baseURL}/call-center`>Call Center</a></li>
+        <li><a href=`${baseURL}/cobrancas`>Cobranças</a></li>
+        <li><a href=`${baseURL}/kyc-e-compliance`>Bancos e Fintechs</a></li>
+        <li><a href=`${baseURL}/corban`>Correspondentes Bancários</a></li>
+        <li><a href=`${baseURL}/varejo`>Varejo</a></li>
+      </ul>           
+
+      <ul class="text-neutral-light  space-y-2" data-animation='lista'>
+        <li class=" text-white mb-5">LGPD</li>
+        <li><a href=`${baseURL}/aviso-privacidade`>Aviso de Privacidade</a></li>
+        <li><a href=`${baseURL}/hub-privacidade`>Hub de Privacidade</a></li>
+      </ul>     
+
+  </nav>
+  <div class="content-container">
+    <address class="text-xs text-neutral not-italic pt-8 border-t border-white border-opacity-10">© <span id="ano"></span> NOVA VIDA TECNOLOGIA DA INFORMACAO LTDA. – 22.036.348/0001-71 – Todos os direitos reservados.</address>
+  </div>
+</footer>

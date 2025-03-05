@@ -1,0 +1,272 @@
+---
+import IndicadoresNumericos from "../components/home/IndicadoresNumericos.astro";
+import ServicoCard from "../components/home/ServicoCard.astro";
+import CardIcone from "../components/shared/CardIcone.astro";
+import BaseFaq from "../components/shared/BaseFaq.astro";
+import { baseURL } from "../config";
+import ButtonOutlineBottom from "../components/shared/ButtonOutlineBottom.astro";
+
+import BlogDestaques from "../components/home/BlogDestaques.astro";
+import Clientes from "../components/home/Clientes.astro";
+import Hero from "../components/home/Hero.astro";
+
+import Depoimentos from "../components/shared/Depoimentos.astro";
+import Layout from '../layouts/Layout.astro';
+
+import { faqHome } from "../data/faq-home.js";
+
+const listaServicos = [
+
+      {
+        titulo: "Plataforma IPE",
+        imagem: `${baseURL}/img/home/produtos/ipe.png`,
+        descricao: "Pare de sofrer com dados desatualizados ou incorretos. A Plataforma Ipê oferece inteligência de dados de forma rápida e eficiente, garantindo operações mais precisas. Tome decisões informadas no seu dia a dia, minimizando erros e otimizando os resultados. Melhore suas operações com dados confiáveis.",
+        link: "/ipe",
+        categoria: "produtos-credito"
+      },
+        {
+        titulo: "Plataforma Congonhas",
+        imagem: `${baseURL}/img/home/produtos/congonhas.png`,
+        descricao: "Simplifique o ciclo de crédito com a melhor ferramenta para localização, análise e validação de dados. O Congonhas oferece informações atualizadas e um histórico completo de CPF e CNPJ. Reduza riscos e aumente a eficiência de suas operações. Trabalhe com dados precisos e confiáveis em todo o ciclo de crédito.",
+        link: "/congonhas",
+        categoria: "produtos-credito"
+      },
+        {
+        titulo: "API de Consultas",
+        imagem: `${baseURL}/img/home/produtos/api-consultas.png`,
+        descricao: "Acelere seu processo de onboarding e ofereça uma jornada mais segura e eficiente para seus usuários com o poder do nosso datalake. A API de Consultas da Nova Vida TI entrega, em tempo recorde, dados essenciais como cadastro, crédito, consumo, demografia, capacidade financeira, e muito mais.",
+        link: "/api-consulta",
+        categoria: "produtos-credito"
+      },
+      {
+      titulo: "Plataforma Next",
+      imagem: `${baseURL}/img/home/produtos/next.png`,
+      descricao: "Desbrave novas oportunidades de negócios B2B com a Plataforma Next. Identifique perfis estratégicos, crie campanhas personalizadas e aumente sua conversão. Potencialize suas estratégias de marketing e vendas com insights detalhados e direcionados. Explore novos mercados, atraia leads qualificados e acelere o crescimento da sua empresa.",
+      link: "/next",
+      categoria: "produtos-marketing"
+    },
+      {
+      titulo: "Plataforma Opera",
+      imagem: `${baseURL}/img/home/produtos/opera.png`,
+      descricao: "Transforme a comunicação com seus clientes em uma experiência personalizada, eficiente e segura com a Plataforma Opera. Nossa ferramenta de mensageria oferece disparo de SMS e WhatsApp, automatizando processos para garantir que suas mensagens cheguem na hora certa, com o impacto certo.",
+      link: "/opera",
+      categoria: "produtos-marketing"
+    },
+      {
+      titulo: "Plataforma Spider",
+      imagem: `${baseURL}/img/home/produtos/spider.png`,
+      descricao: "Garanta a conformidade em todas as etapas de seus processos com análises robustas. Realize verificações completas de fornecedores e parceiros comerciais. Minimize riscos com a checagem de dados críticos e previna fraudes. Assegure que seu negócio esteja em total conformidade com as regulamentações vigentes.",
+      link: "/spider",
+      categoria: "produtos-marketing"
+    },			
+      {
+        titulo: "Plataforma Gênesis",
+        imagem: `${baseURL}/img/home/produtos/genesis.png`,
+        descricao: "Assegure a conformidade em cada etapa dos seus processos com análises robustas da Plataforma Gênesis. Verifique fornecedores e parceiros comerciais de forma completa, minimizando riscos e prevenindo fraudes. Cheque dados críticos com eficiência. Garanta que sua empresa esteja sempre em conformidade com as regulamentações vigentes.",
+        link: "/genesis",
+        categoria: "produtos-compliance"
+      },
+        {
+        titulo: "Plataforma de Consultas KYC",
+        imagem: `${baseURL}/img/home/produtos/api-consultas-kyc.png`,
+        descricao: "Acelere seu processo de onboarding e ofereça uma jornada mais segura e eficiente para seus usuários com o poder do nosso datalake. A API de Consultas da Nova Vida TI entrega, em tempo recorde, dados essenciais como cadastro, crédito, consumo, demografia, capacidade financeira, e muito mais.",
+        link: "/kyc-e-compliance",
+        categoria: "produtos-compliance"
+      }  				
+    ]
+  
+
+---
+
+<Layout title="Nova Vida - TI" customClasses="dark-theme"; pageName="home">
+	<Hero />
+	<>
+
+		<div class=" text-black">
+      <div class="content-container" data-grid-section="initial-section">
+        <div data-grid-section="initial-section__header">
+          <small class="flex items-center gap-2 text-neutral mb-6 text-base">Sobre <i class="icon-curved-arrow relative top-1"></i></small>
+          <p class="text-lg">Geramos valor na conexão entre dados e tecnologia de ponta</p>
+        </div>
+				<p class="section-highlight-title text-highlight-on-light" data-grid-section="initial-section__content">Nossa missão é usar Big Data e Analytics avançados para fornecer informações de alta qualidade, ajudando empresas a identificar, aproximar e conquistar novos clientes.</p>
+
+				<ButtonOutlineBottom text="Conheça mais" icon="icon-arrow-right" href="#" data-grid-section="initial-section__action" />
+      </div>
+    </div>
+
+		<!-- Serviços -->
+		<div class="content-row py-10 md:py-20">
+			<div class="content-container lg:grid grid-cols-12 h-full">
+				<div class="col-span-4 hidden lg:flex flex-col lg:sticky top-[100px] lg:h-dvh mb-8 lg:mb-0 space-y-4 menu-categorias">
+					<h2 class="text-4xl leading-snug font-light"><a href="#produtos-credito" id="produtos-credito" data-menu-categoria="produtos-credito" >Crédito e Cobrança</a></h2>
+					<h2 class="text-4xl leading-snug font-light"><a href="#produtos-marketing" id="produtos-marketing"  data-menu-categoria="produtos-marketing">Marketing e Vendas</a></h2>
+					<h2 class="text-4xl leading-snug font-light"><a href="#produtos-compliance" id="produtos-compliance" data-menu-categoria="produtos-compliance">Compliance & KYC</a></h2>
+				</div>
+				<div class="col-span-6 col-start-7 flex flex-col space-y-[132px] servicos-wrapper">
+
+					{
+						listaServicos.map((servico, index) => {
+							return (
+								<ServicoCard servico={servico} index={index} />
+							)
+						})
+					}
+
+				</div>
+			</div>
+		</div>
+		<!-- / Serviços -->
+
+		<!-- Gerar Informações -->
+		<div class="content-row  text-black py-10">
+
+			<div class="text-nowrap overflow-hidden flex relative select-none gap-5">
+				<div class="flex flex-shrink-0 min-w-full justify-around scrollMarquee">
+					<p class="text-5xl text-center text-highlight-on-light font-light">//: &#123; Geramos Informações para o Bem :)  <span>//: &#123; Geramos Informações para o Bem :)</span>  Geramos Informações para o Bem :) </p>
+				</div>
+				<div class="flex flex-shrink-0 min-w-full justify-around scrollMarquee">
+						<p class="text-5xl text-center text-highlight-on-light font-light"><span>//: &#123; Geramos Informações para o Bem :)</span>  //: &#123; Geramos Informações para o Bem :)  Geramos Informações para o Bem :) </p>
+				</div>
+			</div>
+
+			<div class="content-container mt-4 px-5">
+				<div  data-animation="courtain">
+					<img src=`${baseURL}/img/home/geracao-informacao/geracao-informacao.png` alt="">
+					<img src=`${baseURL}/img/home/geracao-informacao/geracao-informacao-overlay.png` alt="" class="absolute inset-[50%] -translate-x-1/2 -translate-y-1/2">
+				</div>
+			</div>
+			
+		</div>
+		<!-- / Gerar Informações -->
+
+		<!-- Inovação -->
+		<div class="content-row py-10">
+			<div class="content-container">
+					<h2 class="section-highlight-title text-center">Na Nova Vida TI, somos movidos pela inovação e dedicação em oferecer soluções de dados que impulsionam resultados.</h2>
+			</div>
+			<div class="content-container lg:grid grid-cols-4 grid-rows-2 h-full mt-24 gap-4 divide-y-2 lg:divide-y-0 lg:divide-x-[1px] divide-black divide-opacity-10">
+				<CardIcone 
+					titulo="Uma só Nova Vida" 
+					icone=`${baseURL}/img/home/inovacao/icone-uma-so-nova-vida.svg`
+					conteudo="Não importa onde estamos, somos uma equipe unida, movida pela mesma missão: entregar soluções de dados com eficiência e confiança."
+					classList={'col-span-1 pb-4 mb-4'}
+				/>
+				
+				<CardIcone 
+				titulo="Presença abrangente" 
+				icone=`${baseURL}/img/home/inovacao/icone-presenca.svg`
+				conteudo="Atuamos em qualquer lugar, integrando culturas e perspectivas, sempre abertos a novas ideias e formas inovadoras de resolver desafios."
+				classList={'col-span-1 row-span-2 lg:pl-4 content-end py-4 mb-4'}
+				/>    
+				
+				<CardIcone 
+					titulo="Simplicidade e precisão" 
+					icone=`${baseURL}/img/home/inovacao/icone-simplicidade.svg`
+					conteudo="Onde quer que operemos, desvendamos dados complexos e os transformamos em soluções claras e eficazes, com coragem e transparência."
+					classList={'col-span-1 row-span-2 lg:pl-4 py-4 mb-4'}
+				/>
+				
+				<CardIcone 
+					titulo="Tecnologia e conexão" 
+					icone=`${baseURL}/img/home/inovacao/icone-tecnologia.svg`
+					conteudo="Valorizamos tanto a precisão dos dados quanto a empatia e a intuição, equilibrando inovação com entendimento humano."
+					classList={'col-span-1  row-span-2 lg:pl-4  content-end py-4 mb-4'}
+				/>        
+
+			</div>
+		</div>		 
+		<!-- / Inovação -->
+
+		<!-- Animações -->
+		<div class="content-row  py-14">
+			<div class="content-container flex flex-wrap gap-6 justify-center lg:grid grid-cols-9 auto-rows-[55px] max-w-[850px] mx-auto">
+
+				<div class="w-[275px] col-start-1 col-end-4 row-start-3 row-end-9 animacoes-servicos">
+					<img src=`${baseURL}/img/home/animacoes/dados-enriquecidos.webp` alt="Dados enriquecidos" width="275" height="315">
+				</div>
+
+				<div class="w-[275px] col-start-4 col-end-7 row-start-5 row-end-11 animacoes-servicos">
+					<img src=`${baseURL}/img/home/animacoes/processamento-dados.webp` alt="Processamento de dados" class="transform lg:-translate-y-7"  width="275" height="315">
+				</div>    
+
+				<div class="w-[275px] col-start-7 col-end-10 row-start-1 row-end-7 z-10 animacoes-servicos">
+					<img src=`${baseURL}/img/home/animacoes/cruzamento-informacoes.webp` alt="Cruzamento de informações"  width="275" height="315">
+				</div>        
+
+			</div>
+		</div>
+		<!-- / Animações -->
+
+		<!-- Indicadores -->
+		<div class="content-row  text-white bg-black py-36 indicadores-wrapper">
+			<div class="content-container lg:grid grid-cols-12">
+				<div class="flex flex-col col-start-1 col-end-4">
+						<h2 class="text-4xl font-light leading-tight">Uma empresa independente e inovadora</h2>
+
+						<p class="mt-auto text-neutral">A Nova Vida TI transforma dados em soluções poderosas. Aqui está uma visão do nosso alcance:</p>
+
+				</div>
+				<div class="col-span-7  flex flex-wrap justify-center divide-y-2 md:divide-y-0 divide-white  col-start-6 lg:grid gap-6 lg:grid-cols-7 lg:gap-y-52">
+						<IndicadoresNumericos 
+							numero="2000"
+							descricao="Clientes satisfeitos em todo o Brasil"
+							class="indicador"
+							classList={'text-white  lg:border-l border-white border-opacity-75 col-span-3 mb-6 pt-6'}
+						/>
+
+						<IndicadoresNumericos 
+							numero="1000"
+							descricao="De dados processados com precisão diária"
+							class="indicador"
+							classList={'text-white lg:border-l border-white border-opacity-75 col-span-3 col-start-5 mb-6 pt-6'}
+						/> 
+						
+						<IndicadoresNumericos 
+							numero="50"
+							descricao="Autenticações seguras todos os meses"
+							sufixo="M"
+							class="indicador"
+							classList={'text-white  lg:border-l border-white border-opacity-75 col-span-3 col-start-1 row-start-2  mb-6 pt-6'}
+						/>    
+						
+						<IndicadoresNumericos 
+							numero="09"
+							descricao="Anos de experiência no mercado de dados"
+							class="indicador"
+							classList={'text-white  lg:border-l border-white border-opacity-75 col-span-3 col-start-5 row-start-2 pt-6'}
+						/>            
+
+				</div>
+			</div>
+
+		</div>		 
+		<!-- / Indicadores -->
+
+		<!-- Blog Destaques -->
+			<BlogDestaques />
+		<!-- / Blog Destaques -->
+
+		<!-- Depoimentos -->
+			<Depoimentos />
+		<!-- / Depoimentos -->
+
+		<!-- Transição -->
+		<div class="content-row  text-black py-10">
+			<div class="content-container mt-4 px-5" data-animation="courtain">
+				<img src=`${baseURL}/img/home/transicao/transicao.png` alt="">
+			</div>
+		</div>
+		<!-- / Transição -->
+
+		<Clientes />
+	
+
+			
+		<div class="content-row pt-20">
+			<div class="content-container">
+				<BaseFaq titulo="FAQ" questoes={faqHome} />
+			</div>
+		</div>		
+
+	
+</Layout>

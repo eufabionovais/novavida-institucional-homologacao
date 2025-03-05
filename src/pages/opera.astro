@@ -1,0 +1,184 @@
+---
+
+import CallToAction from "../components/shared/CallToAction.astro";
+import Layout from '../layouts/Layout.astro';
+import { baseURL } from "../config";
+import CardIcone from "../components/shared/CardIcone.astro";
+import ButtonShared from "../components/shared/Button.astro";
+import BaseButton from '../components/shared/BaseButton.astro';
+import HeroShared from '../components/shared/HeroShared.astro';
+
+---
+
+<Layout title="Plataforma Opera - Nova Vida TI">
+
+    <HeroShared 
+      item={{
+          bgDesktop: `${baseURL}/img/plataforma-opera/banner-desktop.png`,
+          bgMobile: `${baseURL}/img/plataforma-opera/banner-mobile.png`,
+          minHeightDesktop: "650px",
+          minHeightMobile: "770px"
+      }}
+    >
+        <div class="col-span-6 pb-14 flex flex-col justify-end lg:justify-start items-start">
+            <h1 class="hero-title mt-24">
+              Plataforma Opera: 
+              <br class="hidden lg:inline">
+              otimize sua comunicação <br class="hidden lg:inline">e aumente suas vendas
+            </h1>              
+            <p class="mt-5 lg:mt-11 text-sm lg:text-base">
+              Transforme a comunicação com seus clientes em uma experiência personalizada, eficiente e segura com a Plataforma Opera. Nossa ferramenta de mensageria oferece disparo de SMS, automatizando processos para garantir que suas mensagens cheguem na hora certa, com o impacto certo.
+            </p>              
+
+            <BaseButton classList="mt-16" />
+
+        </div>  
+    </HeroShared>  
+
+
+    <section class="content-row py-5 lg:py-14 lg:mt-16">
+        <div class="content-container">
+            <div class="md:grid grid-cols-12">
+
+            <div class="col-span-5 col-start-8">
+                <div class="image-wrapper">
+                <img src=`${baseURL}/img/plataforma-opera/beneficios/beneficio-1.png` alt="">
+                </div>
+            </div>
+
+            <div class="col-span-5 col-start-1 row-start-1 flex flex-col self-center py-6 lg:py-6 ">
+
+                <h3 class="section-title">Opera é a plataforma de comunicação automatizada da Nova Vida TI</h3>
+                <p class="text-base leading-7 mt-4 lg:mt-11">Com uma interface intuitiva e 100% de autonomia, a plataforma Opera foi desenvolvida para gerenciar seus envios de SMS de maneira prática e personalizada. Com alta confiabilidade, impulsione seus resultados e garanta que cada mensagem chegue ao público certo.</p>
+            </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="content-row">
+        <div class="content-container md:mt-28 mt-10 gap-4">
+            <div class="swiper slider-cards mt-6 lg:mt-0">
+                <div class="swiper-wrapper lg:divide-x-2 divide-black divide-opacity-10">
+                    
+                    <div class="swiper-slide">
+                        <CardIcone
+                            titulo="Envio garantido do SMS para todos os celulares"
+                            icone=`${baseURL}/img/plataforma-opera/icone-sms.png`
+                            conteudo="Alcance seus contatos de forma garantida, sem depender de internet."
+                            classList={"col-span-1 px-7"}
+                        />
+                    </div>
+
+                    <div class="swiper-slide">
+                        <CardIcone
+                            titulo="Engajamento imediato com alta taxa de abertura"
+                            icone=`${baseURL}/img/plataforma-opera/icone-engajamento.png`
+                            conteudo="Mais de 90% dos SMS são lidos, superando outros meios tradicionais."
+                            classList={"col-span-1 px-7"}
+                        />
+                    </div>
+
+                    <div class="swiper-slide">
+                        <CardIcone
+                            titulo="Envios seguros e homologados pela Anatel:"
+                            icone=`${baseURL}/img/plataforma-opera/icone-envio-seguro.png`
+                            conteudo="Segurança e rapidez em entregas com tecnologia Shortcode, a mesma utilizada por bancos."
+                            classList={"col-span-1 px-7"}
+                        />
+                    </div>
+
+                    <div class="swiper-slide">
+                        <CardIcone
+                            titulo="Filtro de qualificação:"
+                            icone=`${baseURL}/img/plataforma-opera/icone-whatsapp.png`
+                            conteudo="Alcance contatos com WhatsApp ativo e maximize o engajamento com mensagens estratégicas."
+                            classList={"col-span-1 px-7"}
+                        />
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ButtonShared
+        text="Experimente a Plataforma" 
+        href="#"
+        customClasses="lg:col-span-4 lg:col-start-5 col-span-10 col-start-2 mt-0" 
+    />
+
+    <section class="content-row py-5 lg:py-14">
+        <div class="content-container">
+            <div class="md:grid grid-cols-12 space-y-8 md:space-y-0">
+
+                <div class="col-span-6 col-start-1">
+                    <div class="image-wrapper">
+                    <img src=`${baseURL}/img/plataforma-opera/beneficios/beneficio-2.png` alt="">
+                    </div>
+                </div>
+
+                <div class="col-span-5 col-start-8 row-start-1 flex flex-col">
+
+                    <h3 class="text-3xl text-black font-regular">Disparo de SMS: comunicação rápida e eficaz</h3>
+                    <p class="text-base leading-7 mt-11">Alcance seus clientes instantaneamente com nossa plataforma de SMS. Seja qual for o tamanho do seu negócio, garantimos a entrega de mensagens no momento ideal, potencializando suas campanhas com o apoio de inteligência artificial.</p>
+
+                
+                    <div class="mt-2 mb-10 lg:mb-0 lg:mt-10">
+                    <p class="font-medium text-black mb-7">Onde usar o SMS em massa:</p>
+                    <ul class="list-disc list-outside marker:pl-0 ml-4 leading-7 text-black">
+                        <li>Lembretes: <span class="text-neutral">Mantenha seus clientes informados e pontuais.</span></li>
+                        <li>Notificações: <span class="text-neutral">Transmita informações críticas em tempo real.</span></li>
+                        <li>Promoções: <span class="text-neutral">Aumente seu alcance com campanhas de impacto.</span></li>
+                        <li>Suporte ao Cliente: <span class="text-neutral">Responda de forma rápida e eficiente.</span></li>
+                    </ul>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-row py-5 lg:py-14 ">
+        <div class="content-container">
+            <h2 class="text-4xl text-highlight-on-light leading-snug text-center">Com SMS, sua comunicação é focada e objetiva, <span>garantindo que a mensagem certa chegue ao seu público no momento exato.</span></h2>
+        </div>
+    </section>
+
+
+    <ButtonShared
+        text="Agende uma demonstração e veja o Opera em ação" 
+        href="#"
+        customClasses="lg:col-span-4 lg:col-start-5 col-span-10 col-start-2 mt-0" 
+    />
+
+  
+    <CallToAction
+        customClasses={"mt:10 lg:mt-20"}
+        info={{
+        titulo: "Transforme WhatsApp e SMS em Motores de Vendas",
+        descricao: "Maximize suas estratégias de comunicação e aumente suas vendas com a Plataforma Opera. Experimente a eficiência e o impacto que nossa ferramenta de mensageria pode trazer para o seu negócio.",
+        textButton: 'Entre em Contato',
+        url: "/#",
+        imagem: {
+        url: `${baseURL}/img/plataforma-opera/call-to-action/imagem-call-to-action.png`,
+        alt: "Texto alternativo imagem"
+        }
+    }} />
+
+</Layout>
+
+<style>
+  .swiper-wrapper{
+      align-items: stretch;
+  }
+  .swiper-slide {
+      width: 100%;
+      align-items: stretch;
+      
+      .card-icone{
+        @apply pb-4;
+        
+      }
+  }
+
+</style>

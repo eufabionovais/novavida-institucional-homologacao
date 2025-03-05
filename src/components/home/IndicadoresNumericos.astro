@@ -1,0 +1,7 @@
+---
+const {classList, numero, descricao, sufixo, ...props} = Astro.props;
+---
+
+<div class="lg:pl-7 text-center lg:text-left indicador" class:list={classList} {...props}>
+  <p class="text-lg text-neutral"><span class="block text-7xl mb-6 lg:mb-14 text-white">+<span class="numero" data-value={numero}>0</span>{sufixo && <span class="sufixo">{sufixo}</span>} </span>{descricao}</p>
+</div>

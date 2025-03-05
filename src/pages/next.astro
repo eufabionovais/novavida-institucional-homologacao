@@ -1,0 +1,304 @@
+---
+
+import BaseButton from "../components/shared/BaseButton.astro";
+import BaseFaq from "../components/shared/BaseFaq.astro";
+import ButtonShared from "../components/shared/Button.astro";
+import CallToAction from "../components/shared/CallToAction.astro";
+import Depoimentos from "../components/shared/Depoimentos.astro";
+import HeroShared from "../components/shared/HeroShared.astro";
+import BeneficioProduto from "../components/shared/BeneficioProduto.astro";
+import CardIcone from "../components/shared/CardIcone.astro";
+import { baseURL } from "../config";
+import Layout from '../layouts/Layout.astro';
+
+import FaqIpe from "../components/next/FaqCongonhas.astro";
+
+//Data 
+import { faqPrincipaisBeneficiosNext } from "../data/faq-principais-beneficios-next";
+
+// Beneficios
+const beneficios = [
+  {
+    titulo: "Análise rápida de perfil ideal",
+    descricao: "Descubra a predominância regional e setorial da sua base de clientes e defina estratégias de expansão com base em dados. Direcione os esforços da sua equipe para o público correto e ajuste a rota de crescimento.",
+    imagem: {
+      url: `${baseURL}/img/next/perfil-ideal.png`,
+      alt: "Descrição imagem 1"
+    },
+    tituloLista: "Benefícios principais:",
+    lista: [
+      "Clareza de entendimento do perfil ideal de cliente",
+      "Identificação de oportunidades regionais e setoriais",
+      "Ajuste contínuo da estratégia de crescimento"
+    ],
+    customClasses:{
+      'container': 'mt-3 !py-0',
+      'content-container': 'px-5 py-6 lg:py-24 bg-grey-surface ',
+      'image-col': '[&]:col-start-6'
+    }
+  },
+
+  {
+    titulo: "Perfil da empresa",
+    descricao: "Descubra o perfil completo de cada empresa ideal, com dados organizados a partir de várias fontes, para te ajudar a entender o potencial de cada cliente na sua estratégia de prospecção.",
+    imagem: {
+      url: `${baseURL}/img/next/perfil-empresa.png`,
+      alt: "Descrição imagem 2"
+    },
+    tituloLista: "Benefícios principais:",
+    lista: [
+      "Qualificação do perfil ideal",
+      "Máxima assertividade dos dados",
+      "Análise de grupo econômico",
+    ],
+    customClasses:{
+      'container': 'mt-3 !py-0',
+      'content-container': 'px-5 py-6 lg:py-24 bg-grey-surface ',
+      'image-col': '[&]:col-start-6'
+    }
+  },
+  
+  {
+    titulo: "Identifique os decisores",
+    descricao: "Saiba quem são os principais tomadores de decisão com dados de contato completos e assertivos. Crie sua estratégia de comunicação para atingir sucesso no contato com a pessoa certa.",
+    imagem: {
+      url: `${baseURL}/img/next/decisores.png`,
+      alt: "Descrição imagem 3"
+    },
+    tituloLista: "Benefícios principais:",
+    lista: [
+      "Telefones atualizados",
+      "Organograma sugerido",
+      "Executivos do LinkedIn",
+    ],
+    customClasses:{
+      'container': 'mt-3 !py-0',
+      'content-container': 'px-5 py-6 lg:py-24 bg-grey-surface ',
+      'image-col': '[&]:col-start-6 lg:pl-16'
+    }
+  }
+
+
+]
+
+// Gestores 
+import { faqGestores } from "../data/faq-gestores";
+---
+
+<Layout title="Plataforma Congonhas - Nova Vida TI">
+
+    <HeroShared 
+      item={{
+          bgDesktop: `${baseURL}/img/next/banner-desktop.png`,
+          bgMobile: `${baseURL}/img/next/banner-mobile.png`,
+          minHeightDesktop: "650px",
+          minHeightMobile: "805px"
+      }}
+    >
+        <div class="col-span-5 pb-14 flex flex-col justify-end lg:justify-start items-start">
+            <h1 class="hero-title mt-24">
+              Conheça a  
+              <br class="hidden lg:inline">
+              plataforma Next
+            </h1>                   
+            
+            <p class="mt-5 lg:mt-10 text-sm lg:text-base">Ferramenta de inteligência de mercado para times de vendas B2B que atuam com prospecção ativa.</p>      
+            <p class="mt-5 text-sm lg:text-base">Encontre seus potenciais clientes com precisão total. Extraia dados detalhados para abordagens de vendas mais estratégicas e assertivas, e ainda leve tudo para o seu ambiente de trabalho ou CRM com facilidade.</p>            
+
+            <BaseButton classList="mt-16">
+
+        </div>  
+    </HeroShared>  
+
+
+    <!-- Como fazemos -->
+    <div class="content-row  text-black">
+      <div class="content-container lg:grid grid-cols-12 pt-20 ">
+        <div class="col-span-12">
+          <h2 class="section-highlight-title text-highlight-on-light">
+            Impulsione suas vendas com a plataforma de leads B2B: crie listas personalizadas, alcance clientes ideais e maximize seus resultados em marketing e vendas.
+          </h2>
+        </div>
+      </div>
+    </div>
+    <!-- / Como fazemos -->
+
+    <!-- Principais Beneficios -->
+    <div class="content-row  text-black py-20">
+      <div class="content-container lg:grid grid-cols-12 space-y-8 md-space-y-0">
+        <div class="col-span-3">
+          <small class="flex items-center gap-2 text-neutral mb-6 text-base">Principais benefícios <i class="icon-curved-arrow relative top-1"></i></small>
+          <p>Ideal para aumentar o poder das suas estratégias de prospecção ativa, sobre seu mercado-alvo.</p>
+        </div>
+        <div class="col-span-7 col-start-6">
+          <!-- <FaqIpe questoes={faqPrincipaisBeneficiosNext} /> -->
+          <BaseFaq questoes={faqPrincipaisBeneficiosNext} classList="faq-numerada" variant="numbered" />
+        </div>
+    
+      </div>
+    </div>
+    <!-- / Principais Beneficios -->
+
+    <div class="content-row md:mt-20 mb-4">
+      <div class="content-container">
+          <div class="md:grid grid-cols-12 space-y-8 md:space-y-0">
+            <div class="col-span-5 flex flex-col justify-center space-y-4 lg:space-y-11">
+              <h2 class="text-black font-regular text-2xl lg:text-3xl">Filtros personalizados</h2>
+              <p class="leading-relaxed">Através dos filtros de hipersegmentação disponíveis na plataforma, você tem em mãos milhares de combinações de filtros que deixam suas buscas orientadas ao seu grupo de interesse.</p>
+              <p class="leading-relaxed">
+                Realize pesquisas a partir de setor, região e porte, obtendo dados seguros, verificados e atualizados em tempo real para serem utilizados em sua estratégia comercial.
+              </p>
+            </div>
+            <div class="col-span-6 col-start-7 flex justify-center">
+              <div class="image-wrapper flex items-center">
+                <img src=`${baseURL}/img/next/filtros-personalizados.png` alt="">
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <ButtonShared
+        text="Fale com um de nossos especialistas " 
+        href="#"
+        customClasses="lg:col-span-4 lg:col-start-5 col-span-10 col-start-2 mt-0" 
+    />
+
+    <div class="content-row mb-12">
+        <div class="content-container grid grid-cols-12 text-center">
+            <p class="section-highlight-title text-highlight-on-light col-span-10 col-start-2">Conheça os recursos e funcionalidades exclusivas da Plataforma Next que transformam a forma de prospectar.</p>
+            <p class="leading-relaxed col-span-12 mt-10">
+                Soluções inovadoras para acelerar seus resultados com eficiência
+            </p>
+            <div class="mt-10 col-span-12">
+                <img src=`${baseURL}/img/segmento-cobranca/icon-scroll.png` class="inline-block" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- Beneficios -->
+    {
+        beneficios.map((beneficio) => {
+          return (
+            <BeneficioProduto item={beneficio} data-animation="beneficios" />
+          )
+        })
+    }
+    <!-- / Beneficios -->
+    
+    <!-- Gestores -->
+    <div class="content-row  text-black py-20">
+        <div class="content-container lg:grid grid-cols-12">
+          <div class="col-span-3">
+            <small class="flex items-center gap-2 text-neutral mb-6 text-base">Ideal para quem <i class="icon-curved-arrow relative top-1"></i></small>
+            <p>Se você se identifica com qualquer um dos três perfis, você precisa conhecer a Plataforma Next</p>
+          </div>
+          <div class="col-span-7 col-start-6">
+            <!-- <FaqIpe questoes={faqGestores} /> -->
+            <BaseFaq questoes={faqGestores} variant="numbered" />
+          </div>
+      
+        </div>
+      </div> 
+    <!-- / Gestores -->
+    
+    <!-- FatoresSucesso -->
+    <div class="content-row  text-black">
+        <div class="content-container lg:grid grid-cols-12 md:pt-20 ">
+          <div class="col-span-4">
+            <h2 class="text-4xl section-highlight-title text-highlight-on-light">Fatores de sucesso</h2>
+          </div>
+          <div class="col-span-6 col-start-7 text-neutral" data-animation="from-bottom">
+            <p>Obtenha insights para otimizar suas estratégias com a Plataforma Next e nossos recursos avançados de pesquisas. Tome decisões mais seguras e assertivas com as nossas soluções.</p>
+          </div>
+        </div>
+      
+        <div class="content-container lg:grid grid-cols-4 grid-rows-2 h-full md:mt-32 mt-20 gap-4 divide-y-2 lg:divide-y-0 lg:divide-x-2 divide-black divide-opacity-10 text-neutral">
+          <CardIcone 
+            titulo="Entender o perfil do cliente ideal" 
+            icone=`${baseURL}/img/next/icones/perfil-cliente-ideal.png`
+            conteudo="Analisar e mapear os dados de mercado da sua empresa, cruzando-os com os dados de negócio para definir claramente o perfil do cliente ideal."
+            classList={'col-span-1 pb-4 mb-4'}
+          />
+      
+          
+          <CardIcone 
+          titulo="Focar na prospecção de clientes" 
+          icone=`${baseURL}/img/next/icones/prospeccao-clientes.png`
+          conteudo="Garantir a presença de pelo menos um agente dedicado exclusivamente à prospecção de novos clientes, maximizando o foco e a eficiência nessa etapa crucial."
+          classList={'col-span-1 row-span-2 lg:pl-4 content-end py-4 mb-4'}
+          />    
+          
+          <CardIcone 
+            titulo="Rotina sistemática de trabalho" 
+            icone=`${baseURL}/img/next/icones/rotina-sistematica.png`
+            conteudo="Implementar um processo estruturado e consistente de prospecção ativa, seguindo uma metodologia eficaz que otimize o tempo e os resultados."
+            classList={'col-span-1 row-span-2 lg:pl-4 py-4 mb-4'}
+          />
+          <CardIcone 
+            titulo="Priorizar conversas e ligações" 
+            icone=`${baseURL}/img/next/icones/conversas-ligacoes.png`
+            conteudo="Conversar aumenta a clareza da comunicação, cria empatia e fortalece o relacionamento, itens essenciais para alcançar bons resultados."
+            classList={'col-span-1  row-span-2 lg:pl-4  content-end py-4 mb-4'}
+          />        
+      
+        </div>
+        
+      </div>
+    <!-- / FatoresSucesso -->
+  
+
+    <ButtonShared
+        text="Fale com um de nossos especialistas " 
+        href="#"
+        customClasses="lg:col-span-4 lg:col-start-5 col-span-10 col-start-2 mt-0" 
+    />
+
+    <div class="content-row mb-44">
+        <div class="content-container grid grid-cols-12 text-center">
+            <p class="section-highlight-title text-highlight-on-light col-span-12">Obtenha mais pontos de contato com executivos relevantes e multiplique as chances de conexão de sucesso com seus clientes alvo.</p>
+            <p class="leading-relaxed col-span-10 col-start-2 mt-10">
+                Implemente um fluxo de cadência multicanal para otimizar suas estratégias de prospecção, que pode ser por e-mail, mensagem e ligação, aumentando suas chances de conexão.
+            </p>
+            <div class="md:mt-32 mt-20 col-span-12">
+                <div class="image-wrapper">
+                <img src=`${baseURL}/img/next/pontos-contato.png` class="inline-block" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <HeroShared 
+      item={{
+          bgDesktop: `${baseURL}/img/next/banner-intermediario-desktop.png`,
+          bgMobile: `${baseURL}/img/next/banner-intermediario-mobile.png`,
+          minHeightDesktop: "545px",
+          minHeightMobile: "725px"
+      }}
+    >
+        <div class="col-span-4 col-start-9 flex flex-col pt-20 lg:pt-0 pb-12 lg:pb-0 lg:justify-center">
+            <h1 class="font-light text-[24px] lg:text-[28px] leading-[1.3]">
+              Você vai transformar sua maneira de prospectar, agregando muito mais inteligência e eficiência nas estratégias de vendas.
+            </h1>              
+        </div>  
+    </HeroShared>  
+
+    <!-- Depoimentos  -->
+    <Depoimentos />
+    <!-- / Depoimentos  -->
+
+    <CallToAction
+        customClasses={"mt:10 lg:mt-20"}
+        info={{
+        titulo: "Aumente a eficiência e o valor do seu banco de dados ",
+        descricao: "Não deixe sua operação ser prejudicada por dados de baixa qualidade. Com a Plataforma Next, você tem as melhores informações ao seu alcance, ranqueadas por nossos especialistas.",
+        textButton: 'Entre em Contato',
+        url: "/#",
+        imagem: {
+        url: `${baseURL}/img/next/call-to-action/imagem-call-to-action.png`,
+        alt: "Texto alternativo imagem"
+        }
+    }} />
+
+</Layout>

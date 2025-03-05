@@ -1,0 +1,17 @@
+---
+const {link, hasIcon = true, classList, variant = 'light', ...props} = Astro.props;
+---
+
+<a href={link} class="base-btn" class:list={classList} data-variant={variant} {...props}>
+    <slot>
+      Conheça Mais
+    </slot>
+    {
+      hasIcon &&
+      <slot name="icon">
+        <i class="icon-arrow-right text-[14px]"></i>
+      </slot>
+    }
+
+</a>
+

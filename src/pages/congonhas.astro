@@ -1,0 +1,248 @@
+---
+import BaseButton from "../components/shared/BaseButton.astro";
+import CallToAction from "../components/shared/CallToAction.astro";
+import Depoimentos from "../components/shared/Depoimentos.astro";
+import HeroShared from "../components/shared/HeroShared.astro";
+import Bandeirola from "../components/shared/Bandeirola.astro";
+import BeneficioProduto from "../components/shared/BeneficioProduto.astro";
+
+import { baseURL } from "../config";
+import Layout from '../layouts/Layout.astro';
+
+
+//Data Principais beneficios
+import { faqPrinciapaisBeneficiosCongonhas } from "../data/faq-principais-beneficios-congonhas.js";
+import BaseFaq from "../components/shared/BaseFaq.astro";
+
+const bandeirolas = [
+  {
+    icone: `${baseURL}/img/shared/icones/score-de-credito.png`,
+    texto: "Score de Crédito",
+    tema: "black",
+    direcao: "vertical",
+    customClass: 'col-span-3 col-start-3',
+    descricao: "Avalie a capacidade de pagamento com mais precisão."
+  },
+  {
+    icone: `${baseURL}/img/shared/icones/flag-de-obito.png`,
+    texto: "Flag de Óbito",
+    tema: "purple",
+    direcao: "vertical",
+    customClass: 'col-span-3 col-start-5 row-start-2' ,
+    descricao: "Evite transtornos ao identificar registros de falecimento."
+  },
+  {
+    icone: `${baseURL}/img/shared/icones/indicador-de-persona.png`,
+    texto: "Indicador de Persona",
+    tema: "blue",
+    direcao: "vertical",
+    customClass: 'col-span-3 col-start-5 xl:col-start-7 row-start-3',
+    descricao: "Conheça melhor o perfil do seu cliente."
+  },    
+  {
+    icone: `${baseURL}/img/shared/icones/propensao-de-pagamento.png`,
+    texto: "Propensão de Pagamento",
+    tema: "black",
+    direcao: "vertical",
+    customClass: 'col-span-3 col-start-9 row-start-1',
+    descricao: "Preveja a probabilidade de pagamento para tomadas de decisão mais assertivas."
+  },      
+  {
+    icone: `${baseURL}/img/shared/icones/score-digital.png`,
+    texto: "Score Digital",
+    tema: "green",
+    direcao: "vertical",
+    customClass: 'col-span-2 col-start-11 row-start-3',
+    descricao: "Avalie o perfil digital para identificar o canal de comunicação mais eficaz."
+  },        
+]
+
+const beneficios = [
+  {
+    titulo: "Tomada de Decisão Estratégica:",
+    descricao: "Aproveite informações detalhadas e relevantes para decisões mais embasadas. Reduza riscos e melhore a gestão de crédito com dados atualizados e precisos.",
+    imagem: {
+      url: `${baseURL}/img/plataforma-congonhas/beneficios/beneficio-1.png`,
+      alt: "Descrição imagem 1",
+      classList: "transform lg:-translate-x-[65px]" 
+    },
+    tituloLista: "Benefícios principais:",
+    lista: [
+      "Redução da inadimplência",
+      "Avaliação precisa de perfis e riscos",
+      "Aumento da eficácia nas cobranças"
+    ],
+    customClasses: {
+      'container': '[&&]:py-2',
+      'content-container': 'px-8 py-6 lg:py-16 bg-grey-surface max-w-[1240px] '
+    }
+  },
+
+  {
+    titulo: "Descobrimento de personas",
+    descricao: "Explore perfis detalhados de consumidores e empresas, agrupados em clusters inteligentes e altamente precisos, desenvolvidos com expertise pela nossa área de modelagem avançada para potencializar suas estratégias.",
+    imagem: {
+      url: `${baseURL}/img/plataforma-congonhas/beneficios/beneficio-2.png`,
+      alt: "Descrição imagem 2",
+      classList: "transform lg:-translate-x-[50px]" 
+    },
+    tituloLista: "Destaques:",
+    lista: [
+      "Perfil de Crédito",
+      "Variáveis demográficas",
+      "Análise de comportamento"
+    ],
+    customClasses: {
+      'container': '[&&]:py-2',
+      'content-container': 'px-8 py-6 lg:py-16 bg-grey-surface max-w-[1240px] '
+    }
+  }  
+]
+---
+
+<Layout title="Plataforma Congonhas - Nova Vida TI">
+
+  <HeroShared 
+      item={{
+          bgDesktop: `${baseURL}/img/plataforma-congonhas/banner-desktop.png`,
+          bgMobile: `${baseURL}/img/plataforma-congonhas/banner-mobile.png`,
+          minHeightDesktop: "650px",
+          minHeightMobile: "735px"
+      }}
+  >
+        <div class="col-span-5 pb-14 flex flex-col justify-end lg:justify-start items-start">
+            <h1 class="hero-title mt-[92px]">
+              Plataforma Congonhas
+              <br class="hidden lg:inline">
+              Consulta Individual
+            </h1>     
+            <div class="hero-description mt-5 lg:mt-[64px]">         
+              <p>
+                O Congonhas é uma plataforma poderosa e abrangente, projetada para facilitar a localização, análise e validação de dados de consumidores e empresas. Ideal para todo o ciclo de crédito, o Congonhas oferece ferramentas que otimizam o tempo e aprimoram a tomada de decisões estratégicas.
+              </p>              
+            </div>
+
+            <BaseButton classList="mt-[70px]" />
+
+      </div>  
+  </HeroShared>    
+
+
+  <!-- Como fazemos -->
+  <div class="content-row  text-black">
+    <div class="content-container lg:grid grid-cols-12 pt-[70px]">
+      <div class="col-span-12">
+        <h2 class="section-highlight-title text-highlight-on-light">
+          Pare de perder tempo com dados desatualizados ou incorretos. Com a Plataforma Congonhas, sua empresa obtém inteligência em suas operações diárias de forma ágil e eficiente.
+        </h2>
+      </div>
+    </div>
+  </div>
+  <!-- / Como fazemos -->
+  
+  <!-- Principais beneficios -->
+  <div class="content-row md:py-20 lg:mt-[85px]">
+    <div class="content-container lg:grid grid-cols-12 space-y-10 md:space-y-0">
+      <div class="col-span-3">
+        <small class="flex items-center gap-2 text-neutral mb-6 text-[16px]">Principais benefícios <i class="icon-curved-arrow relative top-1"></i></small>
+        <p class="text-black text-[18px]">Vantagens que Impulsionam Suas Operações com Dados Precisos e Processos Eficientes.</p>
+      </div>
+       <div class="col-span-7 col-start-6">
+        <BaseFaq questoes={faqPrinciapaisBeneficiosCongonhas} variant="numbered"  />
+      </div>
+      <!-- <div class="col-span-7 col-start-6">
+        <FaqIpe questoes={faqPrinciapaisBeneficiosCongonhas} />
+      </div> -->
+  
+    </div>
+  </div>
+  <!-- / Principais beneficios -->
+
+  <HeroShared 
+      item={{
+          bgDesktop: `${baseURL}/img/plataforma-congonhas/banner-intermediario-desktop.png`,
+          bgMobile: `${baseURL}/img/plataforma-congonhas/banner-intermediario-mobile.png`,
+          minHeightDesktop: "655px",
+          minHeightMobile: "565px"
+      }}
+  >
+        <div class="col-span-4 col-start-9 flex flex-col justify-end pb-12 lg:pb-0 lg:justify-center">
+            <h1 class="font-light text-[24px] lg:text-[28px] leading-[1.3] lg:mb-40">
+              Não deixe sua operação ser prejudicada por dados de baixa qualidade.
+            </h1>              
+        </div>  
+  </HeroShared>   
+
+
+
+  <!-- Indicadores Valiosos -->
+  <div class="content-row  text-black">
+    <div class="content-container lg:grid grid-cols-12 pt-20 ">
+      <div class="col-span-4">
+        <h2 class="text-[40px]" data-animation='from-bottom'>Indicadores Valiosos</h2>
+      </div>
+      <div class="col-span-6 col-start-7 text-neutral">
+        <p class="text-lg" data-animation='from-bottom'>Obtenha insights para otimizar suas estratégias com nossos indicadores precisos. Tome decisões mais seguras e assertivas com as nossas soluções.</p>
+      </div>
+      <div class="col-span-12 mt-20">
+        <div class="gap-y-10 space-y-5 md:space-y-0" data-animation="horizontal-sticky-wrapper">
+          <div class=" h-[540px] py-10 px-2 flex gap-10" data-animation="horizontal-sticky"> 
+
+            {
+              bandeirolas.map(bandeirola => {
+                return (
+                  <div class="  min-w-[275px] flex-1 border-l border-neutral border-opacity-50 odd:pt-16 even:pt-56">
+                    <div>
+                      <Bandeirola item={bandeirola} />
+                      {
+                        bandeirola.descricao &&
+                        <p class="text-base text-neutral pl-4 pt-4">{bandeirola.descricao}</p>
+                      }
+                    </div>
+                  </div>
+                )
+              })
+            }
+
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- / Indicadores Valiosos -->  
+
+  <BaseButton variant="dark" classList={"mx-auto flex w-fit mt-[92px] mb-[122px]"} data-animation='from-bottom'>
+    Fale com um de nossos especialistas
+    <i class="icon-arrow-up-angled text-[12px]" slot="icon"></i>
+  </BaseButton>
+
+  <!-- Beneficios -->
+  {
+
+    beneficios.map((beneficio) => {
+      return (
+        <BeneficioProduto item={beneficio} data-animation="beneficios" />
+      )
+    })
+  
+  }
+  <!-- / Beneficios -->
+
+  <!-- Depoimentos -->
+  <Depoimentos />
+  <!-- / Depoimentos -->
+
+  <CallToAction
+    customClasses={"mt:10 lg:mt-20"}
+    info={{
+    titulo: "Experimente o Congonhas e descubra por que é a melhor ferramenta de consultas cadastrais disponível no mercado.",
+    descricao: "Maximizar a eficiência e a segurança nunca foi tão simples.",
+    textButton: 'Entre em Contato',
+    url: "/#",
+    imagem: {
+      url: `${baseURL}/img/plataforma-congonhas/call-to-action/imagem-call-to-action.png`,
+      alt: "Texto alternativo imagem"
+    }
+  }} />
+
+</Layout>

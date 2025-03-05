@@ -1,0 +1,206 @@
+---
+
+import ListaNumerica from "../components/shared/listaNumerica.astro";
+import BeneficioProduto from "../components/shared/BeneficioProduto.astro";
+import ButtonShared from "../components/shared/Button.astro";
+import CallToAction from "../components/shared/CallToAction.astro";
+import { baseURL } from "../config";
+import Layout from '../layouts/Layout.astro';
+
+const carteiras = [
+  {
+    titulo: "Carteiras complexas: O desafio das empresas em recuperar crédito de clientes com faixas de atraso longas",
+    descricao: "Na Nova Vida, podemos ajudar sua operação de cobrança a aumentar o índice de contato com a pessoa certa, através do nosso data Lake robusto e atualizado diariamente com dados de telefonia. Aliado a isso, temos uma vertical de dados para que as operações de cobrança conheçam profundamente o perfil comportamental do cliente.",
+    imagem: {
+      url: `${baseURL}/img/segmento-cobranca/carteiras-complexas.png`,
+      alt: "Descrição imagem 1"
+    },
+    customClasses: {
+      'container': 'md:mt-20 mt-10',
+      'content-col': 'col-span-5 justify-center',
+      'title': 'text-highlight-on-light',
+    }
+  },
+
+  {
+    titulo: "A Recuperação eficiente de crédito: menos custos, mais resultados",
+    descricao: "Otimize suas campanhas de cobrança digital com nossos indicadores estratégicos do cliente, como:",
+    imagem: {
+        url: `${baseURL}/img/segmento-cobranca/menos-custos.png`,
+      alt: "Descrição imagem 2"
+    },
+    tituloLista: "",
+    lista: [
+      "Score digital",
+      "Presença no WhatsApp",
+      "Propensão de pagamento, entre outros"
+    ],
+    customClasses: {
+      'container': 'mt-10',
+      'content-col': 'col-span-5 justify-center',
+      'title': 'text-highlight-on-light',
+      'lista-container': '[&]:lg:mt-12'
+    }
+  }
+]
+
+const items = [
+  {
+    titulo: "Como a tecnologia em big data pode revolucionar e transformar a recuperação de crédito",
+    descricao: "Na Nova Vida, transformamos dados brutos em informações estratégicas que impulsionam resultados dos nossos clientes. Nosso data warehouse, altamente estruturado, contém dados cadastrais e estratégicos, permitindo uma compreensão profunda das personas com as quais nossos clientes operam.",
+    imagem: {
+      url: `${baseURL}/img/segmento-cobranca/tecnologia-big-data.png`,
+      alt: "Descrição imagem 1"
+    },
+    customClasses: {
+      'content-col': '[&]:col-span-5 [&]:col-start-8 [&]:row-start-1 justify-center ',
+      'image-col': '[&]:col-start-1 [&]:row-start-1',
+      'image-wrapper': '',
+      'image-col-img': '',
+    }    
+  }
+]
+
+const beneficios = [
+  { 
+    titulo: "Otimização do trabalho do controldesk", 
+    texto: "Nossas soluções automatizam processos e geram insights valiosos para o planejamento estratégico, tornando o controldesk mais eficiente. Com dados segmentados, as ações de cobrança são direcionadas com maior assertividade, melhorando a performance e reduzindo o tempo de recuperação." },
+  { 
+    titulo: "Clusterização com personas digitais e de crédito", 
+    texto: "Utilizamos personas digitais e de crédito para clusterizar inadimplentes com base em perfis de risco e comportamento, permitindo estratégias de cobrança ajustadas e eficazes. Isso resulta em abordagens personalizadas que aumentam a eficácia das operações e otimizam a recuperação." },
+  { 
+    titulo: "Direcionamento de canais de acionamento", 
+    texto: "Nossa tecnologia identifica os canais de acionamento mais eficazes (e-mail, SMS, ligação, etc.) para cada cluster de inadimplentes. Isso permite direcionar esforços para onde terão maior impacto, maximizando a eficiência da cobrança e aprimorando os resultados das operações." },
+  { 
+    titulo: "Predição de pagamentos e redução de custos", 
+    texto: "Utilizamos algoritmos avançados para prever a probabilidade de pagamento, priorizando ações de cobrança com maior chance de sucesso. Essa abordagem reduz o tempo e recursos desperdiçados, focando na recuperação de contas e gerando uma significativa redução nos custos operacionais." },
+  { 
+    titulo: "Melhoria na experiência do cliente", 
+    texto: "Uma cobrança mais personalizada e estratégica melhora resultados financeiros e minimiza impactos negativos na relação com o cliente. A assertividade e o respeito nas interações contribuem para manter um relacionamento saudável e de longo prazo, beneficiando ambas as partes." }
+];
+
+---
+
+<Layout title="Segmento Cobrança - Nova Vida TI">
+
+    <!-- Intro -->
+    <div class="content-row novidades text-black py-20">
+        <div class="content-container" data-grid-section="initial-section">
+            <div data-grid-section="initial-section__header">
+                <small class="flex items-center gap-2 text-neutral mb-6 text-base">
+                    Segmento <i class="icon-curved-arrow relative top-1"></i>
+                </small>
+                <p class="text-2xl">Cobrança</p>                
+            </div>
+            <div data-grid-section="initial-section__content">
+                <p class="section-highlight-title text-highlight-on-light">
+                    Como a Nova Vida está transformando a forma que as empresas de cobrança lidam com os dados
+                </p>
+                <p class="mt-10 md:mt-20 text-neutral">
+                    A inadimplência no Brasil é um desafio persistente que afeta empresas de todos os setores. Segundo dados recentes, o número de consumidores com contas em atraso tem crescido e, em 2024, já atinge aproximadamente 41% dos brasileiros. A Nova Vida pode ajudar sua empresa com este perfil de consumidor, desde o aumento do índice de localização até modelos preditivos para aumentar as taxas de recuperação.
+                </p>                
+            </div>
+            <div data-grid-section="initial-section__action">
+                <img src=`${baseURL}/img/segmento-cobranca/icon-scroll.png` alt="">
+            </div>
+        </div>
+    </div>
+    <!-- / Intro -->    
+
+    <!-- Banner -->
+    <div class="content-row">
+        <div class="content-container mb-20">
+            <div class="image-wrapper relative">
+                <picture class="rounded-xl block overflow-hidden">
+                    <source srcset=`${baseURL}/img/segmento-cobranca/banner-carteiras.png` media="(min-width:650px)" >
+                    <img src=`${baseURL}/img/segmento-cobranca/banner-carteiras-mobile.png` alt="">
+                </picture>                
+            </div>
+        </div>
+    </div>    
+    <!-- / Banner -->
+
+    <!-- Carteiras -->
+    {
+        carteiras.map((beneficio) => {
+          return (
+            <BeneficioProduto item={beneficio} />
+          )
+        }) 
+    }
+    <!-- / Carteiras -->
+
+    <ButtonShared
+        text="Descubra como otimizar a recuperação de inadimplentes" 
+        href="#"
+        customClasses="col-span-6 col-start-4" 
+    />
+
+    <!-- Tecnologia -->
+    { 
+        items.map((beneficio) => {
+          return (
+            <BeneficioProduto item={beneficio} />
+          )
+        })
+    }
+    <!-- / Tecnologia -->
+
+    <!-- Beneficios -->
+    <div class="content-row md:my-20 my-10">
+        <div class="content-container grid grid-cols-12">
+            <p class="section-highlight-title text-highlight-on-light col-span-12 text-center">Quando aplicamos essa inteligência de dados ao processo de recuperação de crédito, os benefícios são evidentes:</p>
+            <div class="mt-10 col-span-12 text-center">
+              <img src=`${baseURL}/img/segmento-cobranca/icon-scroll.png` class="inline-block" alt="">
+            </div>
+        </div>
+    </div>
+    
+    <div class="content-row">
+        <div class="content-container">
+            <ListaNumerica items={beneficios} />
+        </div>
+    </div>
+    <!-- / Beneficios -->
+
+    <ButtonShared
+        text="Saiba como melhorar suas taxas de recuperação de crédito" 
+        href="#"
+        customClasses="col-span-6 col-start-4" 
+    />
+
+    <!-- Inovação -->
+    <div class="content-row">
+        <div class="content-container lg:grid grid-cols-12 space-y-20 text-center">
+            <div class="col-span-12">
+                <p class="section-highlight-title text-highlight-on-light">
+                    Com a inadimplência em alta, uma abordagem inovadora e baseada em dados é essencial para o sucesso na recuperação de crédito
+                </p>
+            </div>
+            
+            <div class="col-span-10 col-start-2">
+                <p>
+                    Na NovaVida, oferecemos soluções que vão além do simples “enriquecimento de dados”, proporcionando insights valiosos e estratégias eficientes que resultam em uma recuperação mais eficaz e com menor custo. A tecnologia é a chave para transformar desafios em oportunidades, e estamos aqui para ajudar sua empresa a prosperar nesse cenário.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- / Inovação -->
+    
+    <CallToAction
+        customClasses={"mt-20 md:mt-44"}
+        info={{
+        titulo: "Fale com nossa equipe e veja como transformar a recuperação de crédito da sua empresa",
+        descricao: "Descubra soluções que potencializam seus resultados em cobrança",
+        textButton: 'Falar Agora',
+        url: "/#",
+        imagem: {
+        url: `${baseURL}/img/segmento-cobranca/imagem-call-to-action.png`,
+        alt: "Texto alternativo imagem"
+        }
+    }} />
+
+    
+
+
+</Layout>

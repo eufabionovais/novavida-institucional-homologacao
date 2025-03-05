@@ -1,0 +1,55 @@
+---
+import { baseURL } from "../../config";
+const {classList } = Astro.props;
+import Submenu from "./Submenu.astro";
+import { subMenus } from "../../data/submenus.js";
+import BaseButton from "./BaseButton.astro";
+---
+
+<header class="main-header fixed top-0 left-0 right-0 z-[3]" class:list={classList}>
+  <div class="content-container main-header__inner">
+    <a href=`${baseURL}/` class="main-header__logo-link">
+      <img src=`${baseURL}/img/shared/logo-nova-vida-on-light.png` alt="Nova Vida TI" class="main-header__logo logo-on-light">
+      <img src=`${baseURL}/img/shared/logo-nova-vida-on-dark.png` alt="Nova Vida TI" class="main-header__logo logo-on-dark">
+    </a>
+
+    <button class="btn-menu">
+      <span class="bar bar-top"></span>
+      <span class="bar bar-middle"></span>
+      <span class="bar bar-bottom"></span>
+    </button>
+
+  <div class="main-menu__wrapper">
+      <nav class="main-menu">
+        <li>
+          <a href="#" class="submenu-toggle">Institucional</a>
+          <div class="submenu-wrapper">
+            <Submenu submenus={subMenus.institucional} classList={'lg:grid grid-cols-3 gap-4 items-start'} />
+          </div>      
+        </li>
+        <li>
+          <a href="#" class="submenu-toggle">Soluções</a>
+          <div class="submenu-wrapper">
+            <Submenu submenus={subMenus.solucoes} classList={'lg:grid grid-cols-3 gap-4 items-start'} />
+          </div>      
+        </li>
+          <li>
+          <a href="#" class="submenu-toggle">Segmentos</a>
+          <div class="submenu-wrapper">
+            <Submenu submenus={subMenus.segmentos} classList={'lg:grid grid-cols-3 gap-4 items-start'} />
+          </div>      
+        </li>
+        <li>
+          <a href="#" class="submenu-toggle">LGPD</a>
+          <div class="submenu-wrapper">
+            <Submenu submenus={subMenus.lgpd} classList={'lg:grid grid-cols-3 gap-4 items-start'} />
+          </div>           
+        </li>
+      </nav>
+      <BaseButton link=`${baseURL}/contato` classList={'btn-contato ml-16'} variant="primary" hasIcon={false}>Contato</BaseButton>
+  </div>
+    
+  </div>
+</header>
+
+

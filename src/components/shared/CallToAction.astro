@@ -1,0 +1,22 @@
+---
+const {info, customClasses} = Astro.props;
+import BaseButton from "./BaseButton.astro";
+---
+
+<div class="content-row" class:list={customClasses} data-animation="call-to-action">
+  <div class="content-container">
+    <div class="md:grid grid-cols-2 gap-4">
+      <div class="call-to-action__image-wrapper">
+          <img src={info.imagem.url} class="call-to-action__image" alt={info.imagem.alt}>
+      </div>
+      <div class="call-to-action__conteudo">
+          <h3 class="call-to-action__titulo ">{info.titulo}</h3>
+          {info.descricao &&
+            <p class="call-to-action__descricao">{info.descricao}</p>            
+          }
+
+          <BaseButton variant="dark-outlined" classList={"mt-auto call-to-action__btn"}>Entre em Contato</BaseButton>
+      </div>
+    </div>
+  </div>
+</div>

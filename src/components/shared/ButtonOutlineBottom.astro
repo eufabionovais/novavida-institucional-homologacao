@@ -1,0 +1,9 @@
+---
+const { text, href, icon, customClasses = "", ...props } = Astro.props;
+---
+
+<a class="button-outlined" href={href} class:list={`${customClasses}` } {...props}>
+    {text}
+    <i class=`${icon} text-[15px]`></i>
+</a>
+

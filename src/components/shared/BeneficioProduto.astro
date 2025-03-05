@@ -1,0 +1,47 @@
+---
+const {item, ...props} = Astro.props;
+---
+
+<div class="content-row py-10" class:list={item.customClasses?.container ?? ''} {...props}>
+  <div class="content-container rounded-xl" class:list={item.customClasses?.['content-container'] ?? ''}>
+    <div class="lg:grid grid-cols-12">
+      <div class="col-span-4 flex flex-col lg:mb-0 mb-10" class:list={item.customClasses?.['content-col'] ?? ''}>
+        <div class="space-y-9" >
+          {item.titulo?.length && (
+            <h3 class="text-3xl text-black font-regular" class:list={item.customClasses?.['title'] ?? ''} set:html={item.titulo} data-titulo="true"></h3>
+          )}
+          {item.descricao?.length && (
+            <div data-conteudo="true">
+              <p class="text-base leading-7" set:html={item.descricao}></p>
+            </div>
+          )}            
+        </div>
+        
+         {item.lista?.length && (
+          <div class="mt-6 mb-10 lg:mb-0 lg:mt-20" class:list={item.customClasses?.['lista-container'] ?? ''} >
+            {item.tituloLista != "" && 
+              <p class="font-medium text-black mb-7" data-lista-titulo="true">{item.tituloLista ? item.tituloLista : 'Benefícios principais:'}</p>
+            }
+            <ul class="list-disc list-outside marker:pl-0 marker ml-4 leading-7" class:list={item.customClasses?.['lista'] ?? ''} data-lista="true">
+              {
+                item.lista.map((itemLista) => {
+                  return (
+                    <li set:html={itemLista}></li>      
+                  )
+                })
+              }
+            </ul>
+          </div>
+        )}
+      </div>
+
+      <div class="col-span-6 col-start-7 flex justify-center" class:list={item.customClasses?.['image-col'] ?? ''}>
+        <div class="flex items-center"  class:list={item.customClasses?.['image-wrapper'] ?? ''} data-imagem="true">
+          <img src={item.imagem.url} alt={item.imagem.alt} class:list={item.imagem?.classList}>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

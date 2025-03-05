@@ -1,0 +1,140 @@
+---
+
+import ListaNumerica from "../components/shared/listaNumerica.astro";
+import BeneficioProduto from "../components/shared/BeneficioProduto.astro";
+import ButtonShared from "../components/shared/Button.astro";
+import CallToAction from "../components/shared/CallToAction.astro";
+import { baseURL } from "../config";
+import Layout from '../layouts/Layout.astro';
+
+const carteiras = [
+  {
+    titulo: "Validação e Enriquecimento de Dados para <span>Localizar e Conhecer Melhor Seus Clientes</span>",
+    descricao: "Com os melhores dados em mãos, sua empresa pode personalizar cada interação de forma precisa e eficaz. Nossa solução de validação e enriquecimento de dados permite conhecer a fundo o perfil de seus clientes, oferecendo uma abordagem hiperpersonalizada que aumenta a satisfação e o engajamento. Maximize a eficiência de suas operações e obtenha resultados superiores ao falar com a pessoa certa, no momento certo.",
+    imagem: {
+      url: `${baseURL}/img/segmento-callcenter/imagem-validacao.png`,
+      alt: "Descrição imagem 1"
+    }
+  }
+]
+
+const oportunidades = [
+  { 
+    titulo: "Score de Crédito", 
+    texto: "Indica o grau de risco que uma pessoa oferece ao mercado de concessão de crédito. A pontuação obtida simplifica a visualização e o entendimento rápido do risco associado, facilitando a análise e a tomada de decisões de crédito." },
+  { 
+    titulo: "Persona Digital", 
+    texto: "Determina o nível de inserção digital da pessoa consultada, variando de Digital++ a Digital--. Este indicador mostra como a pessoa responde a estímulos digitais e ajuda a definir estratégias de abordagem, seja por mensagem ou voz." },
+  { 
+    titulo: "Propensão de Pagamento", 
+    texto: "Indica a probabilidade de resolver seus créditos. Informações valiosas para o processo de cobrança, ajudando na definição de estratégias eficazes e proporcionando um esforço focado em melhores condições de negociação para a recuperação de crédito." },
+  { 
+    titulo: "Flag de Whatsapp", 
+    texto: "Indica se o telefone possui acesso ao WhatsApp, facilitando a escolha das estratégias de cobrança. Essa informação ajuda a ajustar a abordagem para maximizar a eficiência e eficácia no contato com o cliente." },
+  { 
+    titulo: "Persona de Crédito", 
+    texto: "Exclusivo da Nova Vida, este indicador determina a situação de crédito no mercado. Identifica novos entrantes, indivíduos procurados, mal pagadores e outros perfis relevantes, ajudando a definir estratégias de crédito e cobrança." },
+  { 
+    titulo: "Flag de Procon/ Não pertube", 
+    texto: "Mostra se um telefone está cadastrado em órgãos de defesa do consumidor para evitar chamadas. Essa informação é crucial para evitar que o discador automático se torne ineficiente, garantindo que discagens sejam feitas para números produtivos." }
+];
+---
+
+<Layout title="Call Center - Nova Vida TI">
+
+    <!-- Intro -->
+    <div class="content-row novidades text-white bg-black py-40 pb-20">
+        <div class="content-container" data-grid-section="initial-section">
+            <div data-grid-section="initial-section__header">
+                <small class="flex items-center gap-2 text-neutral mb-6 text-base">
+                    Segmento <i class="icon-curved-arrow relative top-1"></i>
+                </small>
+                <p class="text-2xl">Call Center</p>                
+            </div>
+            <div data-grid-section="initial-section__content">
+                 <p class="section-highlight-title text-highlight-on-dark">
+                    A hiperpersonalização e o contato eficaz são desafios na indústria de Call Center e BPO
+                </p>
+                <p class="mt-20 text-neutral">
+                    A Nova Vida pode ajudar seu call center a enriquecer dados estratégicos, aumentando o CPC, identificando personas e oferecendo sugestões preditivas para a tomada de decisão. Com nossas soluções, você otimiza processos, melhora a eficiência operacional e maximiza a conversão de contatos.
+                </p>              
+            </div>
+            <div data-grid-section="initial-section__action">
+                <img src=`${baseURL}/img/segmento-cobranca/icon-scroll.png` alt="">
+            </div>
+        </div>
+    </div>
+    <!-- / Intro -->    
+
+    <!-- Banner -->
+    <div class="content-row -mt-32">
+        <div class="content-container my-10 md:my-20">
+            <div class="image-wrapper relative">
+
+                <picture class="rounded-xl block overflow-hidden">
+                    <source srcset=`${baseURL}/img/segmento-callcenter/banner.png` media="(min-width:650px)" >
+                    <img src=`${baseURL}/img/segmento-callcenter/banner-mobile.png` alt="">
+                </picture>                            
+
+            </div>
+        </div>
+    </div>
+    <!-- / Banner -->
+
+    <!-- Validação e Enriquecimento -->
+    {
+        carteiras.map((beneficio) => {
+          return (
+            <BeneficioProduto customClasses={{
+              'container': 'mt-20',
+              'content-col': 'col-span-5',
+              'title': 'text-highlight-on-light'
+            }} item={beneficio} />
+          )
+        })
+    }
+    <!-- / Validação e Enriquecimento -->
+
+
+    <ButtonShared
+        text="Descubra como melhorar a eficiência do seu call center" 
+        href="#"
+    />
+
+    <!-- Oportunidades -->
+     
+    <div class="content-row md:mb-20 mb-10">
+        <div class="content-container grid grid-cols-12">
+          <p class="col-span-12 text-4xl section-highlight-title text-highlight-on-light text-center">
+            Conheça algumas oportunidades que a Nova Vida oferece
+          </p>
+    
+          <div class="mt-10 col-span-12"><img class="mx-auto" src=`${baseURL}/img/hub-privacidade/icon-scroll.png` alt=""></div>
+        </div>
+    </div>
+    
+    <div class="content-row">
+        <div class="content-container">
+            <ListaNumerica items={oportunidades} />
+        </div>
+    </div>
+
+    <!-- / Oportunidades  -->
+    
+    <ButtonShared
+        text="Fale com a pessoa certa no momento certo. Descubra como!" 
+        href="#"
+        customClasses="col-span-6 col-start-4" 
+    />
+    <CallToAction
+        info={{
+        titulo: "Fale com Nossa Equipe e Veja Como Transformar a Recuperação de Crédito da Sua Empresa",
+        descricao: "",
+        textButton: 'Falar Agora',
+        url: "/#",
+        imagem: {
+        url: `${baseURL}/img/segmento-callcenter/imagem-call-to-action.png`,
+        alt: "Texto alternativo imagem"
+        }
+    }} />
+</Layout>

@@ -1,0 +1,91 @@
+---
+import HeroShared from "../components/shared/HeroShared.astro";
+import ButtonShared from "../components/shared/Button.astro";
+import ListaNumerica from "../components/shared/listaNumerica.astro";
+import { baseURL } from "../config";
+import Layout from "../layouts/Layout.astro";
+
+const items = [
+  { 
+    titulo: "Por que trabalhar na Nova Vida?", 
+    texto: "A Nova Vida não é apenas uma empresa de tecnologia, é um ecossistema dinâmico onde cada colaborador tem a oportunidade de crescer e se desenvolver. Aqui, acreditamos que as pessoas são o coração da nossa organização, e nos dedicamos a criar um ambiente onde você se sinta valorizado e motivado a alcançar seu potencial máximo." },
+  { 
+    titulo: "Diversidade e Inclusão", 
+    texto: "Na Nova Vida, promovemos um ambiente acolhedor e seguro, onde cada indivíduo pode ser autêntico e se orgulhar de quem é. Acreditamos que a equidade, a representatividade e o respeito às diferenças são fundamentais para o nosso sucesso. Por meio do nosso programa de Diversidade & Inclusão, trabalhamos continuamente para garantir que cada pessoa tenha o espaço e o apoio necessários para prosperar, tanto no âmbito pessoal quanto profissional." },
+  { 
+    titulo: "Oportunidades de Carreira", 
+    texto: "Fazer parte da Nova Vida significa ter acesso a uma variedade de oportunidades para construir sua carreira em um ambiente inovador e colaborativo. Se você é apaixonado por tecnologia, dados e pelo impacto que eles podem gerar, aqui é o lugar certo para você." },
+  { 
+    titulo: "Reconhecimentos", 
+    texto: "Temos orgulho de ser reconhecidos como uma das melhores empresas para se trabalhar no Brasil. Este reconhecimento é resultado do comprometimento e da paixão dos nossos colaboradores em construir um futuro onde a tecnologia e a inovação andam de mãos dadas com a ética e a integridade." }
+];
+
+---
+
+<Layout title="Carreira - Nova Vida TI">
+
+    <HeroShared 
+      item={{
+          bgDesktop: `${baseURL}/img/carreira/banner-desktop.png`,
+          bgMobile: `${baseURL}/img/carreira/banner-mobile.png`,
+          minHeightDesktop: "535px",
+          minHeightMobile: "550px"
+      }}>
+        <div class="col-span-12 pb-14 flex flex-col justify-end lg:justify-center items-center">
+            <h1 class="hero-title mt-24">
+              Sangue amarelo corre aqui. Vem fazer história!
+            </h1>              
+        </div>  
+    </HeroShared> 
+
+    <div class="content-row md:py-20 py-10">
+        <div class="content-container grid grid-cols-12">
+            <div class="col-span-12">
+                <p class="section-highlight-title text-highlight-on-light">
+                  Faça parte de uma empresa inovadora que valoriza o bem-estar dos colaboradores e desperta orgulho a cada conquista.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content-row">
+        <div class="content-container">
+            <ListaNumerica items={items} />
+        </div>
+    </div>
+
+    <section class="content-row md:pt-32 pt-20">
+      <div class="content-container">
+          <div class="md:grid grid-cols-12">
+  
+             <div class="col-span-5 col-start-8">
+              <div  data-animation="courtain">
+                <img src=`${baseURL}/img/carreira/colaborador.png` alt="">
+              </div>
+            </div>
+  
+            <div class="col-span-5 col-start-1 row-start-1 flex flex-col py-6 lg:py-6 ">
+  
+              <p class="section-highlight-title text-highlight-on-light">
+                Aqui, você encontrará um porto seguro para sua carreira, um lugar onde cada colaborador tem a oportunidade de fazer a diferença e crescer.
+              </p> 
+  
+              <div class="md:mt-2 mt-8 mb-10 lg:mb-0 lg:mt-auto text-black">
+                Explore nossas vagas e descubra como você pode contribuir para transformar o futuro com a Nova Vida.
+              </div>    
+            </div>
+          </div>
+      </div>
+  
+      <div class="content-container">
+          
+          <h2 class="text-4xl font-light text-black pt-10 md:pt-32 -mb-8 text-center">Confira as nossas vagas e #VemPraNovaVida</h2>
+  
+          <ButtonShared
+              text="Acesse nossas vagas" 
+              href="#"
+              customClasses="col-span-4 col-start-5 bg-primary [&]:text-black" 
+          />
+      </div>
+  </section>
+</Layout>

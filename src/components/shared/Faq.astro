@@ -1,0 +1,30 @@
+---
+  const {titulo, questoes, classList} = Astro.props;
+---
+
+
+    <div class="faq-wrapper " class:list={classList}>
+      {
+        titulo &&
+        <h2 class="text-4xl  pb-10 border-b border-black  border-opacity-10">{titulo}</h2>
+      }
+      <dl>
+      {
+        questoes.map((questao) => {
+          return (
+            <div class="faq-item py-4 lg:py-8">
+              <div class="faq-item__conteudo">
+                <dt class="text-lg font-regular  relative flex items-center gap-6 justify-between cursor-pointer">{questao.pergunta}</dt>
+                <dd class="text-base">
+                  <div class="faq-item__conteudo text-neutral">{questao.resposta}</div>
+                </dd>
+              </div>
+            </div>
+          )
+        })
+      }
+      </dl>
+
+    </div>
+
+

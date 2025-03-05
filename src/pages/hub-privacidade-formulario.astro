@@ -1,0 +1,330 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { baseURL } from "../config";
+---
+
+<Layout title="Nova Vida - TI">
+	<div class="content-row mt-24">
+		<div class="content-container lg:grid grid-cols-12">
+			<form id="formContatoPrivacidade">
+				<div class="pb-14 border-b border-neutral border-opacity-50 space-y-10">
+					<div class="image-wrapper">
+						<img src=`${baseURL}/img/privacidade-forms/ilustra.png` alt="">
+					</div>
+	
+					<h3 class="text-3xl text-black font-regular">Formulário para exercício de direitos sobre seus dados pessoais</h3>
+	
+					<p>
+						Por meio deste formulário você poderá exercer seus direitos assegurados pela Lei Geral de Proteção de Dados Pessoais, também conhecida como LGPD.
+					</p>
+	
+					<p>
+						As informações coletadas neste formulário são necessárias para permitir que a Nova Vida atenda sua solicitação. Assim, é muito importante que todos os campos sejam preenchidos corretamente e em sua totalidade.
+					</p>
+				</div>
+	
+				<div class="py-14">
+					<p class="text-lg text-black mb-11">
+						1.Informações de contato (essas informações permitem sua identificação em nossos sistemas)
+					</p>
+	
+					<div data-field-holder>
+						<input
+							id="nome"
+							name="nome"
+							type="text"
+							placeholder="Nome Completo"
+							class="py-2 px-4 block w-full border border-neutral border-opacity-50 placeholder-black placeholder-opacity-30 rounded-md"
+						/>
+						<span data-field-error></span>
+					</div>
+	
+					<div class="flex-col flex lg:flex-row  mt-4 gap-4">
+						<div class="block w-full" data-field-holder>
+							<input
+								id="cpf"
+								name="cpf"
+								type="text"
+								placeholder="CPF"
+								class="py-2 px-4 block w-full border border-neutral border-opacity-50 placeholder-black placeholder-opacity-30 rounded-md"
+							/>
+							<span data-field-error></span>
+						</div>
+	
+						<div class="block w-full" data-field-holder>
+							<input
+								id="email"
+								name="email"
+								type="email"
+								placeholder="E-mail"
+								class="py-2 px-4 block w-full border border-neutral border-opacity-50 placeholder-black placeholder-opacity-30 rounded-md"
+							/>
+							<span data-field-error></span>
+						</div>
+					</div>
+				</div>
+	
+				<div>
+					<p class="text-lg text-black mb-11">
+						2.Você é:
+					</p>
+	
+					<div class="flex-col flex lg:flex-row  mt-4 gap-4" data-field-holder>
+						<div class="card-input">
+							<input type="radio" name="dados" id="titular" />
+							<div class="status-check">
+								<i class="icon-check text-[12px]"></i>
+							</div>
+							<div class="box-icon">
+								<img src=`${baseURL}/img/privacidade-forms/icon-person.png` alt="">
+							</div>
+							<p>
+								Titular dos dados.
+							</p>
+						</div>
+						<div class="card-input">
+							<input type="radio" name="dados" id="representante" />
+							<div class="status-check">
+								<i class="icon-check text-[12px]"></i>
+							</div>
+							<div class="box-icon">
+								<img src=`${baseURL}/img/privacidade-forms/icon-person.png` alt="">
+							</div>
+							<p>
+								Representante legal do titular dos dados pessoais.
+							</p>
+						</div>
+					</div>
+				</div>
+	
+				<div class="py-14">
+					<p class="text-lg text-black mb-11">
+						3.Qual direito você deseja exercer?
+					</p>
+	
+					<div>
+						<div class="direito-item">
+							<input type="radio" name="direito" id="direitoOpcao1" />
+							<div class="status-check">
+								<i class="icon-check text-[12px]"></i>
+							</div>
+							<label for="direitoOpcao1">
+								Confirmação de existência de tratamento: Este direito permite a confirmação de existência de tratamento dos seus dados pessoais pela Nova Vida.
+							</label>
+						</div>
+						<div class="direito-item">
+							<input type="radio" name="direito" id="direitoOpcao2" />
+							<div class="status-check">
+								<i class="icon-check text-[12px]"></i>
+							</div>
+							<label for="direitoOpcao2">
+								Acesso aos seus dados: Este direito permite a obtenção de declaração completa de seus dados pessoais que são tratados pela Nova Vida.
+							</label>
+						</div>
+						<div class="direito-item">
+							<input type="radio" name="direito" id="direitoOpcao3" />
+							<div class="status-check">
+								<i class="icon-check text-[12px]"></i>
+							</div>
+							<label for="direitoOpcao3">
+								Revogação do consentimento: Este direito permite que você revogue a autorização (consentimento) manifestada para tratamento de seus dados pessoais
+							</label>
+						</div>
+						<div class="direito-item">
+							<input type="radio" name="direito" id="direitoOpcao4" />
+							<div class="status-check">
+								<i class="icon-check text-[12px]"></i>
+							</div>
+							<label for="direitoOpcao4">
+								Correção dos seus dados: Este direito permite solicitar correção dos seus dados pessoais, desde que estejam incompletos, inexatos ou desatualizados.
+							</label>
+						</div>
+						<div class="direito-item">
+							<input type="radio" name="direito" id="direitoOpcao5" />
+							<div class="status-check">
+								<i class="icon-check text-[12px]"></i>
+							</div>
+							<label for="direitoOpcao5">
+								Eliminação dos dados pessoais tratados com o consentimento: Este direito permite solicitar a exclusão total ou parcial dos dados pessoais que foram coletados com o seu consentimento.
+							</label>
+						</div>
+						<div class="direito-item">
+							<input type="radio" name="direito" id="direitoOpcao6" />
+							<div class="status-check">
+								<i class="icon-check text-[12px]"></i>
+							</div>
+							<label for="direitoOpcao6">
+								Oposição: Este direito permite que você se oponha ao tratamento de seus dados pessoais realizados pela Nova Vida sem o seu consentimento.
+							</label>
+						</div>
+						<div class="direito-item">
+							<input type="radio" name="direito" id="direitoOpcao7" />
+							<div class="status-check">
+								<i class="icon-check text-[12px]"></i>
+							</div>
+							<label for="direitoOpcao7">
+								Outros direitos assegurados por lei. 
+							</label>
+						</div>
+					</div>
+	
+					<textarea
+						id="outros"
+						rows="4"
+						placeholder="Escreva seu texto."
+						class="texto-outro-direito"
+						disabled
+					></textarea>
+				</div>
+	
+				<div>
+					<p class="text-lg text-black mb-11">
+						4.Detalhes da solicitação
+					</p>
+	
+					<p>
+						Para auxiliar na resposta à sua solicitação de maneira rápida e eficiente, solicitamos, por gentiliza, que você nos forneça o máximo de detalhes acerca do pedido. Se possível gostaríamos que você nos informasse os períodos específicos, tipos de documentos ou quaisquer outras informações relevantes sobre a sua solicitação.
+					</p>
+	
+					<div data-field-holder>
+						<textarea
+							id="detalhes"
+							name="detalhes"
+							rows="4"
+							placeholder="Escreva seu texto."
+							class="detalhes-solicitacao"
+						></textarea>
+						<span data-field-error></span>
+					</div>
+				</div>
+	
+				<div class="py-14">
+					<p class="text-lg text-black mb-11">
+						5.Documento de identificação
+					</p>
+	
+					<p>
+						Importante: para seguirmos com a sua solicitação, precisaremos confirmar a sua identidade. Assim, pedimos que anexe abaixo um documento oficial com foto. Caso você seja o representante legal do titular dos dados pessoais, é necessário que você anexe também uma procuração com poderes de representação adequados à solicitação.
+					</p>
+	
+					<div class="file-container mt-16 mb-3">
+						<input type="file" id="fileInput" class="hidden" multiple />
+					  
+						<button class="custom-button py-3 rounded-md px-7 inline-flex justify-between items-center self-start gap-4 border border-black text-black min-w-64" id="triggerButton">
+						  Anexar Documentos(s)
+						  <i class="icon-clip"></i>
+						</button>
+					  
+						<div class="attached-files mt-2" id="attachedFiles">
+						  <p>Nenhum arquivo anexado.</p>
+						</div>
+					</div>
+	
+					<button type="submit" class="py-3 rounded-md px-7 inline-flex justify-center items-center self-start gap-4 bg-primary text-black min-w-64">Enviar <i class="icon-arrow-up-angled text-[12px]"></i></button>
+				</div>
+	
+			</form>
+		</div>
+	</div>
+</Layout>
+
+
+<style>
+    form{
+        @apply col-span-8 col-start-3 border border-neutral border-opacity-50 rounded-xl py-14 md:px-24 px-12;
+    }
+
+    .card-input{
+        @apply p-6 w-full border border-neutral border-opacity-50 rounded-md relative;
+
+        &:has(input[type="radio"]:checked){
+            @apply text-black;
+            border-color: #0C70DF;
+
+
+            .box-icon{
+                @apply bg-primary;
+            }
+        }
+
+        input[type="radio"]{
+            @apply absolute w-full h-full top-0 left-0 opacity-0 hover:cursor-pointer;
+
+            &:checked + .status-check{
+                background-color: #0C70DF;
+                border-color: #0C70DF;
+                color: white;
+            }
+        }
+
+        .status-check{
+            @apply border border-neutral border-opacity-50 rounded-full w-5 h-5 bg-transparent absolute top-5 right-5 text-transparent flex justify-center;
+
+            i{
+                @apply self-center
+            }
+        }
+
+        .box-icon{
+            @apply w-10 h-10 bg-grey-surface rounded-lg flex justify-center;
+
+            img{
+                @apply self-center
+            }
+
+            + p{
+                @apply mt-8
+            }
+        }
+    }
+
+    
+    .direito-item{
+        @apply flex gap-3 border-b border-neutral border-opacity-50 py-6 cursor-pointer;
+        
+        label{
+            @apply cursor-pointer;
+        }
+        
+
+        input[type="radio"]{
+            @apply hidden;
+
+            &:checked + .status-check{
+                background-color: #0C70DF;
+                border-color: #0C70DF;
+                color: white;
+
+                .icon-check{
+                    @apply flex;
+                }
+            }
+        }
+
+        .status-check{
+            @apply border border-neutral border-opacity-50 rounded-full w-5 h-5 bg-transparent flex justify-center mt-1;
+            flex: 0 0 auto;
+
+            .icon-check{
+                @apply hidden self-center;
+            }
+        }
+
+        &:first-child{
+            @apply pt-0
+        }
+
+        &:last-child{
+            @apply border-none;
+        }
+    }
+
+    .texto-outro-direito, .detalhes-solicitacao{
+        @apply mt-10 p-4 block w-full border border-neutral border-opacity-50 placeholder-black placeholder-opacity-30 rounded-lg;
+    } 
+
+    [data-field-error]{
+        @apply block text-debug mt-2
+    }
+</style>
+

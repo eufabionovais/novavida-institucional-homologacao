@@ -1,0 +1,9 @@
+---
+  const {item, ...props} = Astro.props;
+---
+
+<div class:list={item.customClass} data-theme={item.tema} data-direcao={item.direcao || 'horizontal'} class="bandeirola flex items-center px-3 py-2 gap-4 rounded-md text-sm max-w-60 relative" {...props}>
+  <img src={item.icone} alt="">
+  <p>{item.texto}</p>
+</div>
+

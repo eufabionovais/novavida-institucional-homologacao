@@ -1,0 +1,131 @@
+---
+
+import { baseURL } from "../../config";
+
+const clientes = [
+
+  {
+  
+    logos: [
+      {
+        nome: "Banco Safra",
+        imagem: `${baseURL}/img/home/clientes/safra.png`
+      },
+      {
+        nome: "Heinekein",
+        imagem: `${baseURL}/img/home/clientes/heinekein.png`
+      },  
+      {
+        nome: "Facebook",
+        imagem: `${baseURL}/img/home/clientes/facebook.png`
+      },    
+      {
+        nome: "Totvs",
+        imagem: `${baseURL}/img/home/clientes/totvs.png`
+      },      
+      {
+        nome: "PicPay",
+        imagem: `${baseURL}/img/home/clientes/picpay.png`
+      },        
+      {
+        nome: "Nimbi",
+        imagem: `${baseURL}/img/home/clientes/nimbi.png`
+      },          
+      {
+        nome: "Drogaria São Paulo",
+        imagem: `${baseURL}/img/home/clientes/drogaria-sao-paulo.png`
+      },            
+      {
+        nome: "Pizza Hut",
+        imagem: `${baseURL}/img/home/clientes/pizza-hut.png`
+      },   
+    ]
+  },
+  {
+    
+    logos: [
+      {
+        nome: "Banco Inter",
+        imagem: `${baseURL}/img/home/clientes/banco-inter.png`
+      },   
+      {
+        nome: "Promotiva",
+        imagem: `${baseURL}/img/home/clientes/promotiva.png`
+      },                
+      {
+        nome: "Unimed",
+        imagem: `${baseURL}/img/home/clientes/unimed.png`
+      },
+      {
+        nome: "Casa do Construtor",
+        imagem: `${baseURL}/img/home/clientes/casa-do-construtor.png`
+      },  
+      {
+        nome: "Doctor Feet",
+        imagem: `${baseURL}/img/home/clientes/doctor-feet.png`
+      },                                      
+      {
+        nome: "Atento",
+        imagem: `${baseURL}/img/home/clientes/atento.png`
+      },                                 
+      {
+        nome: "V4 Company",
+        imagem: `${baseURL}/img/home/clientes/v4-company.png`
+      },                                                
+    ]
+  }
+
+]
+---
+
+<div class="text-nowrap overflow-hidden flex relative select-none gap-5">
+  <div class="flex flex-shrink-0 min-w-full justify-around scrollMarquee">
+    {
+      clientes[0].logos.map((logo) => {
+        return (
+        <div class='cliente'>
+          <img src={logo.imagem} alt="">
+        </div>              
+        )
+      })
+    }
+  </div>
+  <div class="flex flex-shrink-0 min-w-full justify-around scrollMarquee">
+    {
+      clientes[0].logos.map((logo) => {
+        return (
+        <div class='cliente'>
+          <img src={logo.imagem} alt="">
+        </div>              
+        )
+      })
+    }
+  </div>
+</div>
+
+
+<div class="text-nowrap overflow-hidden flex relative select-none gap-5">
+  <div class="flex flex-shrink-0 min-w-full justify-around scrollMarqueeReversed">
+    {
+      clientes[1].logos.map((logo) => {
+        return (
+        <div class='cliente'>
+          <img src={logo.imagem} alt="">
+        </div>              
+        )
+      })
+    }
+  </div>
+  <div class="flex flex-shrink-0 min-w-full justify-around scrollMarqueeReversed">
+    {
+      clientes[1].logos.map((logo) => {
+        return (
+        <div class='cliente'>
+          <img src={logo.imagem} alt="">
+        </div>              
+        )
+      })
+    }
+  </div>
+</div>
+

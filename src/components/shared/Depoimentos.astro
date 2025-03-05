@@ -1,0 +1,56 @@
+---
+import Avatares from "../shared/Avatares.astro";
+import {baseURL} from "../../config";
+
+const avataresDepoimentos = [
+    {
+      imagem: `${baseURL}/img/shared/avatares/avatar-3.png`
+    },
+    {
+      imagem: `${baseURL}/img/shared/avatares/avatar-4.png`
+    }    
+]
+
+---
+
+<div class="content-row py-20">
+  <div class="content-container lg:grid grid-cols-12 depoimentos" data-animation="content-with-slider">
+    <div class="col-span-4 flex flex-col">
+      <Avatares itens={avataresDepoimentos} classList={"mb-10"} />
+      <h3 class="section-highlight-title text-highlight-on-light" data-section-title>
+        Cada feedback é uma história de sucesso
+      </h3>
+      <p class="mt-auto" data-section-description>Veja como nossas soluções transformaram desafios e inspire-se com aqueles que já deram o próximo passo</p>
+
+    </div>
+
+    <div class="col-span-6 col-start-7">
+      <div class="swiper slider-depoimentos mt-12 lg:mt-0" data-section-main-content>
+        <div class="swiper-wrapper mb-10 text-black">
+          <div class="swiper-slide">
+            <article>
+              <blockquote>
+                <p>Há mais de 2 anos, implementamos a ferramenta Next na Matriz da V4, e ela nos proporcionou resultados expressivos no Outbound. A Next foi crucial para aumentar a prospecção, com segmentações precisas e contatos estratégicos. Agora, expandimos seu uso a toda a rede, padronizando processos e aprimorando a análise de dados, com suporte essencial da Nova Vida TI.</p>
+              </blockquote>
+              <cite class="mt-10 block not-italic">Yago Pereira /  V4 Company</cite>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article>
+              <blockquote>
+                <p>Há mais de 2 anos, implementamos a ferramenta Next na Matriz da V4, e ela nos proporcionou resultados expressivos no Outbound. A Next foi crucial para aumentar a prospecção, com segmentações precisas e contatos estratégicos. Agora, expandimos seu uso a toda a rede, padronizando processos e aprimorando a análise de dados, com suporte essencial da Nova Vida TI.</p>
+              </blockquote>
+              <cite class="mt-10 block not-italic">Yago Pereira /  V4 Company</cite>
+            </article>
+          </div>
+
+             
+        </div> 
+        <div class="swiper-buttons-wrapper flex gap-2 items-center justify-end lg:justify-start pt-10">
+          <div class="swiper-button swiper-button-prev"></div>
+          <div class="swiper-button swiper-button-next"></div> 
+        </div>
+      </div>
+    </div>    
+  </div>
+</div>

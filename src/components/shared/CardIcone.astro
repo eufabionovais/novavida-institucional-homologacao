@@ -1,0 +1,15 @@
+---
+const {classList, titulo, icone, conteudo} = Astro.props;
+---
+
+<div class="card-icone" class:list={classList}>
+  {
+    icone && 
+    <div class="mb-4 lg:mb-14">
+      <img src={icone} alt="">
+    </div>
+  }
+  <h3 class="font-regular text-lg mb-7 text-black" set:html={titulo}></h3>  
+  <p class="text-base leading-7 font-light" set:html={conteudo}></p>
+</div>
+

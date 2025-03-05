@@ -1,0 +1,157 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BlogPost from "../components/shared/BlogPost.astro";
+import ButtonOutlineBottom from "../components/shared/ButtonOutlineBottom.astro";
+
+const posts = [
+    {
+        imagem: `/img/blog-interna/post-1.png`,
+        alt: '',
+        categoria: "Big Data",
+        data: "11.11.2024",
+        titulo: "Privacidade: como garantir a segurança dos dados?",
+        link: "/blog-post"
+    },
+    {
+        imagem: `/img/blog-interna/post-2.png`,
+        alt: '',
+        categoria: "Mkt & Vendas",
+        data: "11.11.2024",
+        titulo: "Vendas on-line: 4 dicas para melhorar sua performance!",
+        link: "/blog-post"
+    },
+    {
+        imagem: `/img/blog-interna/post-1.png`,
+        alt: '',
+        categoria: "Big Data",
+        data: "11.11.2024",
+        titulo: "Privacidade: como garantir a segurança dos dados?",
+        link: "/blog-post"
+    },
+    {
+        imagem: `/img/blog-interna/post-2.png`,
+        alt: '',
+        categoria: "Mkt & Vendas",
+        data: "11.11.2024",
+        titulo: "Vendas on-line: 4 dicas para melhorar sua performance!",
+        link: "/blog-post"
+    },
+];
+
+const categorias = ["All", "Big Data", "Bussiness", "Compliance", "Mkt & Vendas", "BI"];
+
+const categoriaSelecionada = "All"
+
+---
+
+<Layout title="Nova Vida - TI"  headerTheme="black">
+	<div class="content-row novidades text-black py-40 pb-20">
+        <div class="content-container lg:grid grid-cols-12 h-full">
+            <div class="col-span-3 flex flex-col justify-between">		
+                <p class="flex items-center mb-7 section-highlight-title text-highlight-on-light">
+                    Blog
+                </p>
+            </div>
+            <div class="col-span-8 col-start-5 mt-12 lg:mt-0">
+                <p class="section-highlight-title text-highlight-on-light">
+                    Estamos sempre compartilhando insights, tendências e dicas práticas para ajudar você a otimizar suas operações e ampliar suas oportunidades de negócio.
+                </p>
+                <p class="mt-20 text-neutral">
+                    Nosso conteúdo foi criado para levar até você as informações mais relevantes e exclusivas para transformar suas decisões com dados inteligentes.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content-row pb-20">
+        <div class="content-container lg:grid grid-cols-12">
+            <span class="col-span-4">
+                <span id="categoriaSelecionada">{categoriaSelecionada}</span>
+                 
+                (
+                    <span id="totalPosts">
+                        {
+                            categoriaSelecionada === "All" ? posts.length : posts.filter((post) => post.categoria === categoriaSelecionada).length
+                        }
+                    </span>
+                )
+            </span>
+            <div class="col-span-8 col-start-5 flex lg:flex-row flex-col gap-5 lg:mt-0 mt-10">
+                {
+                    categorias.map((categoria, index) => (
+                        <div class="item-categoria">
+                            <input
+                                type="radio"
+                                name="categorias"
+                                id={categoria}
+                                value={categoria}
+                                checked={categoriaSelecionada === categoria} 
+                                class="hidden"
+                            />
+                            <label for={categoria} class="cursor-pointer">{categoria}</label>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+    
+    <div class="content-row pb-12 md:pb-24">
+        <div class="content-container lg:grid grid-cols-12 gap-4">
+            {
+                posts.map((post, index) => (
+    
+                    <div class="col-span-12 lg:col-span-6 flex" data-categoria={post.categoria}>
+                        <BlogPost post={post} />
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+    
+    <div class="content-row">
+        <div class="content-container text-center">
+            <ButtonOutlineBottom
+                text="Carregar mais" 
+                href="#"
+                icon="icon-arrow-down"
+                customClasses="min-w-64" 
+            />
+        </div>
+    </div>
+
+</Layout>
+
+<style scoped lang="scss">
+    .item-categoria {
+        @apply flex gap-1;
+
+        label {
+            position: relative;
+            padding-left: 14px;
+            
+            &::before{
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 10px;
+                height: 10px;
+                border-radius: 100%;
+                background-color: transparent;
+                transition: background-color 0.2s;
+            }
+        }
+
+        input[type="radio"]:checked + label {
+            color: #000;
+
+            &::before{
+                @apply bg-primary
+            }
+        }
+    }
+</style>
+

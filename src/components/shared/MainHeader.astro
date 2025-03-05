@@ -1,0 +1,126 @@
+---
+import { baseURL } from "../../config";
+import MainMenu from "./MainMenu.astro";
+const { headerTheme } = Astro.props;
+const logo = headerTheme == 'black' ? 'logo-nova-vida-on-dark.png' : 'logo-nova-vida-on-light.png' 
+---
+<header class="main-header fixed top-0 left-0 right-0 z-[3]" data-theme={headerTheme}>
+  <div class="content-container main-header__inner">
+    <a href=`${baseURL}/` class="main-header__logo-link">
+      <img src=`${baseURL}/img/shared/${logo}` alt="Nova Vida TI" class="main-header__logo">
+    </a>
+    <MainMenu theme={headerTheme} />
+  </div>
+</header>
+
+<style lang="scss">
+  .main-header {
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    left: 0;
+    right: 0;
+    @apply bg-white duration-300 delay-150;    
+  }
+
+  [data-theme='black'] {
+    @apply bg-black;
+  }
+
+  .main-header__inner {
+    display: flex;
+    align-items: center;  
+    height: 80px;
+    justify-content: space-between;
+    padding-block: 0;
+  }
+
+  .main-header__logo-link {
+    flex-shrink: 0; 
+  }
+  
+
+  .main-header__logo {
+    flex-shrink: 0;
+    max-width: 170px; 
+  }
+
+  :global(.main-menu__wrapper) {
+      display: flex;
+      align-items: center;
+  }
+
+  :global(.main-menu__container .btn-menu) {
+      display: none;
+  }  
+
+  @media (max-width: 768px) {
+    :global(.main-menu .submenu-toggle) {
+      padding-inline: 20px;
+    }                
+  }  
+
+  @media (max-width: 1140px) {
+    :global(.main-menu__wrapper) {
+      padding-block: 24px;
+      background: #000;
+      display: none;
+    }   
+    :global(.main-menu__container .btn-menu) {
+        display: flex;
+    }       
+
+    body:has(.btn-menu.open) {
+
+      :global(.main-menu__wrapper) {
+        display: flex;
+        position: absolute;
+        left: 0;
+        top: 80px;
+        width: calc(100vw - 17px);   
+        flex-direction: column;
+       ;
+      }
+
+      :global(.main-menu) {
+        flex-direction: column;
+        width: 100%;
+      }     
+      
+      :global(.main-menu .submenu-toggle) {
+        margin-left: 0;
+        justify-content: space-between;
+        padding-inline: 20px;
+      }          
+
+      :global(.submenu-wrapper) {
+        position: static;
+        visibility: visible;
+        opacity: 1;
+        padding: 0;
+            box-shadow: 0 100vh 0 100vh rgba(0, 0, 0, 0.5);    
+      }
+      
+      :global(.submenu-wrapper .content-row) {
+        display: grid;
+        grid-template-rows: 0fr;
+        height: 0;
+        overflow: hidden;
+
+      }
+
+      
+    }
+    
+    :global(.main-menu li.opened .submenu-wrapper .content-row) {
+      grid-template-rows: 1fr;
+
+    }      
+
+
+  }
+
+
+
+
+</style>

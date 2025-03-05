@@ -1,0 +1,200 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ButtonOutlineBottom from "../components/shared/ButtonOutlineBottom.astro";
+import BlogPostItem from "../components/shared/BlogPost.astro";
+import { baseURL } from '../config'; 
+
+const posts = [
+  {
+    imagem: `/img/blog-interna/post-1.png`,
+    alt: '',
+    categoria: "Big Data",
+    data: "11.11.2024",
+    titulo: "Privacidade: como garantir a segurança dos dados?",
+    link: "/post"
+  },
+  {
+    imagem: `/img/blog-interna/post-2.png`,
+    alt: '',
+    categoria: "Mkt & Vendas",
+    data: "11.11.2024",
+    titulo: "Vendas on-line: 4 dicas para melhorar sua performance!",
+    link: "/post"
+  },
+  {
+    imagem: `/img/blog-interna/post-1.png`,
+    alt: '',
+    categoria: "Big Data",
+    data: "11.11.2024",
+    titulo: "Privacidade: como garantir a segurança dos dados?",
+    link: "/post"
+  },
+  {
+    imagem: `/img/blog-interna/post-2.png`,
+    alt: '',
+    categoria: "Mkt & Vendas",
+    data: "11.11.2024",
+    titulo: "Vendas on-line: 4 dicas para melhorar sua performance!",
+    link: "/post"
+  },
+];
+---
+
+<Layout title="Nova Vida - TI"  headerTheme="black">
+
+    <!-- Intro -->
+    <div class="content-row novidades text-black py-10 md:py-20">
+        <div class="content-container" data-grid-section="initial-section">
+            <div data-grid-section="initial-section__header">
+                <p class="flex items-center mb-7">
+                    Marketing e Vendas
+                </p>
+                <p class="text-neutral text-base">11.11.2024</p>               
+            </div>
+            <div data-grid-section="initial-section__content">
+                 <p class="section-highlight-title text-highlight-on-light">
+                    Análise de riscos: por que ela é crucial para o sucesso empresarial?
+                </p>
+                <p class="mt-10 md:mt-20 text-neutral">
+                    Por mais que não seja uma boa notícia, é importante que saiba que empresas de todo o porte e segmento estão sujeitas a passarem por riscos, alguns deles podem até mesmo comprometer a existência de um negócio, o levando a falência.
+                </p>              
+            </div>
+            <div data-grid-section="initial-section__action">
+                <p class="text-neutral text-base">
+                    Escrito por: <br />
+                    Juliana Domingues
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- / Intro -->
+
+    <div class="content-row">
+        <div class="content-container">
+            <div class="image-wrapper relative">
+                <img src=`${baseURL}/img/blog-interna/banner.png` alt="" />
+            </div>
+        </div>
+    </div>
+
+    <div class="content-row pt-20">
+        <div class="content-container lg:grid grid-cols-12 text-neutral">
+            <div class="col-span-8 col-start-5">
+                <p>
+                    Nesse sentido, para evitar que situações como essa ocorram, é essencial que a sua organização realize uma análise de riscos, ou seja, faça uma avaliação para entender como o negócio poderá ser impactado para que crie ações que irão evitar futuros problemas.
+                </p>
+                <p>
+                    Você sabe mais sobre o conceito desse termo, sua relação com os dados e, além disso, a importância? Pensando nisso, para conferir todos esses detalhes, continue com a leitura do conteúdo!
+                </p>
+
+                <h2 class="text-3xl text-black pt-20 pb-14">O que é a análise de riscos?</h2>
+                <p class="pb-10">
+                    Como o próprio nome sugere, a análise de riscos reúne um conjunto de técnicas que visam identificar as possibilidades e probabilidades que determinadas ações podem causar em uma empresa. Sendo assim, é por meio dessa prática que os líderes da empresa ficarão cientes dos futuros problemas que poderão surgir, fazendo com que se preparem e tentem reduzir, ao máximo, todos os malefícios que eles iriam causar. 
+                </p>
+                <p>
+                    No geral, o intuito dessa estratégia é minimizar os efeitos negativos que podem prejudicar a organização. Por esse motivo, toda empresa deve aplicar a análise de riscos para garantir uma existência mais sólida e saudável no mercado.
+                </p>
+
+                <div class="my-10">
+                  <div class="image-wrapper">
+                      <img src=`${baseURL}/img/blog-interna/imagem-intermediaria.png` alt="" />
+                  </div>
+                </div>
+
+                <h2 class="text-3xl text-black pb-14">Relação entre dados e análise de riscos</h2>
+                <p>
+                    Sabia que os dados estão diferentemente relacionados com a análise de riscos? É isso mesmo, afinal, toda a avaliação é feita com base em informações, e não apenas achismos.
+                </p>
+                <p>
+                    Como o processo visa identificar possíveis problemas no futuro, fazer uma avaliação dos dados, a fim de que façam uma previsão é primordial. Por esse motivo, se não tem o costume de olhar para essas informações no dia a dia do seu negócio, mude imediatamente, pois essa ação permitirá que se previna contra possíveis impactos negativos que poderão surgir.
+                </p>
+
+                <h2 class="text-3xl text-black pt-20 pb-14">Importância da análise de riscos</h2>
+                <p>
+                    Depois de entender mais do conceito e, além disso, da relação que essa ação possui com os dados, chegou o momento de aprender sobre seus benefícios. Sendo assim, selecionamos os principais deles. Veja abaixo!
+                </p>
+                <ul class="list-disc list-outside marker:pl-0 ml-6 leading-7 my-10">
+                    <li>Maior estabilidade: uma das vantagens é que terá uma estabilidade maior do seu negócio. Isso porque, irá criar mecanismos para evitar que as oscilações ocorram, comprometendo sua saúde financeira, por exemplo;</li>
+                    <li>Ambiente mais seguro: outra vantagem é que terá acesso a uma empresa mais segura. Isso porque, estará de olho nos possíveis problemas que poderão ocorrer, criando assim, mecanismos de defesa; </li>
+                    <li>Ajuda nas tomadas de decisões: ao saber dos riscos que seu negócio irá enfrentar, poderá ficar mais atento para tomar decisões que não irão comprometer o negócio, mas sim ajudá-lo.</li>
+                </ul>
+                <p>
+                    Já conhecia esses benefícios? Saiba que esses são apenas alguns dos inúmeros aspectos positivos para empresas que realizam a análise de riscos!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-row pt-20 md:pt-28">
+        <div class="content-container lg:grid grid-cols-12">
+          <div class="col-span-5 flex flex-col justify-between lg:pr-20">
+            
+            <h2 class="text-4xl font-light text-black lg:pt-20">Continue a leitura e descubra artigos e insights para enriquecer suas estratégias.</h2>
+            
+            <ButtonOutlineBottom
+                text="Explore Nossos Conteúdos" 
+                href="#"
+                icon="icon-arrow-right"
+                customClasses="mt-10" 
+            />
+          </div>
+      
+          <div class="col-span-7">
+      
+      
+            <div class="swiper slider-blog mt-6 lg:mt-0">
+      
+              <div class="swiper-wrapper">
+                {
+                  posts.map((post, index) => (
+                    <div class="swiper-slide">
+                      <BlogPostItem post={post} />
+                    </div>
+                  ))
+                }
+              </div>
+              
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+              
+            </div>
+      
+          </div>
+        </div>
+      </div>
+</Layout>
+
+<style lang="scss">
+    .swiper {
+       --swiper-pagination-top: 96%;
+      .swiper-slide {
+        max-width: 590px;
+        width: 100%;
+        img {
+          border-radius: 12px;
+        }
+      }
+    }
+    
+  
+    :global(.swiper-pagination.swiper-pagination-bullets) {
+      text-align: left;
+    }
+  
+    :global(.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet) {
+      height: 2px;
+      min-width: 100px;
+      background: #A2B3AE;
+      border-radius: 0;
+      margin: 0 !important;
+      transition: 0.3s;
+    }
+  
+    :global(.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet-active, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet-active) {
+      height: 2px;
+      min-width: 100px;
+      background: #000;
+      border-radius: 0;
+    }  
+</style>
+

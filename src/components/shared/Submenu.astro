@@ -1,0 +1,10 @@
+---
+import SubmenuItem from "./SubmenuItem.astro";
+const { submenus, classList } = Astro.props;
+---
+
+<div class="content-row">
+  <div class="content-container" class:list={classList}>
+    <SubmenuItem submenus={submenus}   />
+  </div>
+</div>

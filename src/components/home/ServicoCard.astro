@@ -1,0 +1,18 @@
+---
+const {servico, index} = Astro.props;
+import { baseURL } from "../../config";
+import BaseButton from "../shared/BaseButton.astro";
+---
+
+<div data-servico-categoria={servico.categoria} data-index={index} class="servico last:mb-0 last:pb-0">
+  <div class="servico__img-wrapper overflow-hidden rounded-xl">
+    <img src={servico.imagem} alt={servico.titulo} class="rounded-xl servico__img" width="592" height="392">
+  </div>
+  <h2 class="text-3xl font-regular text-black servico__titulo mt-[32px]">{servico.titulo}</h2>
+  <p class="text-base font-light servico__descricao  mt-[26px] leading-[1.86]">{servico.descricao}</p>
+
+  <BaseButton classList="servico__btn mt-[52px]" variant="dark" link=`${baseURL}${servico.link}` />
+</div>
+
+
+

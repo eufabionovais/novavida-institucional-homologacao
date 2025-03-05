@@ -1,0 +1,99 @@
+---
+
+import BaseButton from '../components/shared/BaseButton.astro';
+import CallToAction from "../components/shared/CallToAction.astro";
+import HeroShared from '../components/shared/HeroShared.astro';
+import { baseURL } from "../config";
+import Layout from '../layouts/Layout.astro';
+
+---
+
+<Layout title="API de Consulta - Nova Vida TI">
+
+
+      <HeroShared 
+      item={{
+          bgDesktop: `${baseURL}/img/api-consulta/banner-desktop.png`,
+          bgMobile: `${baseURL}/img/api-consulta/banner-mobile.png`,
+          minHeightDesktop: "650px",
+          minHeightMobile: "780px"
+      }}
+  >
+        <div class="col-span-5 pb-14 flex flex-col justify-end lg:justify-start items-start">
+            <h1 class="hero-title mt-24">
+              API de consultas conecte-se ao futuro dos dados
+            </h1>              
+            <p class="mt-5 lg:mt-11 text-sm lg:text-base">
+              Utilize o datalake da Nova Vida para automatizar seu processo de onboarding e garantir uma jornada mais segura e amigável para seus usuários. A API de Consultas da Nova Vida TI é a solução ideal para empresas que buscam integrações rápidas, seguras e eficientes para acesso a dados cruciais.
+            </p>              
+
+            <BaseButton classList="mt-16" />
+
+        </div>  
+    </HeroShared> 	
+
+
+  <div class="content-row mt-20">
+    <div class="content-container">
+        <div class="md:grid grid-cols-12">
+          <div class="col-span-5 flex flex-col justify-center space-y-4 lg:space-y-11 mb-8 md:mb-0">
+            <h2 class="text-2xl lg:text-3xl section-highlight-title text-highlight-on-light">Por que escolher a API de Consultas da Nova Vida TI?</h2>
+            <ul class="list-disc list-outside marker:pl-0 marker ml-4 leading-7" data-animation='lista'>
+              <li>Tempo de resposta rápido;</li>
+              <li>Dados cadastrais para confirmação de identidade;</li>
+              <li>Informações de crédito para análise de risco;</li>
+              <li>Capacidade de pagamento;</li>
+              <li>Personas de crédito;</li>
+              <li>Personas demográficas;</li>
+              <li>Informações de compliance.</li>
+            </ul>
+          </div>
+          <div class="col-span-6 col-start-7 flex justify-center bg-grey-surface rounded-xl py-20">
+            <div data-animation='from-bottom' class="image-wrapper flex items-center">
+              <img src=`${baseURL}/img/api-consulta/lista.png` alt="">
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  
+  <div class="content-row my-20 md:my-32">
+    <div class="content-container">
+        <div class="md:grid grid-cols-12">
+          <div class="col-span-5 flex flex-col justify-center space-y-4 lg:space-y-11 mb-8 md:mb-0">
+            <h2 class="text-black font-regular text-2xl lg:text-3xl">Como Funciona?</h2>
+            <ul class="custom-lista list-disc list-outside space-y-11 marker:pl-0 marker ml-4 leading-7"  data-animation='lista'>
+              <li><span class="text-black">Solicitação de API Key</span>: Cadastre-se e receba sua chave de acesso exclusiva.</li>
+              <li><span class="text-black">Documentação Detalhada</span>: Acesse um guia completo com exemplos práticos para facilitar a integração.</li>
+              <li><span class="text-black">Suporte Dedicado</span>: Equipe pronta para ajudar em cada etapa.</li>
+            </ul>
+          </div>
+          <div class="col-span-6 col-start-7 flex justify-center bg-grey-surface rounded-xl py-28">
+            <div class="image-wrapper flex items-center">
+              <img src=`${baseURL}/img/api-consulta/como-funciona.png` alt="">
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
+  <CallToAction
+    info={{
+    titulo: "Automatize processos e garanta dados precisos com nossa API",
+    descricao: "Aproveite a eficiência da nossa API para integrar dados com precisão, segurança e velocidade, otimizando seus processos de ponta a ponta.",
+    textButton: 'Falar Agora',
+    url: "/#",
+    imagem: {
+      url: `${baseURL}/img/api-consulta/imagem-call-to-action.png`,
+      alt: "Texto alternativo imagem"
+    }
+  }} />
+
+</Layout>
+
+<style>
+  .custom-lista li::marker {
+    @apply text-black;
+  }
+</style>

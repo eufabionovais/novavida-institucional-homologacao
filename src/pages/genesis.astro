@@ -1,0 +1,235 @@
+---
+import ButtonShared from "../components/shared/Button.astro";
+import BaseFaq from "../components/shared/BaseFaq.astro";
+import BaseButton from "../components/shared/BaseButton.astro";
+import CallToAction from "../components/shared/CallToAction.astro";
+import HeroShared from "../components/shared/HeroShared.astro";
+import Bandeirola from "../components/shared/Bandeirola.astro"
+import BeneficioProduto from "../components/shared/BeneficioProduto.astro";
+import { baseURL } from "../config";
+import Layout from '../layouts/Layout.astro';
+
+//Data 
+const faqPrincipaisFuncionalidades = [
+
+  {
+    pergunta: "Análise de riscos e fraudes",
+    resposta: "Ferramentas para identificar ameaças e fraudes antes que causem prejuízos. Com análises preditivas, é possível antecipar problemas, tomar decisões assertivas e proteger o negócio de perdas financeiras e danos à reputação."
+  },
+  {
+    pergunta: "Dossiês de consumidores e empresas",
+    resposta: "Informações detalhadas e organizadas, reunidas para consultas rápidas e assertivas. Ideal para apoiar decisões estratégicas, identificar oportunidades e reduzir riscos no relacionamento com consumidores e empresas."    
+  },
+  {
+    pergunta: "Workflow de processos decisórios",
+    resposta: "Simplifique e automatize fluxos de trabalho com soluções que economizam tempo, reduzem custos e aumentam a produtividade. Facilite decisões consistentes e resultados eficientes."    
+  },
+  {
+    pergunta: "Acesso a inúmeras fontes públicas e privadas",
+    resposta: "Integramos dados atualizados e abrangentes de fontes públicas e privadas confiáveis, fornecendo análises completas que oferecem uma visão estratégica de consumidores e empresas."    
+  },
+  {
+    pergunta: "Validação de dados cadastrais e documentos",
+    resposta: "Processos ágeis e confiáveis para confirmar a autenticidade de dados e documentos cadastrais. Reduza erros, evite fraudes e otimize seus fluxos de validação com mais segurança."    
+  }  
+
+];
+
+const bandeirolas = [
+  {
+    icone: `${baseURL}/img/shared/icones/eficiencia.png`,
+    texto: "Eficiência",
+    tema: "black",
+    direcao: "vertical",
+    customClass: 'col-span-3 col-start-3',
+    descricao: "Reduza o tempo e os custos operacionais."
+  },
+  {
+    icone: `${baseURL}/img/shared/icones/confiabilidade.png`,
+    texto: "Confiabilidade",
+    tema: "purple",
+    direcao: "vertical",
+    customClass: 'col-span-3 col-start-5 row-start-2' ,
+    descricao: "Obtenha informações precisas e validadas."
+  },
+  {
+    icone: `${baseURL}/img/shared/icones/automacao.png`,
+    texto: "Automação",
+    tema: "blue",
+    direcao: "vertical",
+    customClass: 'col-span-3 col-start-5 xl:col-start-7 row-start-3',
+    descricao: "Acelere seus processos decisórios com tecnologia de ponta."
+  },    
+  {
+    icone: `${baseURL}/img/shared/icones/integracao.png`,
+    texto: "Integração",
+    tema: "yellow",
+    direcao: "vertical",
+    customClass: 'col-span-3 col-start-9 row-start-1',
+    descricao: "Conecte sistemas da empresa de forma prática e ágil. (API Webservice)."
+  } 
+];
+
+const beneficiosIpe = [
+  {
+    titulo: "Mais de mil fontes para as melhores tomadas de decisão",
+    descricao: "A plataforma conta com mais de mil fontes diversificadas para a captação de dados, garantindo informações precisas e completas.",
+    imagem: {
+      url: `${baseURL}/img/genesis/fontes.png`,
+      alt: "Descrição imagem 1"
+    },
+    tituloLista: "Entre eles:",
+    lista: [
+      "Informações precisas sobre protestos e ações judiciais",
+      "Notícias positivas e desabonadoras",
+      "Cadastro Nacional de Empresas (Receita Federal)",
+      "Participações societárias e administradores",
+      "Pendências financeiras e Certidões",
+      "Orgãos Reguladores"
+    ],
+    customClasses: {
+        'content-col': '[&]:col-span-5 [&]:col-start-8 [&]:row-start-1 justify-center ',
+        'image-col': '[&]:col-start-1 [&]:row-start-1',
+        'container': 'mt-3 !py-0',
+        
+    }
+  }
+]
+---
+
+<Layout title="Gênesis - Nova Vida TI" headerTheme="white">
+
+    <HeroShared 
+      item={{
+          bgDesktop: `${baseURL}/img/genesis/banner-desktop.png`,
+          bgMobile: `${baseURL}/img/genesis/banner-mobile.png`,
+          minHeightDesktop: "650px",
+          minHeightMobile: "780px"
+      }}
+  >
+        <div class="col-span-5 pb-14 flex flex-col justify-end lg:justify-start items-start">
+            <h1 class="hero-title mt-24">
+              Gênesis: Um nova era para gestão de riscos e compliance da sua empresa
+            </h1>              
+            <p class="mt-5 lg:mt-11 text-sm lg:text-base">
+              Descubra o Gênesis, a solução que integra inteligência de dados e tecnologia avançada para otimizar processo de compliance e gestão de riscos. Com praticidade e resultados garantidos, Gênesis oferece recursos que facilitam a tomada de decisão e assegura segurança e precisão em cada etapa.
+            </p>              
+
+            <BaseButton classList="mt-16" />
+
+        </div>  
+    </HeroShared>      
+
+    <!-- Principais Beneficios -->
+    <div class="content-row  text-black mt-20">
+      <div class="content-container lg:grid grid-cols-12">
+        <div class="col-span-12 md:mb-44 mb-20">
+          <p class="section-highlight-title text-highlight-on-light">Com o Gênesis, sua empresa alcança novos padrões de desempenho e controle, otimizando operações e assegurando decisões estratégicas com praticidade e resultados confiáveis.</p>
+        </div>
+        
+        <div class="col-span-3">
+          <small class="flex items-center gap-2 text-neutral mb-6 text-base">Principais Funcionalidades <i class="icon-curved-arrow relative top-1"></i></small>
+          <p>Recursos que elevam a qualidade das suas análises e decisões</p>
+        </div>
+        <div class="col-span-7 col-start-6 md:m-0 m-10">
+          <BaseFaq questoes={faqPrincipaisFuncionalidades} variant="numbered" />
+        </div>
+    
+      </div>
+    </div>
+    <!-- / Principais Beneficios -->
+
+    <ButtonShared
+        text="Fale com um de nossos especialistas " 
+        href="#"
+        customClasses="col-span-10 col-start-2 lg:col-span-4 lg:col-start-5 bg-black [&]:text-white" 
+    />
+
+    <HeroShared 
+      item={{
+          bgDesktop: `${baseURL}/img/genesis/banner-intermediario.png`,
+          bgMobile: `${baseURL}/img/genesis/banner-intermediario-mobile.png`,
+          minHeightDesktop: "545px",
+          minHeightMobile: "490px"
+      }}>
+        <div class="col-span-12 pb-14 flex flex-col lg:justify-center lg:items-center">
+            <h1 class="hero-title mt-24 lg:text-center">
+              Transforme a gestão de riscos e compliance da sua empresa
+            </h1>              
+        </div>  
+    </HeroShared>   
+
+    <!-- Indicadores Valiosos -->
+    <div class="content-row  text-black">
+        <div class="content-container lg:grid grid-cols-12 pt-20 ">
+          <div class="col-span-5">
+            <h2 class="text-4xl">Por que escolher o Gênesis?</h2>
+          </div>
+          <div class="col-span-6 col-start-7 text-neutral">
+            <p class="text-lg">Obtenha insights para otimizar suas estratégias com nossos indicadores precisos. Tome decisões mais seguras e assertivas com as nossas soluções.</p>
+          </div>
+          <div class="col-span-12 md:mt-32 mt-20">
+            <div class="gap-y-10 space-y-5 md:space-y-0 lg:mb-28">
+              <div class="swiper slider-indicadores-valiosos-genesis h-[540px] px-2">
+                <div class="swiper-wrapper">
+                {
+                  bandeirolas.map(bandeirola => {
+                    return (
+                      <div class="swiper-slide border-l border-neutral border-opacity-50 odd:pt-16 even:pt-56">
+                        <div>
+                          <Bandeirola item={bandeirola} />
+                          {
+                            bandeirola.descricao &&
+                            <p class="text-base text-neutral pl-4 pt-4">{bandeirola.descricao}</p>
+                          }
+                        </div>
+                      </div>
+                    )
+                  })
+                }
+                </div>
+              </div>
+      
+            </div>
+      
+      
+          </div>
+          
+        </div>
+    </div>
+    <!-- / Indicadores Valiosos -->
+    
+    <!-- Beneficios -->
+    {
+
+      beneficiosIpe.map((beneficio) => {
+        return (
+          <BeneficioProduto item={beneficio} />
+        )
+      })
+    
+    }
+    
+    <div class="content-row  text-black my-12 md:my-28">
+      <div class="content-container lg:grid grid-cols-12">
+        <div class="col-span-12">
+          <p class="section-highlight-title text-highlight-on-light text-center">Além da fontes Nova Vida, o Gênesis tem sua capacidade de conectar suas próprias fontes</p>
+        </div>
+      </div>
+    </div>
+    <!-- / Beneficios -->
+
+
+    <CallToAction
+        info={{
+        titulo: "Tudo começa aqui! Revolucione a forma como sua empresa gerencia riscos e compliance.",
+        descricao: "Gênesis – A inteligência que impulsiona suas decisões.",
+        textButton: 'Falar Agora',
+        url: "/#",
+        imagem: {
+        url: `${baseURL}/img/genesis/imagem-call-to-action.png`,
+        alt: "Texto alternativo imagem"
+        }
+  }} />
+
+</Layout>

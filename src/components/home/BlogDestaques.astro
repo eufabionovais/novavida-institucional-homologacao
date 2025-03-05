@@ -1,0 +1,82 @@
+---
+import ButtonOutlineBottom from "../../components/shared/ButtonOutlineBottom.astro";
+import BlogPost from "../../components/shared/BlogPost.astro";
+
+const posts = [
+    {
+        imagem: `/img/home/blog/post-1.jpg`,
+        alt: '',
+        categoria: "Big Data",
+        data: "11.11.2024",
+        titulo: "Privacidade: como garantir a segurança dos dados?",
+        link: "/blog-post"
+    },
+    {
+        imagem: `/img/home/blog/post-2.jpg`,
+        alt: '',
+        categoria: "Mkt & Vendas",
+        data: "11.11.2024",
+        titulo: "Vendas on-line: 4 dicas para melhorar sua performance!",
+        link: "/blog-post"
+    },
+    {
+        imagem: `/img/home/blog/post-1.jpg`,
+        alt: '',
+        categoria: "Big Data",
+        data: "11.11.2024",
+        titulo: "Privacidade: como garantir a segurança dos dados?",
+        link: "/blog-post"
+    },
+    {
+        imagem: `/img/home/blog/post-2.jpg`,
+        alt: '',
+        categoria: "Mkt & Vendas",
+        data: "11.11.2024",
+        titulo: "Vendas on-line: 4 dicas para melhorar sua performance!",
+        link: "/blog-post"
+    },
+];
+
+---
+
+<div class="content-row  py-10">
+  <div class="content-container lg:grid grid-cols-12 blog-destaque-wrapper lg:mt-[90px]" data-animation="content-with-slider">
+    <div class="col-span-5 flex flex-col  lg:pr-20">
+      <!-- <h2 class="text-4xl font-light text-black">Nosso blog é uma fonte rica de conhecimento sobre soluções</h2> -->
+      <h2 class="section-highlight-title" data-section-title>Nosso blog é uma fonte rica de conhecimento sobre soluções</h2>
+      <p class="mt-6 lg:mt-44" data-section-description>Aqui, você encontrará conteúdos exclusivos, insights atualizados e dicas práticas para otimizar suas estratégias de negócios.</p>
+
+      <ButtonOutlineBottom
+          text="Explore Nossos Conteúdos" 
+          href="#"
+          icon="icon-arrow-right"
+          customClasses={"lg:mt-auto max-w-72"} 
+          data-section-action
+      />
+    </div>
+
+    <div class="col-span-6 col-start-7">
+      <div class="swiper slider-blog mt-6 lg:mt-0" data-section-main-content>
+        <div class="swiper-wrapper">
+          {
+            posts.map((post) => {
+              return (
+                <div class="swiper-slide">
+                    <BlogPost post={post} />
+                </div>
+              )  
+            })
+          }
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-buttons-wrapper flex gap-2 items-center justify-end lg:justify-start">
+          <div class="swiper-button swiper-button-prev"></div>
+          <div class="swiper-button swiper-button-next"></div> 
+        </div>
+        
+      </div>
+
+    </div>
+  </div>
+</div>
+

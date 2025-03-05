@@ -1,0 +1,276 @@
+---
+
+import Clientes from "../components/home/Clientes.astro";
+import CardIcone from "../components/shared/CardIcone.astro";
+import BeneficioProduto from "../components/shared/BeneficioProduto.astro";
+import { baseURL } from "../config";
+import Layout from '../layouts/Layout.astro';
+
+const colunas = [
+  {
+    titulo: "Muito Prazer :) Somos a Nova Vida! conectando inovação e resultados.",
+    descricao: "<p>Na Nova Vida TI, transformamos dados em oportunidades. Desde 2014, somos referência em inteligência de dados, combinando tecnologia de ponta e expertise em Big Data e Analytics.</p> <p><span class='text-black'>Nossa missão é clara:</span> <br /> transformar informações em insights valiosos, ajudando empresas a tomar decisões estratégicas e alcançar resultados que realmente impactam. Atuamos como parceiros estratégicos, entregando soluções que promovem crescimento sustentável.<p>",
+    imagem: {
+      url: `${baseURL}/img/quem-somos/imagem-1.png`, 
+      alt: "Descrição imagem 1"
+    },
+    tituloLista: "", 
+    customClasses: {
+      'container': 'md:mt-20 mt-10',
+      'content-col': 'justify-center col-span-5',
+      'image-col': 'bg-grey-surface rounded-xl py-20',
+      'title': 'text-highlight-on-light',
+      'lista': 'space-y-10 custom-lista',
+      'lista-container': '[&]:lg:mt-12',      
+    }   
+  },
+  {
+    titulo: "Deixa a gente te mostrar a jornada que nos trouxe até Aqui",
+    descricao: "<p>Fundados como uma startup em 2015, evoluímos rapidamente. Em apenas 12 meses, nos tornamos uma Companhia de Big Data, investindo em tecnologia e ciência de dados.</p><p>Hoje, somos líderes no mercado, oferecendo soluções completas que atendem empresas de setores diversos. Com um compromisso constante com a inovação, ajudamos nossos clientes a navegar pela transformação digital e alcançar resultados concretos.</p>",
+    imagem: {
+      url: `${baseURL}/img/quem-somos/imagem-2.png`,
+      alt: "Descrição imagem 2"
+    },
+    tituloLista: "",
+    customClasses: {
+      'content-col': '[&]:col-span-5 [&]:col-start-8 [&]:row-start-1 justify-center ',
+      'image-col': 'bg-grey-surface rounded-xl py-20 [&]:col-start-1 [&]:row-start-1',
+      'image-wrapper': '',
+      'image-col-img': '',
+      'title': 'text-highlight-on-light',
+      'lista-container': '[&]:lg:mt-0 text-black',
+      'lista': 'space-y-10'
+    }    
+  }
+]
+---
+
+<Layout title="Quem somos - Nova Vida TI">
+
+    <section class="content-row md:pt-44 pt-32 pb-20">
+        <div class="content-container">
+            <div class="md:grid grid-cols-12">
+                <div class="col-span-12 text-center">
+                    <h2 class="text-5xl mb-11 section-highlight-title text-highlight-on-light">Vivemos de dados, respiramos inovação e criamos soluções que transformam.</h2>
+                </div>
+            </div>
+            <div class="md:grid grid-cols-12">
+                <div class="col-span-6 col-start-4 text-center">
+                    <p>
+                    Convertemos informações em soluções inteligentes que guiam decisões, conectam pessoas e impactam o dia a dia de empresas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-row pb-20">
+        <div class="content-container">
+            <div class="rounded-xl overflow-hidden">
+                <video src=`${baseURL}/img/quem-somos/video.mp4` controls width="1200" height="765" autoplay></video>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-row text-black md:mb-32 mb-20">
+        <div class="content-container lg:grid grid-cols-12">
+            <div class="col-span-12">
+                <p class="section-highlight-title text-highlight-on-light">Com expertise em coleta, análise e disponibilização de dados, transformamos interações em experiências humanas, eficientes e seguras, conectando pessoas e empresas com confiança e resultados.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Missão -->
+    <div class="content-row">
+        <div class="content-container gap-4 divide-y-2 lg:divide-y-0">
+            <div class="swiper slider-cards mt-6 lg:mt-0 slider">
+                <div class="swiper-wrapper lg:divide-x-2 divide-black divide-opacity-10">
+                    
+                    <div class="swiper-slide">
+                        <CardIcone
+                            titulo="Missão"
+                            icone=`${baseURL}/img/quem-somos/icone-missao.png`
+                            conteudo="Ajudar empresas a tomarem decisões mais assertivas por meio de dados de alta qualidade, otimizando processos e garantindo maior eficiência em suas operações."
+                            classList={"col-span-1 pb-4 mb-4"}
+                        />
+                    </div>
+    
+                    <div class="swiper-slide">
+                        <CardIcone
+                            titulo="Visão"
+                            icone=`${baseURL}/img/quem-somos/icone-visao.png`
+                            conteudo="Ser líder no mercado de dados, consolidando nossa posição como referência em soluções inteligentes para cobranças, crédito e marketing"
+                            classList={"col-span-1 lg:pl-4 pb-4 mb-4"}
+                        />
+                    </div>
+    
+                    <div class="swiper-slide">
+                        <CardIcone
+                            titulo="Valores"
+                            icone=`${baseURL}/img/quem-somos/icone-valores.png`
+                            conteudo="Promover a inovação constante, com compromisso ético e eficiência em cada solução, garantindo resultados que inspirem confiança e transformação nos negócios"
+                            classList={"col-span-1 lg:pl-4 pb-4 mb-4"}
+                        />
+                    </div>            
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / Missão -->
+
+    <!-- Colunas -->
+    {
+        colunas.map((beneficio) => {
+          return (
+            <BeneficioProduto item={beneficio} data-animation="beneficios" />
+          )
+        }) 
+    }
+    <!-- / Colunas -->
+
+    <!-- Fundadores -->
+    <div class="content-row py-20">
+        <div class="content-container mb-20">
+            <div class="lg:grid grid-cols-12">
+                <p class="col-span-8 col-start-3 text-center section-highlight-title text-highlight-on-light">Conheça as mentes por trás da revolução no mercado de dados</p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="md:grid grid-cols-12 gap-4 md:space-y-0 space-y-10">
+                <div class="col-span-4">
+                    <div class="fundador">
+                        <div class="foto image-wrapper">
+                            <img src=`${baseURL}/img/quem-somos/felipe-caldas.png` alt="">
+                        </div>
+                        <div class="nome">
+                            <span class="text-black">Felipe Caldas</span>
+                            <span>Co- Founder</span>
+                        </div>
+                        <div class="descricao">
+                            
+                                <p>Estrutura estratégias de vendas, parcerias e inovação à frente da Nova Vida, com 20 anos de experiência em Dados e Bureaus. Cursou Ciência da Computação e atuou em projetos transformadores, como a implementação do CRM do Valor Econômico e produtos de dados da Experian Serasa. Apaixonado por Big Data, IA e Esportes!</p>
+                            
+                        </div>
+                        <button class="action">Leia mais</button>
+                    </div>
+                </div>
+                <div class="col-span-4">
+                    <div class="fundador">
+                        <div class="foto image-wrapper">
+                            <img src=`${baseURL}/img/quem-somos/henrique-abreu.png` alt="">
+                        </div>
+                        <div class="nome">
+                            <span class="text-black">Henrique Abreu</span>
+                            <span>Co- Founder</span>
+                        </div>
+                        <div class="descricao">
+                            
+                                <p>Operações, Parcerias e Produtos, desenvolvimento de operações, estruturação de parcerias e inovação em processos estratégicos. Com mais de 25 anos de experiência, iniciou sua jornada como empreendedor logo cedo, liderando projetos e operações financeiras viabilizaram iniciativas de alto impacto.</p>
+<p>Estudou Engenharia Civil e Finanças, combinando experiência técnica e visão estratégica, sempre focado em soluções inovadoras para contribuição e crescimento organizacional.</p>
+<p>Seja forte e corajoso!</p>
+                            
+                        </div>
+                        <button class="action">Leia mais</button>
+                    </div>
+                </div>
+                <div class="col-span-4">
+                    <div class="fundador">
+                        <div class="foto image-wrapper">
+                            <img src=`${baseURL}/img/quem-somos/alvaro-koji.png` alt="">
+                        </div>
+                        <div class="nome">
+                            <span class="text-black">Álvaro Koji</span>
+                            <span>Co- Founder</span>
+                        </div>
+                        <div class="descricao">
+                            
+                               <p>Responsável pela área TI da Nova Vida TI, formou-se em análise de sistemas na FIAP e iniciou sua carreira, em 2002, descobriu sua vocação por desenvolvimento de Sistemas e Banco de Dados, passando por empresas como Santander, Banco IBIS, Serasa, IceCards e Cosin Consulting.</p>
+                            
+                        </div>
+                        <button class="action">Leia mais</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / Fundadores -->
+
+    <div class="content-row  text-black py-10">
+        <div class="text-nowrap overflow-hidden flex relative select-none gap-5">
+            <div class="flex flex-shrink-0 min-w-full justify-around scrollMarquee">
+                <p class="text-5xl text-center text-highlight-on-light font-light">//: &#123; Geramos Informações para o Bem :)  <span>//: &#123; Geramos Informações para o Bem :)</span>  Geramos Informações para o Bem :) </p>
+            </div>
+            <div class="flex flex-shrink-0 min-w-full justify-around scrollMarquee">
+                <p class="text-5xl text-center text-highlight-on-light font-light"><span>//: &#123; Geramos Informações para o Bem :)</span>  //: &#123; Geramos Informações para o Bem :)  Geramos Informações para o Bem :) </p>
+            </div>
+        </div>
+        <div class="content-container mt-4 px-5">
+            <div class="image-wrapper" data-animation="courtain">
+                <img src=`${baseURL}/img/quem-somos/banner-intermediario.png` alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="content-row md:my-20 my-10">
+        <div class="content-container">
+            <div class="lg:grid grid-cols-12 text-center space-y-11">
+                <p class="col-span-12 section-highlight-title text-highlight-on-light">
+                    Veja quem compartilha conosco a visão de transformar dados em resultados
+                </p>
+                <p class="col-span-8 col-start-3 ">
+                    Convertemos informações em soluções inteligentes que guiam decisões, conectam pessoas e impactam o dia a dia de empresas.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clientes -->
+    <Clientes />
+    <!-- Clientes -->
+
+</Layout>
+
+<style lang="scss">
+    .swiper-slide {
+        width: 100%;
+
+        @apply lg:px-16;
+
+        &:first-child{
+            @apply pl-0;
+        }
+        &:last-child{
+            @apply pr-0;
+        }
+    }
+
+    .fundador{
+
+        &.open{
+            .descricao{
+                @apply mt-11 h-auto overflow-visible;
+            }
+        }
+
+        .foto{
+            @apply mb-6;
+        }
+
+        .nome{
+            span{
+                @apply block
+            }
+            @apply space-y-4;
+        }
+
+        .descricao{
+            @apply h-0 transition-all overflow-hidden;
+        }
+
+        .action{
+            @apply mt-7 pb-2 border-b border-black text-black;
+        }
+
+    }
+</style>
+

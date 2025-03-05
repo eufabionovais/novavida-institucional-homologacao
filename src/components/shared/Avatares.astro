@@ -1,0 +1,27 @@
+---
+const {classList, itens, ['avatar-size']: avatarSize, ['show-more'] : showMore} = Astro.props;
+---
+
+<div class:list={classList} class="flex items-center avatares-wrapper" data-section-avatares="true">
+
+  {
+    itens.map((avatar) => {
+      return (
+        <div class="avatar-item" data-size={avatarSize}>
+          <img src={avatar.imagem} alt="">
+        </div>
+
+      )
+    })  
+  }
+
+  {
+    showMore &&
+    <div class="avatar-item" data-size={avatarSize}>
+      <button class="avatar-item__more">+</button>
+    </div>
+  }
+
+  
+</div>
+
