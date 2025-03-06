@@ -166,7 +166,11 @@ animateContentWithSlider(contentWithSlider);
 
 
   const influencers = document.querySelectorAll(".influencer");
-  staggerOnEnterViewport(influencers)
+  staggerOnEnterViewport(influencers);
+
+
+  const avisoPrivacidade = document.querySelectorAll(".item-content p, .item-content ul, .item-content ol");
+  staggerOnEnterViewport(avisoPrivacidade);
 
  
 
@@ -429,10 +433,10 @@ function animateHighlightTexts(textParents) {
     scrollTrigger: {
       trigger: textParent,
       start: "top 70%",
-      end: "+=500",
+     // end: "+=500",
       scrub: true,
       toggleActions: "play none none none",
-    }
+      }
     });
     
     // Para cada linha, cria uma sub-timeline e adiciona à masterTimeline
@@ -488,37 +492,73 @@ function animateHero(heroBanner, options = {}) {
   })
 }
 
+// function staggerOnEnterViewport(elements, options = {}) {
+
+//   const targets = Array.isArray(elements) ? elements : [elements];
+
+//   const {
+//     duration = 0.5,
+//     stagger = 0.3,
+//     fromVars = { opacity: 0, y: 30 },
+//     toVars = { opacity: 1, y: 0 },
+//     ease = "back",
+//     scrollTrigger = {}
+//   } = options;
+
+//   scrollTrigger.trigger = scrollTrigger.trigger || targets[0];
+//   scrollTrigger.start = scrollTrigger.start || "top 70%";
+//   const animationFromVars = { ...fromVars };
+//   const animationToVars = {
+//     ...toVars,
+//     duration,
+//     ease,
+//     stagger,
+//     scrollTrigger
+//   };
+
+//   return gsap.fromTo(targets, animationFromVars, animationToVars);
+// }
+
 function staggerOnEnterViewport(elements, options = {}) {
+  // Garante que 'elements' seja sempre um array, mesmo que seja uma NodeList ou um único elemento
+  const targets = Array.isArray(elements) ? elements : Array.from(elements);
+
   const {
     duration = 0.5,
-    stagger = 0.3,
-    fromVars = { opacity: 0, y: 30 },
+    stagger = 0,
+    fromVars = { opacity: 0, y: 20 },
     toVars = { opacity: 1, y: 0 },
-    ease = "back",
+    ease = "back.out",
     scrollTrigger = {}
   } = options;
 
-  // Garante que 'elements' seja sempre um array, mesmo que seja uma única referência
-  const targets = Array.isArray(elements) ? elements : [elements];
+  // Cria uma animação para cada elemento, aplicando um delay baseado no índice
+  const animations = [];
+  targets.forEach((target, index) => {
+    // Se o scrollTrigger não tiver um trigger definido, usa o próprio elemento
+    const individualTrigger = {
+      trigger: scrollTrigger.trigger || target,
+      start: scrollTrigger.start || "top 80%",
+      ...scrollTrigger
+    };
 
-  // Define o trigger e start padrão se não fornecidos
-  scrollTrigger.trigger = scrollTrigger.trigger || targets[0];
-  scrollTrigger.start = scrollTrigger.start || "top 70%";
-
-  // Configura a animação 'from' e 'to'
-  const animationFromVars = { ...fromVars };
-  const animationToVars = {
-    ...toVars,
-    duration,
-    ease,
-    stagger,
-    scrollTrigger
-  };
-
-  
-  // Cria a animação com GSAP
-  return gsap.fromTo(targets, animationFromVars, animationToVars);
+    animations.push(
+      gsap.fromTo(
+        target,
+        { ...fromVars },
+        {
+          ...toVars,
+          duration,
+          ease,
+          delay: index * stagger, // delay incrementado para efeito de stagger
+          scrollTrigger: individualTrigger
+        }
+      )
+    );
+  });
+  return animations;
 }
+
 
 // Função para animar elementos com efeito stagger e disparar a animação via ScrollTrigger
 function animateElementsWithScrollTrigger(elements, options) {
@@ -595,7 +635,7 @@ function animateHorizontalSticky(items) {
         
         scrub: true, 
         start: "top 30%", 
-        // end: "+=5000",
+        //end: "+=5000",
         markers: false, 
       }
     });
