@@ -98,40 +98,17 @@ const items = [
     <!-- ProtecaoDados -->
     <div class="content-row">
         <div class="content-container lg:grid grid-cols-12 pt-20 items-center">
-            <div class="col-span-4 lg-mb-0 mb-10">
-                <div class="divide-y divide-opacity-50 divide-neutral">
-                    <div class="item">
-                        <div class="icon">
-                            <i class="icon-register"></i>
-                        </div>
-                        <span class="item-text"> Aviso de privacidade </span>
-                    </div>
-                    <div class="item">
-                        <div class="icon">
-                            <i class="icon-security"></i>
-                        </div>
-                        <span class="item-text"> Como protegemos dados pessoais? </span>
-                    </div>
-                    <div class="item">
-                        <div class="icon">
-                            <i class="icon-hammer"></i>
-                        </div>
-                        <span class="item-text"> Como exercer seus direitos de titular? </span>
-                    </div>
-                    <div class="item">
-                        <div class="icon">
-                            <i class="icon-phone"></i>
-                        </div>
-                        <span class="item-text"> Contate nosso encarregado </span>
-                    </div>
+            <div class="col-span-5 lg-mb-0 mb-10">
+                <div class="rounded-lg" data-animation="courtain">
+                    <img src=`${baseURL}/img/hub-privacidade/protecao-dados.png` alt="">
                 </div>
             </div>
             <div class="col-span-6 col-start-7">
-                <p class="text-3xl text-black">
+                <p class="text-3xl text-neutral-light" data-animation='gradual-text-color'>
                     A proteção de dados pessoais e o respeito à privacidade são fundamentais para os
                     nossos negócios.
                 </p>
-                <p class="mt-10">
+                <p class="mt-10" data-animation='gradual-text-color'>
                     Neste Hub, reunimos as principais informações que você precisa saber sobre
                     nossas práticas de proteção de dados pessoais. <br />
                     PODE ENTRAR!
@@ -144,53 +121,53 @@ const items = [
     <!-- Acoes -->
     <div class="content-row">
         <div class="content-container md:mt-28 mt-20 gap-4">
-            <div class="swiper slider-cards mt-6 lg:mt-0">
-                <div class="swiper-wrapper lg:divide-x-2 divide-black divide-opacity-10">
+            <div class=" mt-6 lg:mt-0" data-animation="horizontal-sticky-wrapper">
+                <div class="lg:divide-x-2 divide-black divide-opacity-10 flex " data-animation="horizontal-sticky">
                     
-                    <div class="swiper-slide">
+                    
                         <CardIcone
                             titulo="Ações de Transparência"
                             icone=`${baseURL}/img/hub-privacidade/acoes/icone-lupa.png`
                             conteudo="Desenvolvemos portal dedicado ao tema na página da Nova Vida, reunindo as principais informações sobre a proteção de dados pessoais. Além disso, contamos com Aviso de Privacidade divulgado publicamente no portal, com o objetivo de trazer transparência sobre as atividades de tratamento de dados pessoais que conduzimos."
-                            classList={"col-span-1 px-7"}
+                            classList={"col-span-1 px-7 min-w-[380px] static"}
                         />
-                    </div>
+                   
     
-                    <div class="swiper-slide">
+                    
                         <CardIcone
                             titulo="Ações de Conscientização"
                             icone=`${baseURL}/img/hub-privacidade/acoes/icone-lampada.png`
                             conteudo="Acreditamos que o conhecimento do nosso time sobre proteção de dados é uma das chaves para assegurar o uso correto das informações que fornecemos em nossos produtos e soluções. Por isso, realizamos constantes treinamentos com nossa equipe para mantê-los atualizados das leis, regulações e normas internas de privacidade."
-                            classList={"col-span-1 px-7"}
+                            classList={"col-span-1 px-7 min-w-[380px] static"}
                         />
-                    </div>
+                 
     
-                    <div class="swiper-slide">
+                   
                         <CardIcone
                             titulo="Ações De Governança"
                             icone=`${baseURL}/img/hub-privacidade/acoes/icone-engrenagem.png`
                             conteudo="Temos um sólido programa de governança em privacidade, que inclui uma estrutura de pessoas, medidas e regras dedicada ao atendimento da LGPD. Possuímos políticas e regras internas sobre o tema de proteção de dados."
-                            classList={"col-span-1 px-7"}
+                            classList={"col-span-1 px-7 min-w-[380px] static"}
                         />
-                    </div>
+                   
     
-                    <div class="swiper-slide">
+                   
                         <CardIcone
                             titulo="Ações de Orientação"
                             icone=`${baseURL}/img/hub-privacidade/acoes/icone-bussola.png`
                             conteudo="Considerando nosso modelo de negócio, compartilhamos conteúdo orientativo direcionado aos nossos clientes, com o objetivo de trazer informações relevantes sobre como utilizar os  dados  pessoais disponibilizados pela Nova Vida em conformidade com a LGPD."
-                            classList={"col-span-1 px-7"}
+                            classList={"col-span-1 px-7 min-w-[380px] static"}
                         />
-                    </div>
+                  
                     
-                    <div class="swiper-slide">
+                    
                         <CardIcone
                             titulo="Ações de Segurança"
                             icone=`${baseURL}/img/hub-privacidade/acoes/icone-check.png`
                             conteudo="Construímos políticas e procedimentos internos sobre Segurança da Informação, adotando medidas robustas que buscam preservar a confidencialidade e a integridade dos nossos bancos de dados."
-                            classList={"col-span-1 px-7"}
+                            classList={"col-span-1 px-7 min-w-[380px] static"}
                         />
-                    </div>
+                  
                 
                 </div>
             </div>
@@ -211,9 +188,8 @@ const items = [
     <div class="content-row pb-20">
         <div class="content-container grid grid-cols-12">
             <div class="col-span-10 col-start-2">
-                <p class="text-5xl leading-snug text-highlight-on-light font-light text-center">
-                    Entenda Seus Direitos 
-                    <span>como Titular de Dados Pessoais e Como Protegê-los</span>
+                <p class="text-5xl leading-snug text-highlight-on-light font-light text-center" data-animation='gradual-text-color'>
+                    Entenda Seus Direitos como Titular de Dados Pessoais e Como Protegê-los
                 </p>
                 <div class="flex justify-center mt-10"><div><img src=`${baseURL}/img/hub-privacidade/icon-scroll.png` alt=""></div></div>
             </div>
@@ -277,12 +253,12 @@ const items = [
         }
     }
 
-    .swiper-wrapper{
+    /* .swiper-wrapper{
         align-items: stretch;
     }
     .swiper-slide {
         width: 100%;
         align-items: stretch;
-    }
+    } */
 </style>
 
