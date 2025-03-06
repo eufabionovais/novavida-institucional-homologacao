@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // TÍTULOS DE SEÇÕES E DESTAQUES
-  const highlightTexts = document.querySelectorAll('.section-highlight-title, .footer-text');
+  const highlightTexts = document.querySelectorAll(".section-highlight-title, .footer-text, [data-animation='gradual-text-color']");
   if(highlightTexts) {
     animateHighlightTexts(highlightTexts)
   }
@@ -116,7 +116,7 @@ animateContentWithSlider(contentWithSlider);
 
 
   /* CARD ÍCONES */
-  const cardIcones = document.querySelectorAll(".card-icone");
+  const cardIcones = document.querySelectorAll(".card-icone:not(.static)");
   if(cardIcones) {
     animateElementsWithScrollTrigger(cardIcones)
   }
@@ -163,6 +163,14 @@ animateContentWithSlider(contentWithSlider);
 
   const elementosBaseFAQ = document.querySelectorAll(".accordion .accordion-item");
   animateColorTransition(elementosBaseFAQ);
+
+
+  const influencers = document.querySelectorAll(".influencer");
+  staggerOnEnterViewport(influencers);
+
+
+  const avisoPrivacidade = document.querySelectorAll(".item-content p, .item-content ul, .item-content ol");
+  staggerOnEnterViewport(avisoPrivacidade);
 
  
 
@@ -338,7 +346,8 @@ function textColorTransition(texts) {
       start: "top 70%",
       duration: 0.3,
       onEnter: () => {
-        text.classList.add("dark-text");
+        gsap.fromTo(text, {y: 15, opacity: 0}, {y: 0, opacity: 1, duration: 0.3, ease: 'back.out(1.7)', onComplete:()=> text.classList.add("dark-text")});
+        // text.classList.add("dark-text");
       },
       onLeaveBack: () => {
         text.classList.remove("dark-text");
@@ -397,11 +406,11 @@ function animateBeneficios(elements) {
         end: "bottom top",
       },
     });
-    elementTl.from(titulo, {y: 20, opacity: 0, duration: 0.4, ease: 'back.out(1.7)'})
-    elementTl.from(conteudo, {y: 20, opacity: 0, duration: 0.4, ease: 'back.out(1.7)'}, "-=0.1")
-    elementTl.from(listaTitulo, {y: 20, opacity: 0, duration: 0.4, ease: 'back.out(1.7)'}, "-=0.1")
-    elementTl.from(listaItens, {x: 20, opacity: 0, duration: 0.4, stagger: 0.2, ease: 'back.out(1.7)'}, "-=0.1")
-    elementTl.from(imagem, {y: 20, opacity: 0, duration: 0.4, ease: 'back.out(1.7)'}, "-=0.1")
+    titulo && elementTl.from(titulo, {y: 20, opacity: 0, duration: 0.4, ease: 'back.out(1.7)'})
+    conteudo && elementTl.from(conteudo, {y: 20, opacity: 0, duration: 0.4, ease: 'back.out(1.7)'}, "-=0.1")
+    listaTitulo && elementTl.from(listaTitulo, {y: 20, opacity: 0, duration: 0.4, ease: 'back.out(1.7)'}, "-=0.1")
+    listaItens && elementTl.from(listaItens, {x: 20, opacity: 0, duration: 0.4, stagger: 0.2, ease: 'back.out(1.7)'}, "-=0.1")
+    imagem && elementTl.from(imagem, {y: 20, opacity: 0, duration: 0.4, ease: 'back.out(1.7)'}, "-=1")
   })
 }
 
@@ -411,7 +420,8 @@ function animateHighlightTexts(textParents) {
 
   textParents.forEach((textParent) => {
 
-    const textColor = textParent.getAttribute("class").split(' ').includes("text-highlight-on-dark") ? "light-text" : 'dark-text';
+    // const textColor = textParent.getAttribute("class").split(' ').includes("text-highlight-on-dark") ? "light-text" : 'dark-text';
+    const textColor = textParent.getAttribute("class")?.split(' ').includes("text-highlight-on-dark") ? "light-text" : 'dark-text';
 
   
 
@@ -423,10 +433,10 @@ function animateHighlightTexts(textParents) {
     scrollTrigger: {
       trigger: textParent,
       start: "top 70%",
-      end: "+=500",
+     // end: "+=500",
       scrub: true,
       toggleActions: "play none none none",
-    }
+      }
     });
     
     // Para cada linha, cria uma sub-timeline e adiciona à masterTimeline
@@ -482,37 +492,73 @@ function animateHero(heroBanner, options = {}) {
   })
 }
 
+// function staggerOnEnterViewport(elements, options = {}) {
+
+//   const targets = Array.isArray(elements) ? elements : [elements];
+
+//   const {
+//     duration = 0.5,
+//     stagger = 0.3,
+//     fromVars = { opacity: 0, y: 30 },
+//     toVars = { opacity: 1, y: 0 },
+//     ease = "back",
+//     scrollTrigger = {}
+//   } = options;
+
+//   scrollTrigger.trigger = scrollTrigger.trigger || targets[0];
+//   scrollTrigger.start = scrollTrigger.start || "top 70%";
+//   const animationFromVars = { ...fromVars };
+//   const animationToVars = {
+//     ...toVars,
+//     duration,
+//     ease,
+//     stagger,
+//     scrollTrigger
+//   };
+
+//   return gsap.fromTo(targets, animationFromVars, animationToVars);
+// }
+
 function staggerOnEnterViewport(elements, options = {}) {
+  // Garante que 'elements' seja sempre um array, mesmo que seja uma NodeList ou um único elemento
+  const targets = Array.isArray(elements) ? elements : Array.from(elements);
+
   const {
     duration = 0.5,
-    stagger = 0.3,
-    fromVars = { opacity: 0, y: 30 },
+    stagger = 0,
+    fromVars = { opacity: 0, y: 20 },
     toVars = { opacity: 1, y: 0 },
-    ease = "back",
+    ease = "back.out",
     scrollTrigger = {}
   } = options;
 
-  // Garante que 'elements' seja sempre um array, mesmo que seja uma única referência
-  const targets = Array.isArray(elements) ? elements : [elements];
+  // Cria uma animação para cada elemento, aplicando um delay baseado no índice
+  const animations = [];
+  targets.forEach((target, index) => {
+    // Se o scrollTrigger não tiver um trigger definido, usa o próprio elemento
+    const individualTrigger = {
+      trigger: scrollTrigger.trigger || target,
+      start: scrollTrigger.start || "top 80%",
+      ...scrollTrigger
+    };
 
-  // Define o trigger e start padrão se não fornecidos
-  scrollTrigger.trigger = scrollTrigger.trigger || targets[0];
-  scrollTrigger.start = scrollTrigger.start || "top 70%";
-
-  // Configura a animação 'from' e 'to'
-  const animationFromVars = { ...fromVars };
-  const animationToVars = {
-    ...toVars,
-    duration,
-    ease,
-    stagger,
-    scrollTrigger
-  };
-
-  
-  // Cria a animação com GSAP
-  return gsap.fromTo(targets, animationFromVars, animationToVars);
+    animations.push(
+      gsap.fromTo(
+        target,
+        { ...fromVars },
+        {
+          ...toVars,
+          duration,
+          ease,
+          delay: index * stagger, // delay incrementado para efeito de stagger
+          scrollTrigger: individualTrigger
+        }
+      )
+    );
+  });
+  return animations;
 }
+
 
 // Função para animar elementos com efeito stagger e disparar a animação via ScrollTrigger
 function animateElementsWithScrollTrigger(elements, options) {
@@ -571,7 +617,7 @@ function animateHorizontalSticky(items) {
 
     const computedStyle = getComputedStyle(item);
     const gapValue = computedStyle.getPropertyValue('gap');
-    const rawGapValue = parseInt(gapValue,10);
+    const rawGapValue = parseInt(gapValue,10) || 0;
 
     let totalWidth = 0;
     $(item).children().each(function(index, item){
@@ -589,7 +635,7 @@ function animateHorizontalSticky(items) {
         
         scrub: true, 
         start: "top 30%", 
-        // end: "+=5000",
+        //end: "+=5000",
         markers: false, 
       }
     });
