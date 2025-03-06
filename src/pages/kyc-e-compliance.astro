@@ -3,6 +3,7 @@
 import Layout from '../layouts/Layout.astro';
 import CardIcone from "../components/shared/CardIcone.astro";
 import ButtonShared from "../components/shared/Button.astro";
+import BaseButton from '../components/shared/BaseButton.astro';
 import ListaNumerica from "../components/shared/listaNumerica.astro";
 import CallToAction from "../components/shared/CallToAction.astro";
 import BeneficioProduto from "../components/shared/BeneficioProduto.astro";
@@ -109,7 +110,7 @@ const processos = [
     {
         carteiras.map((beneficio) => {
           return (
-            <BeneficioProduto item={beneficio} />
+            <BeneficioProduto item={beneficio} data-animation="beneficios" />
           )
         })
     }
@@ -123,17 +124,19 @@ const processos = [
     </div>
     <!-- / Processos -->
 
-    <ButtonShared
-    text="Fale com a pessoa certa no momento certo. Descubra como!" 
-    href="#"
-    customClasses="lg:col-span-6 lg:col-start-4 col-span-10 col-start-2" 
-    />
+
+
+    <BaseButton variant="dark" data-animation='from-bottom' classList="flex justify-self-center my:16 lg:mt-[45px] lg:mb-[90px]">
+        Fale com a pessoa certa no momento certo. Descubra como!
+        <i class="icon-arrow-up-angled text-[12px]" slot="icon"></i>
+    </BaseButton>    
+
 
     <!-- Fonte Dados -->
     {
         items.map((beneficio) => {
           return (
-            <BeneficioProduto item={beneficio} />
+            <BeneficioProduto item={beneficio} data-animation="beneficios" />
           )
         }) 
     }
@@ -142,7 +145,7 @@ const processos = [
     <!-- Beneficios -->
     <div class="content-row md:py-20 py-10">
         <div class="content-container px-5 lg:grid grid-cols-12">
-            <h2 class="text-4xl text-center text-highlight-on-light font-light col-span-8 col-start-3">Benefícios que Transformam a Gestão e Elevam a Performance Empresarial</h2>
+            <h2 class="text-4xl text-center text-highlight-on-light font-light col-span-8 col-start-3" data-animation='gradual-text-color'>Benefícios que Transformam a Gestão e Elevam a Performance Empresarial</h2>
         </div>
         <div class="content-container lg:grid grid-cols-4 grid-rows-2 h-full mt-32 gap-4 divide-y-2 lg:divide-y-0 lg:divide-x-2 divide-black divide-opacity-10">
           <CardIcone 
