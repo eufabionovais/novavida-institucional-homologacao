@@ -1,5 +1,5 @@
 ---
-
+import BaseButton from "../components/shared/BaseButton.astro";
 import ButtonShared from "../components/shared/Button.astro";
 import CallToAction from "../components/shared/CallToAction.astro";
 import BeneficioProduto from "../components/shared/BeneficioProduto.astro";
@@ -111,7 +111,7 @@ const definicoes = [
 <Layout title="Segmento Cobrança - Nova Vida TI">
 
     <!-- Intro -->
-    <div class="content-row novidades text-black pt-20 pb-10">
+    <div class="content-row text-black pt-20 pb-10">
         <div class="content-container" data-grid-section="initial-section">
             <div data-grid-section="initial-section__header">
                 <small class="flex items-center gap-2 text-neutral mb-6 text-base">
@@ -123,7 +123,7 @@ const definicoes = [
                  <p class="section-highlight-title text-highlight-on-light">
                     Como a Nova Vida Está Transformando os Produtos Financeiros no Varejo
                 </p>
-                <p class="mt-20 text-neutral">
+                <p class="mt-20 text-neutral" data-animation='gradual-text-color'>
                     Na Nova Vida, nossa missão é proporcionar soluções inovadoras em enriquecimento e consulta de dados, impulsionando o sucesso das empresas do varejo em seus produtos financeiros. Atuamos como um parceiro estratégico para nossos clientes, oferecendo insights valiosos que otimizam desde a análise de crédito até a definição de personas.
                 </p>              
             </div>
@@ -148,36 +148,43 @@ const definicoes = [
     {
         items.map((beneficio) => {
           return (
-            <BeneficioProduto item={beneficio} />
+            <BeneficioProduto item={beneficio} data-animation="beneficios" />
           )
         })
     }
     <!-- / Analise e confirmação -->
 
-    <ButtonShared
-        text="Garanta segurança e confiança nos seus dados" 
-        href="#"
-    />
+
+
+    <BaseButton variant="dark" data-animation='from-bottom' classList="flex justify-self-center my:16 lg:mt-[45px] lg:mb-[110px]">
+        Garanta segurança e confiança nos seus dados
+        <i class="icon-arrow-up-angled text-[12px]" slot="icon"></i>
+    </BaseButton>         
 
     <!-- Determinação e definição -->
     {
         definicoes.map((beneficio) => {
           return (
-            <BeneficioProduto item={beneficio} />
+            <BeneficioProduto item={beneficio} data-animation="beneficios" />
           )
         })
     }
     <!-- / Determinação e definição -->
 
-    <ButtonShared
+    <BaseButton variant="dark" data-animation='from-bottom' classList="flex justify-self-center my:16 lg:mt-[45px] lg:mb-[110px]">
+        Transforme suas soluções financeiras no varejo com a Nova Vida
+        <i class="icon-arrow-up-angled text-[12px]" slot="icon"></i>
+    </BaseButton>      
+
+    <!-- <ButtonShared
         text="Transforme suas soluções financeiras no varejo com a Nova Vida" 
         href="#"
-    />
+    /> -->
 
     <!-- Soluções -->
     <div class="content-row py-10">
         <div class="content-container px-5">
-            <h2 class="text-4xl text-center text-highlight-on-light font-light">Por que Escolher a Nova Vida? <span>Somos guiados pela expertise e tecnologia para oferecer soluções de dados que impulsionam resultados estratégicos.</span></h2>
+            <h2 class="text-4xl text-center text-highlight-on-light font-light" data-animation='gradual-text-color'>Por que Escolher a Nova Vida? Somos guiados pela expertise e tecnologia para oferecer soluções de dados que impulsionam resultados estratégicos.</h2>
         </div>
         <div class="content-container lg:grid grid-cols-4 grid-rows-2 h-full md:mt-24 mt-10 gap-4 divide-y-2 lg:divide-y-0 lg:divide-x-2 divide-black divide-opacity-10">
           <CardIcone 
@@ -215,7 +222,7 @@ const definicoes = [
         <div class="content-container">
             <div class="md:grid grid-cols-12  px-12 py-16 bg-[url('/img/segmento-varejo/banner-cubo.gif')] md:h-[500px] rounded-xl ">
                 <div class="col-span-5 flex flex-col">
-                    <h3 class="text-3xl text-highlight-on-dark font-light">Na Nova Vida, acreditamos que dados são mais do que números; <span>eles são a chave para o sucesso em um mercado competitivo.</span></h3>
+                    <h3 class="text-3xl text-neutral-light text-highlight-on-dark font-light" data-animation='gradual-text-color'>Na Nova Vida, acreditamos que dados são mais do que números; eles são a chave para o sucesso em um mercado competitivo.</h3>
                     <p class="mt-auto">Junte-se a nós e descubra como podemos transformar os seus produtos financeiros e impulsionar o crescimento da sua empresa.</p>
                 </div>
 
