@@ -1,8 +1,7 @@
 ---
 
 import Layout from '../layouts/Layout.astro';
-
-
+import BaseButton from '../components/shared/BaseButton.astro';
 import ButtonShared from "../components/shared/Button.astro";
 import CallToAction from "../components/shared/CallToAction.astro";
 import BeneficioProduto from "../components/shared/BeneficioProduto.astro";
@@ -89,7 +88,7 @@ const telefones = [
                 <p class="text-2xl">Corban</p>                
             </div>
             <div data-grid-section="initial-section__content">
-                 <p class="section-highlight-title text-highlight-on-light">
+                 <p class="section-highlight-title text-highlight-on-dark">
                     Venda mais com soluções de inteligência de dados para contato e segmentação de público
                 </p>
                 <p class="mt-20 text-neutral">
@@ -117,29 +116,29 @@ const telefones = [
     {
         carteiras.map((beneficio) => {
           return (
-            <BeneficioProduto item={beneficio} />
+            <BeneficioProduto item={beneficio} data-animation="beneficios" />
           )
         })  
     }
     <!-- / Mensageria -->
 
-    <ButtonShared
-        text="Alcance a pessoa certa com o melhor telefone hot" 
-        href="#"
-        customClasses="lg:col-span-6 lg:col-start-4 col-span-10 col-start-2" 
-    />
+    <BaseButton variant="dark" data-animation='from-bottom' classList="flex justify-self-center my:16 lg:mt-[132px] lg:mb-[132px]">
+        Alcance a pessoa certa com o melhor telefone hot
+        <i class="icon-arrow-up-angled text-[12px]" slot="icon"></i>
+    </BaseButton>    
+
 
     <!-- Vantagens -->
     <div class="content-row md:pb-20 pb-10">
         <div class="content-container px-5 lg:grid grid-cols-12">
-            <h2 class="text-4xl text-center text-highlight-on-light font-light col-span-10 col-start-2"><span>Vantagens de uma base de dados tratada e repleta de</span> oportunidades para correspondentes bancários</h2>
+            <h2 class="text-4xl text-center text-highlight-on-light font-light col-span-10 col-start-2" data-animation='gradual-text-color'>Vantagens de uma base de dados tratada e repleta de oportunidades para correspondentes bancários</h2>
         </div>
     </div>
       
     { 
         items.map((beneficio) => {
           return (
-                <BeneficioProduto item={beneficio} />
+                <BeneficioProduto item={beneficio} data-animation="beneficios" />
             )
         })
     }
@@ -149,7 +148,7 @@ const telefones = [
     <div class="content-row md:my-20 my-10">
         <div class="content-container px-5 lg:grid grid-cols-12">
             <div class="col-span-10 col-start-2 text-center ">
-              <h2 class="text-4xl text-highlight-on-light font-light ">Por que os nossos telefones fazem a diferença?</h2>
+              <h2 class="text-4xl text-highlight-on-light font-light " data-animation='gradual-text-color'>Por que os nossos telefones fazem a diferença?</h2>
               <div class="mt-10">
                 <img src=`${baseURL}/img/segmento-cobranca/icon-scroll.png` class="inline-block" alt="">
               </div>
@@ -164,15 +163,20 @@ const telefones = [
       </div>
     <!-- / Telefones -->
 
-    <ButtonShared
+    <BaseButton variant="dark" data-animation='from-bottom' classList="flex justify-self-center my:16 lg:mt-[45px] lg:mb-[110px]">
+       Tenha alta performance com contatos qualificados
+        <i class="icon-arrow-up-angled text-[12px]" slot="icon"></i>
+    </BaseButton>       
+
+    <!-- <ButtonShared
         text="Tenha alta performance com contatos qualificados" 
         href="#"
         customClasses="lg:col-span-6 lg:col-start-4 col-span-10 col-start-2" 
-    />
+    /> -->
 
     <div class="content-row md:mb-32 mb-20">
         <div class="content-container px-5 lg:grid grid-cols-12">
-            <h2 class="col-span-10 col-start-2 text-center text-4xl text-highlight-on-light font-light ">Time de influenciadores: <span>conheça as vozes que impulsionam nossa missão na cobrança</span></h2>
+            <h2 class="col-span-10 col-start-2 text-center text-4xl text-highlight-on-light font-light " data-animation='gradual-text-color'>Time de influenciadores: conheça as vozes que impulsionam nossa missão na cobrança</h2>
         </div>
 
         <div class="content-container flex flex-wrap gap-8 md:gap-12 justify-between py-16 md:py-32 border-b border-black border-opacity-10">
@@ -217,7 +221,7 @@ const telefones = [
 
     <div class="content-row md:mb-44 mb-20">
         <div class="content-container px-5 lg:grid grid-cols-12">
-            <p class="col-span-10 col-start-2 text-center text-xl text-highlight-on-light font-light mb-14">Estamos conectados aos maiores promotores do mercado, <span>criando juntos soluções inovadoras e estratégicas para transformar operações e gerar resultados excepcionais.</span></p>
+            <p class="col-span-10 col-start-2 text-center text-xl text-highlight-on-light font-light mb-14" data-animation='gradual-text-color'>Estamos conectados aos maiores promotores do mercado, <span>criando juntos soluções inovadoras e estratégicas para transformar operações e gerar resultados excepcionais.</span></p>
         </div>
 
         <div class="content-container lg:grid grid-cols-6 text-center gap-24 items-center space-y-4 lg:space-y-0">

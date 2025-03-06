@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // TÍTULOS DE SEÇÕES E DESTAQUES
-  const highlightTexts = document.querySelectorAll('.section-highlight-title, .footer-text');
+  const highlightTexts = document.querySelectorAll(".section-highlight-title, .footer-text, [data-animation='gradual-text-color']");
   if(highlightTexts) {
     animateHighlightTexts(highlightTexts)
   }
@@ -163,6 +163,10 @@ animateContentWithSlider(contentWithSlider);
 
   const elementosBaseFAQ = document.querySelectorAll(".accordion .accordion-item");
   animateColorTransition(elementosBaseFAQ);
+
+
+  const influencers = document.querySelectorAll(".influencer");
+  staggerOnEnterViewport(influencers)
 
  
 
@@ -338,7 +342,8 @@ function textColorTransition(texts) {
       start: "top 70%",
       duration: 0.3,
       onEnter: () => {
-        text.classList.add("dark-text");
+        gsap.fromTo(text, {y: 15, opacity: 0}, {y: 0, opacity: 1, duration: 0.3, ease: 'back.out(1.7)', onComplete:()=> text.classList.add("dark-text")});
+        // text.classList.add("dark-text");
       },
       onLeaveBack: () => {
         text.classList.remove("dark-text");

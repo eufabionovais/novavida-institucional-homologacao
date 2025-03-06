@@ -142,7 +142,7 @@ export const subMenus =
         
         'itens': [
           {
-            'titulo': 'Bancos e Fintechs',
+            'titulo': 'KYC e Compliance',
             'descricao': 'Soluções que tornam decisões de crédito seguras e inteligentes.',
             'icone': `/img/shared/icones/submenus/segmentos/icone-bancos-fintech.png`,
             'path': '/kyc-e-compliance'            
