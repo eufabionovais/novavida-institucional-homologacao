@@ -517,6 +517,10 @@ h1, h2, h3, h4, h5, h6 {
       "initial-section__action initial-section__content"
   }
 
+  [data-grid-section-width='lg'] {
+    grid-template-columns: 288px 755px;
+  }
+
   [data-grid-section='initial-section__header'] {
     grid-area: initial-section__header;
   }

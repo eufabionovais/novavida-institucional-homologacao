@@ -416,7 +416,8 @@ function animateHighlightTexts(textParents) {
 
   textParents.forEach((textParent) => {
 
-    const textColor = textParent.getAttribute("class").split(' ').includes("text-highlight-on-dark") ? "light-text" : 'dark-text';
+    // const textColor = textParent.getAttribute("class").split(' ').includes("text-highlight-on-dark") ? "light-text" : 'dark-text';
+    const textColor = textParent.getAttribute("class")?.split(' ').includes("text-highlight-on-dark") ? "light-text" : 'dark-text';
 
   
 

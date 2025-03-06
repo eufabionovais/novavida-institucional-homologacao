@@ -2,7 +2,6 @@
 
 import ListaNumerica from "../components/shared/listaNumerica.astro";
 import BeneficioProduto from "../components/shared/BeneficioProduto.astro";
-import ButtonShared from "../components/shared/Button.astro";
 import CallToAction from "../components/shared/CallToAction.astro";
 import BaseButton from "../components/shared/BaseButton.astro";
 import { baseURL } from "../config";
@@ -85,8 +84,8 @@ const beneficios = [
 <Layout title="Segmento Cobrança - Nova Vida TI">
 
     <!-- Intro -->
-    <div class="content-row novidades text-black py-20">
-        <div class="content-container" data-grid-section="initial-section">
+    <div class="content-row text-black py-20">
+        <div class="content-container" data-grid-section="initial-section" data-grid-section-width='lg'>
             <div data-grid-section="initial-section__header">
                 <small class="flex items-center gap-2 text-neutral mb-6 text-base">
                     Segmento <i class="icon-curved-arrow relative top-1"></i>
@@ -94,7 +93,7 @@ const beneficios = [
                 <p class="text-2xl">Cobrança</p>                
             </div>
             <div data-grid-section="initial-section__content">
-                <p class="section-highlight-title text-highlight-on-dark">
+                <p class="section-highlight-title text-highlight-on-light">
                     Como a Nova Vida está transformando a forma que as empresas de cobrança lidam com os dados
                 </p>
                 <p class="mt-10 md:mt-20 text-neutral">
@@ -190,7 +189,7 @@ const beneficios = [
             </div>
             
             <div class="col-span-10 col-start-2">
-                <p>
+                <p data-animation='gradual-text-color'>
                     Na NovaVida, oferecemos soluções que vão além do simples “enriquecimento de dados”, proporcionando insights valiosos e estratégias eficientes que resultam em uma recuperação mais eficaz e com menor custo. A tecnologia é a chave para transformar desafios em oportunidades, e estamos aqui para ajudar sua empresa a prosperar nesse cenário.
                 </p>
             </div>
